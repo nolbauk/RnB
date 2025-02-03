@@ -10,6 +10,6 @@ class HeroController extends Controller
     public function index()
     {
         $heroes = Hero::all();
-        return view('heroes.index', compact('heroes'));
+        return view('heroes', compact('heroes'));
     }
 }

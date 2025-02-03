@@ -1,53 +1,61 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: none;
+    cursor: pointer; /* Memberikan indikasi bahwa elemen dapat di klik */
+    width: 45px;
+    height: 60px;
+    overflow: hidden; /* Memastikan gambar tidak keluar dari kartu */
+    border-radius: 1px;
+    position: relative;
 }
 
 .card:hover {
-    transform: scale(1.1); /* Lebih besar saat dihover */
+    transform: scale(2.2); /* Lebih besar saat dihover */
     box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.2); /* Efek bayangan lembut */
+    z-index: 1000; /* Menempatkan kartu di atas kartu lain */
+    transition: transform 0.3s ease;
+}
+
+.card img {
+    width: 100%; /* Membuat gambar menyesuaikan dengan lebar kartu */
+    height: 100%; /* Membuat gambar menyesuaikan dengan tinggi kartu */
+    object-fit: cover; /* Memastikan gambar terpotong sesuai dengan ukuran kartu */
 }
 
 .hero-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Memberi jarak antar gambar */
+    gap: 5px; /* Memberi jarak antar gambar */
     justify-content: center;
 }
-.hero-container img {
-    width: 100px; /* Sesuaikan ukuran gambar */
-    height: auto;
-    border-radius: 2px; /* Opsional: Membuat sudut gambar membulat */
-}
+
 .box {
     font-size: 1.2rem;
     font-weight: bold;
     text-align: center;
     padding: 10px;
     margin-bottom: 10px;
-    border-radius: 2px;
+    /* border-radius: 2px; */
 }
-.bg-red { background-color: red; }
-.bg-blue { background-color: blue; }
-.bg-green { background-color: green; }
-.bg-yellow { background-color: yellow; }
-
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     color: white;
-    position: fixed; /* Membuat header tetap di atas */
+    position: fixed; 
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; /* Agar header tetap di atas konten lainnya */
-    
+    z-index: 1000;
 }
 
 header .logo img {
     height: 70px; /* Menyesuaikan ukuran logo */
+    width: auto;
 }
 
 header nav ul {
@@ -55,16 +63,23 @@ header nav ul {
     display: flex;
     justify-content: center;
     gap: 20px;
+    padding: 0; /* Menghilangkan padding default */
+    margin: 0; /* Menghilangkan margin default */
+}
+
+header nav ul li {
+    margin: 0; /* Menghilangkan margin default */
 }
 
 header nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
+    transition: color 0.3s ease; /* Menambahkan transisi saat hover */
 }
 
 header nav ul li a:hover {
-    text-decoration: underline;
+    color: #ccc; /* Mengubah warna teks saat dihover */
 }
 
 header .login a {
@@ -74,8 +89,48 @@ header .login a {
     padding: 5px 10px;
     border-radius: 15px;
     border: 2px solid white;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Menambahkan transisi saat hover */
 }
 
 header .login a:hover {
-    background-color: #0056b3;
+    background-color: white;
+    color: #0056b3;
+}
+
+.navbar {
+    background-color: #1b1b1b !important;
+    padding: 10px;
+    border-radius: 5px;
+}
+.navbar p {
+    font-size: 16px;
+    font-weight: bold;
+}
+.attribute-img {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    filter: grayscale(100%);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.attribute-img:hover {
+    filter: grayscale(0%);
+}
+.search-box {
+    background-color: #333;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.search-box::placeholder {
+    color: #999;
+}
+.search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
 }
