@@ -1,0 +1,46 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    position: fixed; /* Membuat header tetap di atas */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Agar header tetap di atas konten lainnya */
+}
+
+header .logo img {
+    height: 70px; /* Menyesuaikan ukuran logo */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+header .login a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: 2px solid white;
+}
+
+header .login a:hover {
+    background-color: #0056b3;
+}
