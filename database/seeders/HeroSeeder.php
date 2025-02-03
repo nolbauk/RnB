@@ -79,6 +79,22 @@ class HeroSeeder extends Seeder
             'role' => 'Support',
             'image' => 'puki.jfif'
         ]);
+        Hero::create([
+            'name' => 'Mirana',
+            'role' => 'Marksman',
+            'image' => 'Mirana_Large.png'
+        ]);
+
+        Hero::create([
+            'name' => 'Chen',
+            'role' => 'Support',
+            'image' => 'puki.jfif'
+        ]);
+        Hero::create([
+            'name' => 'Chen',
+            'role' => 'Support',
+            'image' => 'puki.jfif'
+        ]);
         // Tambahkan hero lainnya sesuai kebutuhan
     
     }

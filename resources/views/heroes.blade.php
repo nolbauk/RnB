@@ -79,9 +79,7 @@
                 </div>
                 <div class="hero-container">
                     @foreach($heroes as $hero)
-              
                         <img class="card" src="{{ asset('img/' . $hero->image) }}" alt="{{ $hero->name }}">
-                    
                     @endforeach
                 </div>
             </div>
@@ -98,24 +96,24 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="row mt-3 text-center">
             <!-- Kiri Bawah -->
             <div class="col-md-6">
                 <div class="box text-start  d-flex align-items-center">
-                    <img  src="{{ asset('img/universal.jfif') }}" alt="Support" class="img-fluid me-2" style="width: 50px;">
+                    <img src="{{ asset('img/universal.jfif') }}" alt="Support" class="img-fluid me-2" style="width: 50px;">
                     Mage
                 </div>
                 <div class="hero-container">
                     @foreach($heroes as $hero)
-                    <img class="card" src="{{ asset('img/' . $hero->image) }}" alt="{{ $hero->name }}">
-                @endforeach
+                        <img class="card" src="{{ asset('img/' . $hero->image) }}" alt="{{ $hero->name }}">
+                    @endforeach
                 </div>
             </div>
             <!-- Kanan Bawah -->
             <div class="col-md-6">
                 <div class="box text-start  d-flex align-items-center">
-                    <img  src="{{ asset('img/universal.jfif') }}" alt="Support" class="img-fluid me-2" style="width: 50px;">
+                    <img src="{{ asset('img/universal.jfif') }}" alt="Support" class="img-fluid me-2" style="width: 50px;">
                     Support
                 </div>
                 <div class="hero-container">

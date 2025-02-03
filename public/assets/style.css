@@ -5,18 +5,17 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: none;
     cursor: pointer; /* Memberikan indikasi bahwa elemen dapat di klik */
-    width: 45px;
-    height: 60px;
+    width: 100px; /* Sesuaikan ukuran kartu */
+    height: 60px; /* Sesuaikan ukuran kartu */
     overflow: hidden; /* Memastikan gambar tidak keluar dari kartu */
     border-radius: 1px;
     position: relative;
 }
 
 .card:hover {
-    transform: scale(2.2); /* Lebih besar saat dihover */
+    transform: scale(1.2); /* Lebih besar saat dihover */
     box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.2); /* Efek bayangan lembut */
-    z-index: 1000; /* Menempatkan kartu di atas kartu lain */
-    transition: transform 0.3s ease;
+    z-index: 1; /* Menempatkan kartu di atas kartu lain */
 }
 
 .card img {
@@ -27,11 +26,19 @@ body {
 
 .hero-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 5px; /* Memberi jarak antar gambar */
+    flex-wrap: wrap; /* Membungkus baris jika lebih dari 15 item */
+    gap: 10px; /* Memberi jarak antar gambar */
     justify-content: center;
 }
 
+/* .hero-container .card {
+    flex: 0 0 calc(100% / 15 - 10px); 
+} */
+.card img {
+    width: 100%; /* Membuat gambar menyesuaikan dengan lebar kartu */
+    height: 100%; /* Membuat gambar menyesuaikan dengan tinggi kartu */
+    object-fit: cover; /* Memastikan gambar terpotong sesuai dengan ukuran kartu */
+}
 .box {
     font-size: 1.2rem;
     font-weight: bold;
