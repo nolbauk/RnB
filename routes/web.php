@@ -9,3 +9,7 @@ Route::get('/', function () {
 
 
 Route::get('/heroes', [HeroController::class, 'index'])->name('heroes.index');
+
+route::get('/tes', function(){
+    return view('tes');
+});

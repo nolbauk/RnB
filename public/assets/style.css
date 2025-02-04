@@ -1,12 +1,15 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    padding-top: 100px; /* Sesuaikan dengan tinggi header */
+    padding-bottom: 60px; /* Memberikan ruang untuk navbar fixed-bottom */
 }
+
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: none;
     cursor: pointer; /* Memberikan indikasi bahwa elemen dapat di klik */
-    width: 100px; /* Sesuaikan ukuran kartu */
-    height: 60px; /* Sesuaikan ukuran kartu */
+    width: 80px; /* Sesuaikan ukuran kartu */
+    height: 110px; /* Sesuaikan ukuran kartu */
     overflow: hidden; /* Memastikan gambar tidak keluar dari kartu */
     border-radius: 1px;
     position: relative;
@@ -31,22 +34,14 @@ body {
     justify-content: center;
 }
 
-/* .hero-container .card {
-    flex: 0 0 calc(100% / 15 - 10px); 
-} */
-.card img {
-    width: 100%; /* Membuat gambar menyesuaikan dengan lebar kartu */
-    height: 100%; /* Membuat gambar menyesuaikan dengan tinggi kartu */
-    object-fit: cover; /* Memastikan gambar terpotong sesuai dengan ukuran kartu */
-}
 .box {
     font-size: 1.2rem;
     font-weight: bold;
     text-align: center;
     padding: 10px;
     margin-bottom: 10px;
-    /* border-radius: 2px; */
 }
+
 header {
     display: flex;
     justify-content: space-between;
@@ -105,14 +100,17 @@ header .login a:hover {
 }
 
 .navbar {
-    background-color: #1b1b1b !important;
-    padding: 10px;
-    border-radius: 5px;
+    background-color: #1b1b1b;
+    padding:10px;
+    border-radius: 5px 5px 0 0; /* Membulatkan sudut atas navbar */
+    
 }
+
 .navbar p {
     font-size: 16px;
     font-weight: bold;
 }
+
 .attribute-img {
     width: 30px;
     height: 30px;
@@ -121,23 +119,35 @@ header .login a:hover {
     cursor: pointer;
     transition: 0.3s;
 }
+
 .attribute-img:hover {
     filter: grayscale(0%);
 }
+
 .search-box {
-    background-color: #333;
-    border: none;
-    color: white;
-    padding: 5px 10px;
+    padding: 5px;
     border-radius: 5px;
+    border: none;
 }
+
 .search-box::placeholder {
     color: #999;
 }
+
 .search-icon {
     position: absolute;
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    color: white;
+    cursor: pointer;
 }
+
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.7s ease-in-out;
+}
+
+
