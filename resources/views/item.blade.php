@@ -33,14 +33,16 @@
                 <img src="{{ asset('images/itembkb.jpg') }}">
                 <div class="item-info">
                     <h3>Black King Bar</h3>
+                    <hr class="divider">
                     <p>This is a powerful item that gives you extra damage.</p>
                 </div>
-            </div>
+            </div>   
             <!-- Item 2 -->
             <div class="item-card">
                 <img src="{{ asset('images/itemshiva.jpg') }}">
                 <div class="item-info">
                     <h3>Shiva Guard</h3>
+                    <hr class="divider">
                     <p>This item provides great defense and health regen.</p>
                 </div>
             </div>
@@ -49,6 +51,7 @@
                 <img src="{{ asset('images/itemdeso.jpg') }}">
                 <div class="item-info">
                     <h3>Desolator</h3>
+                    <hr class="divider">
                     <p>A utility item that offers speed and agility boosts.</p>
                 </div>
             </div>
@@ -57,7 +60,16 @@
                 <img src="{{ asset('images/itemradian.jpg') }}" alt="Item 4">
                 <div class="item-info">
                     <h3>Radiance</h3>
+                    <hr class="divider">
                     <p>Perfect for magical users, provides mana and cooldown reduction.</p>
+                </div>
+            </div>
+            <div class="item-card">
+                <img src="{{ asset('images/itembkb.jpg') }}">
+                <div class="item-info">
+                    <h3>Black King Bar  das</h3>
+                    <hr class="divider">
+                    <p>This is a powerful item that gives you extra damage.</p>
                 </div>
             </div>
         </div>
