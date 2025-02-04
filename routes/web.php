@@ -15,5 +15,3 @@ Route::get('/item', function () {
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
 Route::resource('heroes', HeroesController::class);
-
-Route::get('/heroes', [HeroController::class, 'index'])->name('heroes.index');
