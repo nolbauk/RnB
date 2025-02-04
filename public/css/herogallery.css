@@ -150,4 +150,13 @@ header .login a:hover {
     transition: transform 0.7s ease-in-out;
 }
 
+.page {
+    height: 100vh; /* Mengatur tinggi setiap halaman untuk mengisi layar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: transform 0.5s ease-in-out;
+  }
+
 

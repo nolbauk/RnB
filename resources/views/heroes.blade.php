@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Daftar Hero - Dota 2</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ asset('assets/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/herogallery.css') }}" rel="stylesheet">
 </head>
 <body class="bg-dark text-white">
     <div class="container">
@@ -25,6 +25,7 @@
                 <a href="/login">Login</a>
             </div>
         </header>
+        <div class="page">
         <div style="margin: -20px;" class="row text-center py-4 hero-section strength active">
             <div class="col-md-12">
                 <div class="box text-start d-flex align-items-center border-bottom ">
@@ -38,6 +39,8 @@
                 </div>
             </div>
         </div>
+        </div>
+        <div class="page">
         <div style="margin: -20px;" class="row text-center py-4 hero-section agility">
             <div class="col-md-12">
                 <div class="box text-start d-flex align-items-center border-bottom ">
@@ -51,6 +54,8 @@
                 </div>
             </div>
         </div>
+        </div>
+        <div class="page">
         <div style="margin: -20px;" class="row text-center py-4 hero-section intelligence">
             <div class="col-md-12">
                 <div class="box text-start d-flex align-items-center border-bottom ">
@@ -64,6 +69,8 @@
                 </div>
             </div>
         </div>
+        </div>
+        <div class="page">
         <div style="margin: -20px;" class="row text-center py-4 p-0 hero-section universal">
             <div class="col-md-12">
                 <div class="box text-start d-flex align-items-center border-bottom ">
@@ -76,6 +83,7 @@
                     @endforeach
                 </div>
             </div>
+        </div>
         </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-bottom">
@@ -120,6 +128,6 @@
     </nav>   
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('assets/script.js') }}"></script>
+    <script src="{{ asset('js/galleryhero.js') }}"></script>
 </body>
 </html>
