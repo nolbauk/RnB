@@ -2,11 +2,15 @@
 
 namespace App\Models;
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+=======
+>>>>>>> 1-ListHero
 use Illuminate\Database\Eloquent\Model;
 
 class Hero extends Model
 {
+<<<<<<< HEAD
     use HasFactory;
 
     protected $table = 'heroes';
@@ -58,3 +62,7 @@ class Hero extends Model
         'talent_25_right',
     ];
 }
+=======
+    
+}
+>>>>>>> 1-ListHero
