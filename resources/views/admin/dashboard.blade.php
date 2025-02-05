@@ -76,7 +76,7 @@
                                             <div class="text-m font-weight-bold text-success text-uppercase mb-1">
                                                 Heroes</div>
                                             <div class="h5 mb-1 font-weight-bold text-gray-800">126</div>
-                                            <a href="{{ route('heroes.index') }}" class="text-s font-weight-bold">Details</a>
+                                            <a href="{{ route('adminheroes.index') }}" class="text-s font-weight-bold">Details</a>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-user-shield fa-2x text-gray-300"></i>

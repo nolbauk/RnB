@@ -11,4 +11,4 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
-Route::resource('heroes', HeroesController::class);
+Route::resource('adminheroes', HeroesController::class);
