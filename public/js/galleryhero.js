@@ -16,7 +16,6 @@ function scrollToPage(pageIndex) {
   }
 }
 
-
 window.addEventListener('wheel', (e) => {
   const currentTime = new Date().getTime();
 

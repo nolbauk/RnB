@@ -103,7 +103,6 @@ header .login a:hover {
     background-color: #1b1b1b;
     padding:10px;
     border-radius: 5px 5px 0 0; /* Membulatkan sudut atas navbar */
-    
 }
 
 .navbar p {
@@ -157,6 +156,16 @@ header .login a:hover {
     align-items: center;
     flex-direction: column;
     transition: transform 0.5s ease-in-out;
-  }
+    margin-top: -45px; /* Menghilangkan jarak atas */
+    
+}
 
-
+.content {
+    height: 80vh; /* Sesuaikan tinggi konten */
+    overflow-y: auto; /* Menambahkan scroll pada konten */
+    width: 100%; /* Sesuaikan lebar konten */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
