@@ -39,7 +39,7 @@
 
   <!-- Mobile Sidebar Menu -->
   <div class="mobile-menu">
-    <span class="close-menu">&times;</span>
+    <!-- <span class="close-menu">&times;</span> -->
     <ul>
       <li><a href="#page-1" id="nava">HERO</a></li>
       <li><a href="item">ITEM</a></li>

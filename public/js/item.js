@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         card.addEventListener('mouseleave', () => {
-            card.style.transform = 'scale(1)';
+            card.style.transform = 'skew(-5deg) scale(1)';
         });
     });
 });
