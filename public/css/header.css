@@ -9,9 +9,10 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 9999; /* Increase z-index to ensure it's on top of everything */
     transition: all 0.3s ease-in-out;
 }
+
 
 /* Logo Styling */
 header .logo img {
@@ -87,7 +88,8 @@ header .login a:hover {
     padding-top: 60px;
     text-align: center;
     transition: top 0.3s ease-in-out;
-    padding-bottom: 40px; /* Adds space at the bottom */
+    padding-bottom: 40px; /* Adds space at the bottom */    
+    z-index: 9999;
 }
 
 /* Menu Items */
@@ -162,7 +164,6 @@ header .login a:hover {
         cursor: pointer;
         gap: 5px;
         position: relative;
-        z-index: 1100;
         transition: all 0.3s ease-in-out;
     }
 

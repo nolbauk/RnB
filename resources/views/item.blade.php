@@ -37,10 +37,9 @@
   </header>
 
   <!-- Mobile Sidebar Menu -->
-  <div class="mobile-menu">
-    <span class="close-menu">&times;</span>
+  <div class="mobile-menu"><!-- <span class="close-menu">&times;</span> -->
     <ul>
-      <li><a href="#page-1" id="nava">HERO</a></li>
+      <li><a href="#page-1">HERO</a></li>
       <li><a href="item">ITEM</a></li>
       <li><a href="#page-3">NEWS</a></li>
       <li><a href="#page-4">FORUM</a></li>
@@ -101,7 +100,7 @@
         </div>
     </div>
 
-    <script src="{{ asset('js/script.js') }}"></script>
+    <script src="{{ asset('js/item.js') }}"></script>
     <script src="{{ asset('js/header.js') }}"></script>
 </body>
 </html>
