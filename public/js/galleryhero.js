@@ -1,48 +1,32 @@
-// script.js
-let currentPage = 0;
-const pages = document.querySelectorAll('.page');
-const totalPages = pages.length;
-let isScrolling = false; // Flag untuk mencegah scroll berturut-turut terlalu cepat
-let lastScrollTime = 0; // Menyimpan waktu scroll terakhir untuk throttle
+document.addEventListener("DOMContentLoaded", function () {
+  let pages = document.querySelectorAll(".page");
+  let currentIndex = 0;
 
-function scrollToPage(pageIndex) {
-  if (pageIndex >= 0 && pageIndex < totalPages) {
-    const targetPosition = pageIndex * window.innerHeight;
-    window.scrollTo({
-      top: targetPosition,
-      behavior: "smooth"
-    });
-    currentPage = pageIndex;
-  }
-}
-
-window.addEventListener('wheel', (e) => {
-  const currentTime = new Date().getTime();
-
-  // Jika interval antara scroll terlalu singkat, hentikan scroll berikutnya
-  if (currentTime - lastScrollTime < 800 || isScrolling) return;
-
-  lastScrollTime = currentTime;
-
-  // Menentukan scroll ke halaman berikutnya atau sebelumnya
-  if (e.deltaY > 0) {
-    // Scroll Down
-    if (currentPage < totalPages - 1) {
-      isScrolling = true;
-      scrollToPage(currentPage + 1);
-    }
-  } else {
-    // Scroll Up
-    if (currentPage > 0) {
-      isScrolling = true;
-      scrollToPage(currentPage - 1);
-    }
+  function showPage(index) {
+      pages.forEach((page, i) => {
+          if (i === index) {
+              page.classList.add("active");
+          } else {
+              page.classList.remove("active");
+          }
+      });
   }
 
-  // Setelah transisi selesai, aktifkan scroll kembali
-  setTimeout(() => {
-    isScrolling = false;
-  }, 800); // Waktu timeout yang lebih panjang untuk throttle scroll
+  document.addEventListener("keydown", function (event) {
+      if (event.key === "PageDown") {
+          event.preventDefault();
+          if (currentIndex < pages.length - 1) {
+              currentIndex++;
+              showPage(currentIndex);
+          }
+      } else if (event.key === "PageUp") {
+          event.preventDefault();
+          if (currentIndex > 0) {
+              currentIndex--;
+              showPage(currentIndex);
+          }
+      }
+  });
+
+  showPage(currentIndex); // Tampilkan halaman pertama saat dimuat
 });
-
-document.body.style.height = `${totalPages * 100}vh`;
