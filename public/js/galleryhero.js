@@ -101,6 +101,9 @@ style.textContent = `
   .hero-container {
       transition: opacity 0.3s ease-in-out;
   }
+    .page-container {
+    margin-top: -80px;
+}
   .card {
       transition: transform 0.3s ease-in-out;
   }

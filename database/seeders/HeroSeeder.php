@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-use App\Models\Hero;
+use App\Models\Hero1Tes;
 class HeroSeeder extends Seeder
 {
     /**
@@ -13,188 +13,188 @@ class HeroSeeder extends Seeder
      */
     public function run(): void
 {
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Chen',
         'role' => 'Support',
         'image' => 'chen.jfif'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Mirana',
         'role' => 'Marksman',
         'image' => 'Mirana_Large.png'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Axe',
         'role' => 'Carry',
         'image' => 'axe.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Drow Ranger',
         'role' => 'Carry',
         'image' => 'drow.png'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Lion',
         'role' => 'Support',
         'image' => 'lion.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Tidehunter',
         'role' => 'Tank',
         'image' => 'tide.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Sniper',
         'role' => 'Carry',
         'image' => 'sniper.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Vengeful Spirit',
         'role' => 'Support',
         'image' => 'venge.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Wraith King',
         'role' => 'Carry',
         'image' => 'wraith.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Crystal Maiden',
         'role' => 'Support',
         'image' => 'maiden.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Juggernaut',
         'role' => 'Carry',
         'image' => 'jugg.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Queen of Pain',
         'role' => 'Mid',
         'image' => 'queen.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Invoker',
         'role' => 'Mid',
         'image' => 'invoker.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Anti-Mage',
         'role' => 'Carry',
         'image' => 'anti.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Phantom Lancer',
         'role' => 'Carry',
         'image' => 'phantom.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Templar Assassin',
         'role' => 'Mid',
         'image' => 'templar.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Medusa',
         'role' => 'Carry',
         'image' => 'medusa.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Luna',
         'role' => 'Carry',
         'image' => 'luna.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Chaos Knight',
         'role' => 'Carry',
         'image' => 'chaos.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Sven',
         'role' => 'Carry',
         'image' => 'sven.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Tiny',
         'role' => 'Carry',
         'image' => 'tiny.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Earthshaker',
         'role' => 'Support',
         'image' => 'earth.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Sand King',
         'role' => 'Initiator',
         'image' => 'sand.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Slardar',
         'role' => 'Carry',
         'image' => 'slardar.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Kunkka',
         'role' => 'Carry',
         'image' => 'kunkka.jpg'
     ]);
 
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Pudge',
         'role' => 'Tank',
         'image' => 'pudge.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Lifestealer',
         'role' => 'Carry',
         'image' => 'lifestealer.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Night Stalker',
         'role' => 'Carry',
         'image' => 'night.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Doom',
         'role' => 'Carry',
         'image' => 'doom.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Spectre',
         'role' => 'Carry',
         'image' => 'spectre.jpg'
     ]);
 
-    Hero::create([
+    Hero1Tes::create([
         'name' => 'Weaver',
         'role' => 'Carry',
         'image' => 'weaver.jpg'

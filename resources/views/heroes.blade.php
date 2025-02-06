@@ -27,8 +27,7 @@
                 <a href="/login">Login</a>
             </div>
         </header>
-
-        <div class="page-container" >
+        <div class="page-container">
             <div  class="page active" id="page-1">
                 <div class="row text-center py-4 hero-section strength">
                     <div class="col-md-12">
