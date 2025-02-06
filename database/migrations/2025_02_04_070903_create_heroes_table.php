@@ -38,7 +38,6 @@ return new class extends Migration {
             $table->text('innate_desc')->nullable();
             $table->integer('projectile_speed')->nullable();
             $table->integer('attack_range');
-            $table->integer('move_speed');
             $table->float('turn_rate');
             $table->float('collision_size');
             $table->float('bound_radius');

@@ -4,7 +4,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
-            <img src="img/icon.png"/>
+            <img src="/img/icon.png"/>
         </div>  
         <div class="sidebar-brand-text mx-3">Admin</div>
     </a>
@@ -37,7 +37,7 @@
     </div>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('heroes.index') }}">
+        <a class="nav-link" href="{{ route('adminheroes.index') }}">
             <i class="fas fa-solid fa-user-shield"></i>
             <span>Heroes</span></a>
     </li>
