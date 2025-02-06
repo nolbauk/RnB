@@ -12,16 +12,11 @@ Route::get('/', function () {
 
 Route::get('/item', function () {
     return view('item');
-}); 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
-
-Route::resource('heroes', HeroesController::class);
-
-// Route::get('/heroes', [HeroController::class, 'index'])->name('heroes.index');
-
-route::get('/tes', function(){
-    return view('tes');
 });
 
 Route::get('/hero', [Hero1TesController::class, 'index'])->name('heroes.index');
+
+// ROUTE ADMIN
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+
 Route::resource('adminheroes', HeroesController::class);
