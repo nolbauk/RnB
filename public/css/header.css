@@ -89,7 +89,7 @@ header .login a:hover {
     text-align: center;
     transition: top 0.3s ease-in-out;
     padding-bottom: 40px; /* Adds space at the bottom */    
-    z-index: 9999;
+    z-index: 1;
 }
 
 /* Menu Items */
