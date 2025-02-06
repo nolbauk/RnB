@@ -1,23 +1,3 @@
-// Definisikan data hero untuk setiap atribut
-const heroData = {
-  strength: {
-      title: 'Strength',
-      heroes: ['Chen', 'Mirana', 'Axe', 'Drow Ranger', 'Lion', 'Tidehunter', 'Sniper', 'Vengeful Spirit', 'Wraith King', 'Crystal Maiden', 'Juggernaut', 'Queen of Pain', 'Invoker', 'Anti-Mage']
-  },
-  agility: {
-      title: 'Agility',
-      heroes: ['Phantom Lancer', 'Templar Assassin', 'Medusa', 'Luna', 'Chaos Knight', 'Sven', 'Tiny', 'Earthshaker', 'Sand King', 'Slardar', 'Kunkka', 'Pudge', 'Lifestealer', 'Night Stalker']
-  },
-  intelligence: {
-      title: 'Intelligence',
-      heroes: ['Shadow Fiend', 'Storm Spirit', 'Lina', 'Zeus', 'Puck', 'Shadow Shaman', 'Witch Doctor', 'Lich', 'Nature\'s Prophet', 'Enchantress', 'Crystal Maiden', 'Dark Willow']
-  },
-  universal: {
-      title: 'Universal',
-      heroes: ['Marci', 'Primal Beast', 'Hoodwink', 'Snapfire', 'Pangolier', 'Dark Willow', 'Monkey King']
-  }
-};
-
 // Inisialisasi variabel untuk tracking
 let currentSection = 'strength';
 let isScrolling = false;
