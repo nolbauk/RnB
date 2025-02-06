@@ -33,7 +33,7 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-        <x-sidebarnavbar />
+        <x-sidebarnavbar/>
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
@@ -112,113 +112,110 @@
             </div>
         </div>
 
-    </div>
-    <!-- End of Main Content -->
-
-    <!-- Footer -->
-    <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; RnB 2025</span>
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; RnB 2025</span>
+                </div>
             </div>
-        </div>
-    </footer>
-    <!-- End of Footer -->
+        </footer>
+        <!-- End of Footer -->
 
-</div>
-<!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
 
-</div>
-<!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
+    <!-- Logout Modal-->
+    <x-logoutmodal/>
 
-<!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-<!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
 
-<!-- Page level plugins -->
-<script src="vendor/chart.js/Chart.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
 
-<!-- Page level custom scripts -->
-<script src="js/demo/chart-area-demo.js"></script>
-<script src="js/demo/chart-pie-demo.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
 
-<script>
-    function showHeroDetails(heroId) {
-        $.ajax({
-            url: '/adminheroes/' + heroId, // Menyesuaikan rute untuk mendapatkan data hero
-            method: 'GET',
-            success: function(response) {
-                var hero = response.hero;
-                var detailsHtml = `
-                    <h4>${hero.name}</h4>
-                    <img src="/storage/${hero.image}" alt="${hero.name}" class="img-fluid mb-3">
-                    <p><strong>Bio:</strong> ${hero.bio || 'N/A'}</p>
-                    <p><strong>Primary Attribute:</strong> ${hero.primary_attribute}</p>
-                    <p><strong>Attack Type:</strong> ${hero.attack_type}</p>
-                    <p><strong>Complexity:</strong> ${hero.complexity}</p>
-                    <p><strong>Roles:</strong> ${hero.roles}</p>
-                    <p><strong>Primary Strength:</strong> ${hero.primary_strength}</p>
-                    <p><strong>Primary Agility:</strong> ${hero.primary_agility}</p>
-                    <p><strong>Primary Intelligence:</strong> ${hero.primary_intelligence}</p>
-                    <p><strong>Strength per Level:</strong> ${hero.strength_per_lvl}</p>
-                    <p><strong>Agility per Level:</strong> ${hero.agility_per_lvl}</p>
-                    <p><strong>Intelligence per Level:</strong> ${hero.intelligence_per_lvl}</p>
-                    <p><strong>Health:</strong> ${hero.health}</p>
-                    <p><strong>Health Regen:</strong> ${hero.health_regen}</p>
-                    <p><strong>Mana:</strong> ${hero.mana}</p>
-                    <p><strong>Mana Regen:</strong> ${hero.mana_regen}</p>
-                    <p><strong>Armor:</strong> ${hero.armor}</p>
-                    <p><strong>Attack Damage Min:</strong> ${hero.attack_dmg_min}</p>
-                    <p><strong>Attack Damage Max:</strong> ${hero.attack_dmg_max}</p>
-                    <p><strong>Attack Speed:</strong> ${hero.attack_speed}</p>
-                    <p><strong>Movement Speed:</strong> ${hero.movement_speed}</p>
-                    <p><strong>Magic Resist:</strong> ${hero.magic_resist}</p>
-                    <p><strong>Attack Rate:</strong> ${hero.attack_rate}</p>
-                    <p><strong>Lore:</strong> ${hero.lore || 'N/A'}</p>
-                    <p><strong>Innate Title:</strong> ${hero.innate_title || 'N/A'}</p>
-                    <p><strong>Innate Description:</strong> ${hero.innate_desc || 'N/A'}</p>
-                    <p><strong>Projectile Speed:</strong> ${hero.projectile_speed || 'N/A'}</p>
-                    <p><strong>Attack Range:</strong> ${hero.attack_range}</p>
-                    <p><strong>Move Speed:</strong> ${hero.move_speed}</p>
-                    <p><strong>Turn Rate:</strong> ${hero.turn_rate}</p>
-                    <p><strong>Collision Size:</strong> ${hero.collision_size}</p>
-                    <p><strong>Bound Radius:</strong> ${hero.bound_radius}</p>
-                    <p><strong>Vision Range (Day):</strong> ${hero.vision_range_day}</p>
-                    <p><strong>Vision Range (Night):</strong> ${hero.vision_range_night}</p>
-                    <p><strong>Voice Actor:</strong> ${hero.voice_actor || 'N/A'}</p>
-                    <p><strong>Talent 10 Left:</strong> ${hero.talent_10_left}</p>
-                    <p><strong>Talent 10 Right:</strong> ${hero.talent_10_right}</p>
-                    <p><strong>Talent 15 Left:</strong> ${hero.talent_15_left}</p>
-                    <p><strong>Talent 15 Right:</strong> ${hero.talent_15_right}</p>
-                    <p><strong>Talent 20 Left:</strong> ${hero.talent_20_left}</p>
-                    <p><strong>Talent 20 Right:</strong> ${hero.talent_20_right}</p>
-                    <p><strong>Talent 25 Left:</strong> ${hero.talent_25_left}</p>
-                    <p><strong>Talent 25 Right:</strong> ${hero.talent_25_right}</p>
-                `;
-
-                // Memasukkan konten detail ke modal
-                $('#heroDetails').html(detailsHtml);
-
-                // Menampilkan modal
-                $('#heroDetailsModal').modal('show');
-            },
-            error: function(xhr, status, error) {
-                alert('Error fetching hero details');
-            }
-        });
-    }
-</script>
+    <script>
+        function showHeroDetails(heroId) {
+            $.ajax({
+                url: '/adminheroes/' + heroId, // Menyesuaikan rute untuk mendapatkan data hero
+                method: 'GET',
+                success: function(response) {
+                    var hero = response.hero;
+                    var detailsHtml = `
+                        <h4>${hero.name}</h4>
+                        <img src="/storage/${hero.image}" alt="${hero.name}" class="img-fluid mb-3">
+                        <p><strong>Bio:</strong> ${hero.bio || 'N/A'}</p>
+                        <p><strong>Primary Attribute:</strong> ${hero.primary_attribute}</p>
+                        <p><strong>Attack Type:</strong> ${hero.attack_type}</p>
+                        <p><strong>Complexity:</strong> ${hero.complexity}</p>
+                        <p><strong>Roles:</strong> ${hero.roles}</p>
+                        <p><strong>Primary Strength:</strong> ${hero.primary_strength}</p>
+                        <p><strong>Primary Agility:</strong> ${hero.primary_agility}</p>
+                        <p><strong>Primary Intelligence:</strong> ${hero.primary_intelligence}</p>
+                        <p><strong>Strength per Level:</strong> ${hero.strength_per_lvl}</p>
+                        <p><strong>Agility per Level:</strong> ${hero.agility_per_lvl}</p>
+                        <p><strong>Intelligence per Level:</strong> ${hero.intelligence_per_lvl}</p>
+                        <p><strong>Health:</strong> ${hero.health}</p>
+                        <p><strong>Health Regen:</strong> ${hero.health_regen}</p>
+                        <p><strong>Mana:</strong> ${hero.mana}</p>
+                        <p><strong>Mana Regen:</strong> ${hero.mana_regen}</p>
+                        <p><strong>Armor:</strong> ${hero.armor}</p>
+                        <p><strong>Attack Damage Min:</strong> ${hero.attack_dmg_min}</p>
+                        <p><strong>Attack Damage Max:</strong> ${hero.attack_dmg_max}</p>
+                        <p><strong>Attack Speed:</strong> ${hero.attack_speed}</p>
+                        <p><strong>Movement Speed:</strong> ${hero.movement_speed}</p>
+                        <p><strong>Magic Resist:</strong> ${hero.magic_resist}</p>
+                        <p><strong>Attack Rate:</strong> ${hero.attack_rate}</p>
+                        <p><strong>Lore:</strong> ${hero.lore || 'N/A'}</p>
+                        <p><strong>Innate Title:</strong> ${hero.innate_title || 'N/A'}</p>
+                        <p><strong>Innate Description:</strong> ${hero.innate_desc || 'N/A'}</p>
+                        <p><strong>Projectile Speed:</strong> ${hero.projectile_speed || 'N/A'}</p>
+                        <p><strong>Attack Range:</strong> ${hero.attack_range}</p>
+                        <p><strong>Move Speed:</strong> ${hero.move_speed}</p>
+                        <p><strong>Turn Rate:</strong> ${hero.turn_rate}</p>
+                        <p><strong>Collision Size:</strong> ${hero.collision_size}</p>
+                        <p><strong>Bound Radius:</strong> ${hero.bound_radius}</p>
+                        <p><strong>Vision Range (Day):</strong> ${hero.vision_range_day}</p>
+                        <p><strong>Vision Range (Night):</strong> ${hero.vision_range_night}</p>
+                        <p><strong>Voice Actor:</strong> ${hero.voice_actor || 'N/A'}</p>
+                        <p><strong>Talent 10 Left:</strong> ${hero.talent_10_left}</p>
+                        <p><strong>Talent 10 Right:</strong> ${hero.talent_10_right}</p>
+                        <p><strong>Talent 15 Left:</strong> ${hero.talent_15_left}</p>
+                        <p><strong>Talent 15 Right:</strong> ${hero.talent_15_right}</p>
+                        <p><strong>Talent 20 Left:</strong> ${hero.talent_20_left}</p>
+                        <p><strong>Talent 20 Right:</strong> ${hero.talent_20_right}</p>
+                        <p><strong>Talent 25 Left:</strong> ${hero.talent_25_left}</p>
+                        <p><strong>Talent 25 Right:</strong> ${hero.talent_25_right}</p>
+                    `;
+    
+                    // Memasukkan konten detail ke modal
+                    $('#heroDetails').html(detailsHtml);
+    
+                    // Menampilkan modal
+                    $('#heroDetailsModal').modal('show');
+                },
+                error: function(xhr, status, error) {
+                    alert('Error fetching hero details');
+                }
+            });
+        }
+    </script>
 
 </body>
 

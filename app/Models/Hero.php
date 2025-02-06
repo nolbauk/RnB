@@ -41,7 +41,6 @@ class Hero extends Model
         'innate_desc',
         'projectile_speed',
         'attack_range',
-        'move_speed',
         'turn_rate',
         'collision_size',
         'bound_radius',
