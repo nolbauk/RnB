@@ -13,6 +13,11 @@ Route::get('/', function () {
 Route::get('/item', function () {
     return view('item');
 }); 
+
+Route::get('/qwerty', function () {
+    return view('qwerty');
+}); 
+
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
 Route::resource('heroes', HeroesController::class);
