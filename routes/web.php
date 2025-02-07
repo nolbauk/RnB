@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HeroesController;
-use App\Http\Controllers\Hero1TesController;
+use App\Http\Controllers\GalleryHeroController;
 
 Route::get('/', function () {
     return view('home');
@@ -12,21 +12,11 @@ Route::get('/', function () {
 
 Route::get('/item', function () {
     return view('item');
-}); 
-
-Route::get('/qwerty', function () {
-    return view('qwerty');
-}); 
-
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
-
-Route::resource('heroes', HeroesController::class);
-
-// Route::get('/heroes', [HeroController::class, 'index'])->name('heroes.index');
-
-route::get('/tes', function(){
-    return view('tes');
 });
 
-Route::get('/hero', [Hero1TesController::class, 'index'])->name('heroes.index');
+Route::get('/hero', [GalleryHeroController::class, 'index'])->name('heroes.index');
+
+// ROUTE ADMIN
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+
 Route::resource('adminheroes', HeroesController::class);
