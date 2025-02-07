@@ -20,3 +20,5 @@ Route::get('/hero', [GalleryHeroController::class, 'index'])->name('heroes.index
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
 Route::resource('adminheroes', HeroesController::class);
+
+// Hakim Filter Route

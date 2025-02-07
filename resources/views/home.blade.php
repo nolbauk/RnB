@@ -25,7 +25,7 @@
 
     <nav>
       <ul>
-        <li><a href="#page-1">HERO</a></li>
+        <li><a href="{{ route('heroes.index') }}">HERO</a></li>
         <li><a href="item">ITEM</a></li>
         <li><a href="#page-3">NEWS</a></li>
         <li><a href="#page-4">FORUM</a></li>

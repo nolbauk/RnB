@@ -17,7 +17,7 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#page-1">HERO</a></li>
+                    <li><a href="{{ url('/') }}">HOME</a></li>
                     <li><a href="item">ITEM</a></li>
                     <li><a href="#page-3">NEWS</a></li>
                     <li><a href="#page-4">FORUM</a></li>
@@ -27,7 +27,7 @@
                 <a href="/login">Login</a>
             </div>
         </header>
-        <div class="page-container">
+        <div class="page-container" style="margin-top: -110px">
             <div  class="page active" id="page-1">
                 <div class="row text-center py-4 hero-section strength">
                     <div class="col-md-12">
@@ -37,7 +37,7 @@
                         </div>
                         <div class="hero-container">
                             @foreach($heroes as $hero)
-                                <img class="card" src="img/{{ $hero->image }}" alt="{{ $hero->name }}">
+                                <img class="card img-fluid" src="/storage/{{ $hero->image }}" alt="{{ $hero->name }}">
                             @endforeach
                         </div>
                     </div>
@@ -48,11 +48,11 @@
                     <div class="col-md-12">
                         <div class="box text-start d-flex align-items-center border-bottom ">
                             <img src="images/universal.jfif" alt="Support" class="img-fluid me-2" style="width: 50px;">
-                            11111
+                            Agility
                         </div>
                         <div class="hero-container">
                             @foreach($heroes as $hero)
-                                <img class="card" src="img/{{ $hero->image }}" alt="{{ $hero->name }}">
+                                <img class="card img-fluid" src="/storage/{{ $hero->image }}" alt="{{ $hero->name }}">
                             @endforeach
                         </div>
                     </div>
@@ -63,11 +63,11 @@
                     <div class="col-md-12">
                         <div class="box text-start d-flex align-items-center border-bottom ">
                             <img src="images/universal.jfif" alt="Support" class="img-fluid me-2" style="width: 50px;">
-                            22222
+                            Intelligence
                         </div>
                         <div class="hero-container">
                             @foreach($heroes as $hero)
-                                <img class="card" src="img/{{ $hero->image }}" alt="{{ $hero->name }}">
+                                <img class="card img-fluid" src="/storage/{{ $hero->image }}" alt="{{ $hero->name }}">
                             @endforeach
                         </div>
                     </div>
@@ -78,11 +78,11 @@
                     <div class="col-md-12">
                         <div class="box text-start d-flex align-items-center border-bottom ">
                             <img src="images/universal.jfif" alt="Support" class="img-fluid me-2" style="width: 50px;">
-                            33333
+                            Universal
                         </div>
                         <div class="hero-container">
                             @foreach($heroes as $hero)
-                                <img class="card" src="img/{{ $hero->image }}" alt="{{ $hero->name }}">
+                                <img class="card img-fluid" src="/storage/{{ $hero->image }}" alt="{{ $hero->name }}">
                             @endforeach
                         </div>
                     </div>
