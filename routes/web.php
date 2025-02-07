@@ -14,6 +14,7 @@ Route::get('/item', function () {
     return view('item');
 });
 
+// HAKIM BERKERJA DI SINI
 Route::get('/hero', [GalleryHeroController::class, 'index'])->name('heroes.index');
 
 // ROUTE ADMIN
