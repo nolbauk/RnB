@@ -18,4 +18,8 @@ class GalleryHeroController extends Controller
         ];
         return view('heroes', compact('groupedHeroes')); 
     }
+    public function show($id){
+        $hero = Hero::findOrFail($id);
+        return view('hero-detail', compact('hero'));
+    }
 }

@@ -68,6 +68,15 @@ function updateHeroSection(sectionType) {
         // Reset scrolling flag
         setTimeout(() => {
             isScrolling = false;
+
+            // Inisialisasi event listener untuk klik hero
+            const heroImages = document.querySelectorAll('.hero-container .card');
+            heroImages.forEach(image => {
+                image.addEventListener('click', function() {
+                    const heroId = this.getAttribute('data-hero-id');
+                    window.location.href = `/hero/${heroId}`;
+                });
+            });
         }, 500);
     }, 300);
 }

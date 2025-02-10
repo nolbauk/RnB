@@ -6,26 +6,11 @@
     <title>Daftar Hero - Dota 2</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/herogallery.css">
-    <link rel="stylesheet" href="css/header1.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 <body class="bg-dark text-white">
     <div class="container">
-        <header style="background-color: #1b1b1b">
-            <div class="logo">
-                <img src="images/BISMILLAH.png" alt="Logo" />
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="{{ url('/') }}">HOME</a></li>
-                    <li><a href="item">ITEM</a></li>
-                    <li><a href="#page-3">NEWS</a></li>
-                    <li><a href="#page-4">FORUM</a></li>
-                </ul>
-            </nav>
-            <div class="login">
-                <a href="/login">Login</a>
-            </div>
-        </header>
+        @include('header')
         <div class="page-container" style="margin-top: -110px">
             @foreach($groupedHeroes as $attribute => $heroes)
                 <div class="page" id="page-{{ $loop->index + 1 }}">
@@ -37,7 +22,7 @@
                             </div>
                             <div class="hero-container">
                                 @foreach($heroes as $hero)
-                                    <img class="card img-fluid" src="/storage/{{ $hero->image }}" alt="{{ $hero->name }}">
+                                    <img class="card img-fluid" src="/storage/{{ $hero->image }}" alt="{{ $hero->name }}" data-hero-id="{{ $hero->id }}">
                                 @endforeach
                             </div>
                         </div>
@@ -85,6 +70,6 @@
         </div>
     </nav>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-   <script src="js/galleryhero.js"></script>
+    <script src="js/galleryhero.js"></script>
 </body>
 </html>
