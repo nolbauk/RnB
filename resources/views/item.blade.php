@@ -1,106 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Items</title>
-    <link rel="stylesheet" href="{{ asset('css/item.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/header.css') }}"> <!-- Link ke file CSS header -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }} ">
-</head>
-<body>
-<!-- Header -->
-<header>
-    <div class="logo">
-      <img src="{{ asset('images/logo.png') }}" alt="Logo" />
-    </div>
-
-    <!-- Mobile Menu Toggle -->
-    <div class="menu-toggle">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-
-    <nav>
-      <ul>
-        <li><a href="#page-1">HERO</a></li>
-        <li><a href="item">ITEM</a></li>
-        <li><a href="#page-3">NEWS</a></li>
-        <li><a href="#page-4">FORUM</a></li>
-      </ul>
-    </nav>
-
-    <div class="login">
-      <a href="/login">Login</a>
-    </div>
-  </header>
-
-  <!-- Mobile Sidebar Menu -->
-  <div class="mobile-menu"><!-- <span class="close-menu">&times;</span> -->
-    <ul>
-      <li><a href="#page-1">HERO</a></li>
-      <li><a href="item">ITEM</a></li>
-      <li><a href="#page-3">NEWS</a></li>
-      <li><a href="#page-4">FORUM</a></li>
-    </ul>
-    
-    <!-- Login inside Mobile Menu -->
-    <div class="login">
-      <a href="/login">Login</a>
-    </div>
-  </div>
-    
-    <div class="container">
-        <div class="item-grid">
-            <!-- Item 1 -->
-            <div class="item-card">
-                <img src="{{ asset('images/itembkb.jpg') }}">
-                <div class="item-info">
-                    <h3>Black King Bar</h3>
-                    <hr class="divider">
-                    <p>This is a powerful item that gives you extra damage.</p>
-                </div>
-            </div>   
-            <!-- Item 2 -->
-            <div class="item-card">
-                <img src="{{ asset('images/itemshiva.jpg') }}">
-                <div class="item-info">
-                    <h3>Shiva Guard</h3>
-                    <hr class="divider">
-                    <p>This item provides great defense and health regen.</p>
-                </div>
+<html>
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>RNB</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
+      <link rel="stylesheet" type="text/css" href="{{ asset('css/home/bootstrap.min.css') }}">
+      <!-- style css -->
+      <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+      <link rel="stylesheet" type="text/css" href="{{ asset('css/home/style.css') }}">
+      <!-- Responsive-->
+      <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+      <link rel="stylesheet" href="{{ asset('css/home/responsive.css') }}">
+      <!-- fevicon -->
+      <!-- <link rel="icon" href="images/fevicon.png" type="{{ asset('images/logo.png') }}" /> -->
+      <!-- font css -->
+      <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+      <!-- Scrollbar Custom CSS -->
+      <!-- <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css"> -->
+      <link rel="stylesheet" href="{{ asset('css/home/jquery.mCustomScrollbar.min.css') }}">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   </head>
+   <body>
+      <div class="header_section">
+         <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand" href="index.html"><img src="images/logo2.png"></a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="index.html">HERO</a>
+                     </li>
+                     <li class="nav-item active">
+                        <a class="nav-link" href="about.html">ITEM</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="icecream.html">NEWS</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="services.html">FORUM</a>
+                     </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                     <div class="cart_bt"><a href="#">LOGIN</a></div>
+                  </form>
+               </div>
+            </nav>
+         </div>
+      <!-- services section start -->
+      <div>
+         <div class="container">
+            <div class="row">
+               <div class="col-md-1">
+                  <h1 class="services_taital">Artifact</h1>
+               </div>
             </div>
-            <!-- Item 3 -->
-            <div class="item-card">
-                <img src="{{ asset('images/itemdeso.jpg') }}">
-                <div class="item-info">
-                    <h3>Desolator</h3>
-                    <hr class="divider">
-                    <p>A utility item that offers speed and agility boosts.</p>
-                </div>
+            <div class="services_section_2">
+               <div class="row">
+                  <div class="col-md-2">
+                     <div class="services_box">
+                        <h5 class="tasty_text"><span class="icon_img"><img src="images/itembkb.jpg"></span>Black King Bar</h5>
+                        <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat </p>
+                     </div>
+                  </div>
+                  <div class="col-md-2">
+                     <div class="services_box">
+                        <h5 class="tasty_text"><span class="icon_img"><img src="images/itemdeso.jpg"></span>Desolator</h5>
+                        <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat </p>
+                     </div>
+                  </div>
+                  <div class="col-md-2">
+                     <div class="services_box">
+                        <h5 class="tasty_text"><span class="icon_img"><img src="images/itemshiva.jpg"></span>Shiva Guard</h5>
+                        <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat </p>
+                     </div>
+                  </div>
+                  <div class="col-md-2">
+                     <div class="services_box">
+                        <h5 class="tasty_text"><span class="icon_img"><img src="images/itembkb.jpg"></span>Black King Bar</h5>
+                        <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat </p>
+                     </div>
+                  </div>
+                  <div class="col-md-2">
+                     <div class="services_box">
+                        <h5 class="tasty_text"><span class="icon_img"><img src="images/itemdeso.jpg"></span>Desolator</h5>
+                        <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat </p>
+                     </div>
+                  </div>
+                  <div class="col-md-2">
+                     <div class="services_box">
+                        <h5 class="tasty_text"><span class="icon_img"><img src="images/itemshiva.jpg"></span>Shiva Guard</h5>
+                        <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat </p>
+                     </div>
+                  </div>
+               </div>
             </div>
-            <!-- Item 4 -->
-            <div class="item-card">
-                <img src="{{ asset('images/itemradian.jpg') }}" alt="Item 4">
-                <div class="item-info">
-                    <h3>Radiance</h3>
-                    <hr class="divider">
-                    <p>Perfect for magical users, provides mana and cooldown reduction.</p>
-                </div>
-            </div>
-            <div class="item-card">
-                <img src="{{ asset('images/itembkb.jpg') }}">
-                <div class="item-info">
-                    <h3>Black King Bar  das</h3>
-                    <hr class="divider">
-                    <p>This is a powerful item that gives you extra damage.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="{{ asset('js/item.js') }}"></script>
-    <script src="{{ asset('js/header.js') }}"></script>
-</body>
+         </div>
+      </div>
+      <!-- services section end -->
+      <!-- Javascript files-->
+      <script src="js/home/jquery.min.js"></script>
+      <!-- <script src="{{ asset('js/home/jquery.min.js') }}"></script> -->
+      <script src="js/home/popper.min.js"></script>
+      <!-- <script src="{{ asset('js/home/popper.min.js') }}"></script> -->
+      <script src="js/home/bootstrap.bundle.min.js"></script>
+      <!-- <script src="{{ asset('js/home/bundle.min.js') }}"></script> -->
+      <script src="js/home/jquery-3.0.0.min.js"></script>
+      <!-- <script src="{{ asset('js/home/jquery-3.0.0.min.js') }}"></script> -->
+      <script src="js/home/plugin.js"></script>
+      <!-- <script src="{{ asset('js/home/plugin.js') }}"></script> -->
+      <!-- sidebar -->
+      <script src="js/home/jquery.mCustomScrollbar.concat.min.js"></script>
+      <!-- <script src="{{ asset('js/home/jquery.mCustomScrollbar.concat.min.js') }}"></script> -->
+      <script src="js/home/custom.js"></script>
+      <!-- <script src="{{ asset('js/home/custom.js') }}"></script> -->
+      <!-- javascript --> 
+      <script src="{{ asset('js/item.js') }}"></script>
+   </body>
 </html>

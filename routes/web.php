@@ -15,6 +15,14 @@ Route::get('/item', function () {
     return view('item');
 });
 
+Route::get('/bekasitem', function () {
+    return view('bekasitem');
+});
+
+Route::get('/qwerty', function () {
+    return view('qwerty');
+});
+
 Route::get('/hero', [GalleryHeroController::class, 'index'])->name('heroes.index');
 
 // ROUTE ADMIN
