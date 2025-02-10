@@ -19,8 +19,8 @@ body {
     justify-content: center;
     width: 100%;
     padding: 20px;
-    z-index: 0; /* Ensures that the container is below the header */
-    position: relative; /* Necessary for proper stacking context */
+    z-index: 0; 
+    position: relative;
 }
 
 .item-grid {

@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Romyk</title>
+      <title>RNB</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -32,13 +32,6 @@
       <!-- Tweaks for older IEs-->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
    </head>
-   <style>
-    .navbar-brand-icon img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-    }
-</style>
    <body>
       <div class="header_section">
          <div class="container">
@@ -232,7 +225,7 @@
                <div class="row">
                   <div class="col-md-4">
                      <div class="services_box">
-                        <h5 class="tasty_text"><span class="icon_img"><img src="images/icon-1.png"></span>Cookies Ice Cream</h5>
+                        <h5 class="tasty_text"><span class="icon_img"><img src="images/logo.png"></span>Cookies Ice Cream</h5>
                         <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat </p>
                      </div>
                   </div>
