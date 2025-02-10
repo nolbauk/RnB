@@ -23,9 +23,18 @@ Route::get('/qwerty', function () {
     return view('qwerty');
 });
 
+// HAKIM BERKERJA DI SINI FILTER
 Route::get('/hero', [GalleryHeroController::class, 'index'])->name('heroes.index');
+Route::get('/hero/{id}', [GalleryHeroController::class, 'show'])->name('hero.show');
+
+
+
+
+
 
 // ROUTE ADMIN
 Route::resource('admindashboard', DashboardController::class);
 
 Route::resource('adminheroes', HeroesController::class);
+
+
