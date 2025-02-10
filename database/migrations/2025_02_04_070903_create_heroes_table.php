@@ -14,7 +14,15 @@ return new class extends Migration {
             $table->enum('primary_attribute', ['Strength', 'Agility', 'Intelligence', 'Universal']);
             $table->enum('attack_type', ['Melee', 'Ranged']);
             $table->enum('complexity', ['Easy', 'Medium', 'Hard']);
-            $table->string('roles', 255);
+            $table->integer('carry')->nullable();
+            $table->integer('support')->nullable();
+            $table->integer('nuker')->nullable();
+            $table->integer('disabler')->nullable();
+            $table->integer('jungler')->nullable();
+            $table->integer('durable')->nullable();
+            $table->integer('escape')->nullable();
+            $table->integer('pusher')->nullable();
+            $table->integer('initiator')->nullable();
             $table->float('primary_strength');
             $table->float('primary_agility');
             $table->float('primary_intelligence');

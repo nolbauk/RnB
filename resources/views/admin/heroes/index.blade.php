@@ -158,56 +158,131 @@
                 success: function(response) {
                     var hero = response.hero;
                     var detailsHtml = `
-                        <h4>${hero.name}</h4>
-                        <img src="/storage/${hero.image}" alt="${hero.name}" class="img-fluid mb-3">
-                        <p><strong>Bio:</strong> ${hero.bio || 'N/A'}</p>
-                        <p><strong>Primary Attribute:</strong> ${hero.primary_attribute}</p>
-                        <p><strong>Attack Type:</strong> ${hero.attack_type}</p>
-                        <p><strong>Complexity:</strong> ${hero.complexity}</p>
-                        <p><strong>Roles:</strong> ${hero.roles}</p>
-                        <p><strong>Primary Strength:</strong> ${hero.primary_strength}</p>
-                        <p><strong>Primary Agility:</strong> ${hero.primary_agility}</p>
-                        <p><strong>Primary Intelligence:</strong> ${hero.primary_intelligence}</p>
-                        <p><strong>Strength per Level:</strong> ${hero.strength_per_lvl}</p>
-                        <p><strong>Agility per Level:</strong> ${hero.agility_per_lvl}</p>
-                        <p><strong>Intelligence per Level:</strong> ${hero.intelligence_per_lvl}</p>
-                        <p><strong>Health:</strong> ${hero.health}</p>
-                        <p><strong>Health Regen:</strong> ${hero.health_regen}</p>
-                        <p><strong>Mana:</strong> ${hero.mana}</p>
-                        <p><strong>Mana Regen:</strong> ${hero.mana_regen}</p>
-                        <p><strong>Armor:</strong> ${hero.armor}</p>
-                        <p><strong>Attack Damage Min:</strong> ${hero.attack_dmg_min}</p>
-                        <p><strong>Attack Damage Max:</strong> ${hero.attack_dmg_max}</p>
-                        <p><strong>Attack Speed:</strong> ${hero.attack_speed}</p>
-                        <p><strong>Movement Speed:</strong> ${hero.movement_speed}</p>
-                        <p><strong>Magic Resist:</strong> ${hero.magic_resist}</p>
-                        <p><strong>Attack Rate:</strong> ${hero.attack_rate}</p>
-                        <p><strong>Lore:</strong> ${hero.lore || 'N/A'}</p>
-                        <p><strong>Innate Title:</strong> ${hero.innate_title || 'N/A'}</p>
-                        <p><strong>Innate Description:</strong> ${hero.innate_desc || 'N/A'}</p>
-                        <p><strong>Projectile Speed:</strong> ${hero.projectile_speed || 'N/A'}</p>
-                        <p><strong>Attack Range:</strong> ${hero.attack_range}</p>
-                        <p><strong>Move Speed:</strong> ${hero.move_speed}</p>
-                        <p><strong>Turn Rate:</strong> ${hero.turn_rate}</p>
-                        <p><strong>Collision Size:</strong> ${hero.collision_size}</p>
-                        <p><strong>Bound Radius:</strong> ${hero.bound_radius}</p>
-                        <p><strong>Vision Range (Day):</strong> ${hero.vision_range_day}</p>
-                        <p><strong>Vision Range (Night):</strong> ${hero.vision_range_night}</p>
-                        <p><strong>Voice Actor:</strong> ${hero.voice_actor || 'N/A'}</p>
-                        <p><strong>Talent 10 Left:</strong> ${hero.talent_10_left}</p>
-                        <p><strong>Talent 10 Right:</strong> ${hero.talent_10_right}</p>
-                        <p><strong>Talent 15 Left:</strong> ${hero.talent_15_left}</p>
-                        <p><strong>Talent 15 Right:</strong> ${hero.talent_15_right}</p>
-                        <p><strong>Talent 20 Left:</strong> ${hero.talent_20_left}</p>
-                        <p><strong>Talent 20 Right:</strong> ${hero.talent_20_right}</p>
-                        <p><strong>Talent 25 Left:</strong> ${hero.talent_25_left}</p>
-                        <p><strong>Talent 25 Right:</strong> ${hero.talent_25_right}</p>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">${hero.name}</h4>
+                                <div class="text-center mb-3">
+                                    <img src="/storage/${hero.image}" alt="${hero.name}" class="img-fluid img-thumbnail" style="max-width: 250px;">
+                                </div>
+
+                                <h5 class="mt-3">General Information</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p><strong>Primary Attribute:</strong> ${hero.primary_attribute}</p>
+                                        <p><strong>Attack Type:</strong> ${hero.attack_type}</p>
+                                        <p><strong>Complexity:</strong> ${hero.complexity}</p>
+                                        <p><strong>Bio:</strong> ${hero.bio || 'N/A'}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><strong>Voice Actor:</strong> ${hero.voice_actor || 'N/A'}</p>
+                                        <p><strong>Lore:</strong> ${hero.lore || 'N/A'}</p>
+                                        <p><strong>Innate Title:</strong> ${hero.innate_title || 'N/A'}</p>
+                                        <p><strong>Innate Description:</strong> ${hero.innate_desc || 'N/A'}</p>
+                                    </div>
+                                </div>
+
+                                <h5 class="mt-3">Hero Roles</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>Carry:</strong> ${hero.carry}</li>
+                                    <li class="list-group-item"><strong>Support:</strong> ${hero.support}</li>
+                                    <li class="list-group-item"><strong>Nuker:</strong> ${hero.nuker}</li>
+                                    <li class="list-group-item"><strong>Disabler:</strong> ${hero.disabler}</li>
+                                    <li class="list-group-item"><strong>Jungler:</strong> ${hero.jungler}</li>
+                                    <li class="list-group-item"><strong>Durable:</strong> ${hero.durable}</li>
+                                    <li class="list-group-item"><strong>Escape:</strong> ${hero.escape}</li>
+                                    <li class="list-group-item"><strong>Pusher:</strong> ${hero.pusher}</li>
+                                    <li class="list-group-item"><strong>Initiator:</strong> ${hero.initiator}</li>
+                                </ul>
+
+                                <h5 class="mt-3">Base Attributes</h5>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p><strong>Strength:</strong> ${hero.primary_strength} (+${hero.strength_per_lvl}/lvl)</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p><strong>Agility:</strong> ${hero.primary_agility} (+${hero.agility_per_lvl}/lvl)</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p><strong>Intelligence:</strong> ${hero.primary_intelligence} (+${hero.intelligence_per_lvl}/lvl)</p>
+                                    </div>
+                                </div>
+
+                                <h5 class="mt-3">Combat Stats</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p><strong>Health:</strong> ${hero.health} (Regen: ${hero.health_regen})</p>
+                                        <p><strong>Mana:</strong> ${hero.mana} (Regen: ${hero.mana_regen})</p>
+                                        <p><strong>Armor:</strong> ${hero.armor}</p>
+                                        <p><strong>Magic Resist:</strong> ${hero.magic_resist}%</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><strong>Attack Damage:</strong> ${hero.attack_dmg_min} - ${hero.attack_dmg_max}</p>
+                                        <p><strong>Attack Speed:</strong> ${hero.attack_speed}</p>
+                                        <p><strong>Attack Rate:</strong> ${hero.attack_rate}</p>
+                                        <p><strong>Attack Range:</strong> ${hero.attack_range}</p>
+                                    </div>
+                                </div>
+
+                                <h5 class="mt-3">Movement & Vision</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p><strong>Movement Speed:</strong> ${hero.movement_speed}</p>
+                                        <p><strong>Turn Rate:</strong> ${hero.turn_rate}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><strong>Vision Range (Day):</strong> ${hero.vision_range_day}</p>
+                                        <p><strong>Vision Range (Night):</strong> ${hero.vision_range_night}</p>
+                                    </div>
+                                </div>
+
+                                <h5 class="mt-3">Additional Info</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p><strong>Projectile Speed:</strong> ${hero.projectile_speed || 'N/A'}</p>
+                                        <p><strong>Collision Size:</strong> ${hero.collision_size}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><strong>Bound Radius:</strong> ${hero.bound_radius}</p>
+                                    </div>
+                                </div>
+
+                                <h5 class="mt-3">Hero Talents</h5>
+                                <table class="table table-bordered text-center">
+                                    <thead>
+                                        <tr>
+                                            <th>Left Talent</th>
+                                            <th>Level</th>
+                                            <th>Right Talent</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>${hero.talent_10_left}</td>
+                                            <td>10</td>
+                                            <td>${hero.talent_10_right}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>${hero.talent_15_left}</td>
+                                            <td>15</td>
+                                            <td>${hero.talent_15_right}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>${hero.talent_20_left}</td>
+                                            <td>20</td>
+                                            <td>${hero.talent_20_right}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>${hero.talent_25_left}</td>
+                                            <td>25</td>
+                                            <td>${hero.talent_25_right}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     `;
-    
-                    // Memasukkan konten detail ke modal
                     $('#heroDetails').html(detailsHtml);
     
-                    // Menampilkan modal
                     $('#heroDetailsModal').modal('show');
                 },
                 error: function(xhr, status, error) {
