@@ -37,4 +37,10 @@ Route::resource('admindashboard', DashboardController::class);
 
 Route::resource('adminheroes', HeroesController::class);
 
+Route::get('/login', function () {
+    return view('auth.login');
+});
 
+Route::get('/register', function () {
+    return view('auth.register');
+});
