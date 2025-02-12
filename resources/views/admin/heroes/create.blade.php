@@ -21,7 +21,6 @@
 
     <!-- Custom styles for this template-->
     <link href="/css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="{{ asset('/images/logo.png') }} ">
 
 </head>
 
@@ -43,8 +42,16 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Data Heroes</h1>
-                    
-                    <x-allert/>
+
+                    @if ($errors->any())
+                        <div class="bg-red-200 text-red-700 p-3">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -464,6 +471,7 @@
     </a>
 
     <!-- Logout Modal-->
+    <x-logoutmodal/>
 
     <!-- Bootstrap core JavaScript-->
     <script src="/vendor/jquery/jquery.min.js"></script>

@@ -2,11 +2,10 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center"
-        href="{{ route('admindashboard.index') }}">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admindashboard.index') }}">
         <div class="sidebar-brand-icon">
-            <img src="/img/icon.png" />
-        </div>
+            <img src="/img/icon.png"/>
+        </div>  
         <div class="sidebar-brand-text mx-3">Admin</div>
     </a>
 
@@ -24,35 +23,35 @@
     <hr class="sidebar-divider my-0">
 
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-            aria-controls="collapseTwo">
+        <a class="nav-link" href="">
             <i class="fas fa-solid fa-users"></i>
-            <span>User Management</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="">User List</a>
-                <a class="collapse-item" href="{{ route('adminroles.index') }}">Roles</a>
-            </div>
-        </div>
+            <span>User List</span></a>
     </li>
 
     <!-- Divider -->
-    <hr class="sidebar-divider my-0">
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Dota 2
+    </div>
 
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true"
-            aria-controls="collapseThree">
-            <i class="fas fa-solid fa-chess-knight"></i>
-            <span>Dota 2 Management</span>
-        </a>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('adminheroes.index') }}">Hero List</a>
-                <a class="collapse-item" href="">Item List</a>
-                <a class="collapse-item" href="">Skill List</a>
-            </div>
-        </div>
+        <a class="nav-link" href="{{ route('adminheroes.index') }}">
+            <i class="fas fa-solid fa-user-shield"></i>
+            <span>Heroes</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="">
+            <i class="fas fa-solid fa-puzzle-piece"></i>
+            <span>Items</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="">
+            <i class="fas fa-solid fa-cubes"></i>
+            <span>Skills</span></a>
     </li>
 
     <!-- Divider -->
@@ -65,8 +64,8 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     {{-- <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-            aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+            aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
             <span>Components</span>
         </a>
@@ -86,7 +85,8 @@
             <i class="fas fa-fw fa-wrench"></i>
             <span>Utilities</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Utilities:</h6>
                 <a class="collapse-item" href="utilities-color.html">Colors</a>
@@ -98,8 +98,7 @@
     </li> --}}
 
     <!-- Divider -->
-    {{--
-    <hr class="sidebar-divider"> --}}
+    {{-- <hr class="sidebar-divider"> --}}
 
     <!-- Heading -->
     {{-- <div class="sidebar-heading">
@@ -108,8 +107,8 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     {{-- <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-            aria-controls="collapsePages">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+            aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
             <span>Pages</span>
         </a>
@@ -142,8 +141,7 @@
     </li> --}}
 
     <!-- Divider -->
-    {{--
-    <hr class="sidebar-divider d-none d-md-block"> --}}
+    {{-- <hr class="sidebar-divider d-none d-md-block"> --}}
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
@@ -153,8 +151,7 @@
     <!-- Sidebar Message -->
     {{-- <div class="sidebar-card d-none d-lg-flex">
         <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-        <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!
-        </p>
+        <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
         <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
     </div> --}}
 
@@ -176,7 +173,8 @@
             </button>
 
             <!-- Topbar Search -->
-            {{-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            {{-- <form
+                class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                 <div class="input-group">
                     <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                         aria-label="Search" aria-describedby="basic-addon2">
@@ -203,7 +201,8 @@
                         <form class="form-inline mr-auto w-100 navbar-search">
                             <div class="input-group">
                                 <input type="text" class="form-control bg-light border-0 small"
-                                    placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                    placeholder="Search for..." aria-label="Search"
+                                    aria-describedby="basic-addon2">
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="button">
                                         <i class="fas fa-search fa-sm"></i>
@@ -281,7 +280,8 @@
                         </h6>
                         <a class="dropdown-item d-flex align-items-center" href="#">
                             <div class="dropdown-list-image mr-3">
-                                <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
+                                <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                                    alt="...">
                                 <div class="status-indicator bg-success"></div>
                             </div>
                             <div class="font-weight-bold">
@@ -292,7 +292,8 @@
                         </a>
                         <a class="dropdown-item d-flex align-items-center" href="#">
                             <div class="dropdown-list-image mr-3">
-                                <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
+                                <img class="rounded-circle" src="img/undraw_profile_2.svg"
+                                    alt="...">
                                 <div class="status-indicator"></div>
                             </div>
                             <div>
@@ -303,7 +304,8 @@
                         </a>
                         <a class="dropdown-item d-flex align-items-center" href="#">
                             <div class="dropdown-list-image mr-3">
-                                <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
+                                <img class="rounded-circle" src="img/undraw_profile_3.svg"
+                                    alt="...">
                                 <div class="status-indicator bg-warning"></div>
                             </div>
                             <div>
@@ -332,10 +334,11 @@
 
                 <!-- Nav Item - User Information -->
                 <li class="nav-item dropdown no-arrow">
-                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                        <img class="img-profile rounded-circle" src="/img/undraw_profile.svg">
+                        <img class="img-profile rounded-circle"
+                            src="/img/undraw_profile.svg">
                     </a>
                     <!-- Dropdown - User Information -->
                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -356,22 +359,3 @@
 
         </nav>
         <!-- End of Topbar -->
-
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">x</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="login.html">Logout</a>
-                    </div>
-                </div>
-            </div>
-        </div>

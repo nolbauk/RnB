@@ -19,7 +19,6 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="{{ asset('/images/logo.png') }} ">
 
 </head>
 
@@ -69,7 +68,7 @@
                                         <div class="col mr-2">
                                             <div class="text-m font-weight-bold text-success text-uppercase mb-1">
                                                 Heroes</div>
-                                            <div class="h5 mb-1 font-weight-bold text-gray-800">{{ $totalHero }}</div>
+                                            <div class="h5 mb-1 font-weight-bold text-gray-800">126</div>
                                             <a href="{{ route('adminheroes.index') }}" class="text-s font-weight-bold">Details</a>
                                         </div>
                                         <div class="col-auto">
@@ -153,6 +152,7 @@
     </a>
 
     <!-- Logout Modal-->
+    <x-logoutmodal/>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
