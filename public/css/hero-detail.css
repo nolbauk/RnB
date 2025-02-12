@@ -1,3 +1,8 @@
+* {
+    font-family: 'Cinzel', serif;
+    color: white
+}
+
 body {
     background: url('/images/dota2_background.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -15,7 +20,8 @@ body {
     max-width: 1400px; /* Maksimum lebar agar tetap rapi */
     height: auto;
     margin-top: 90px;
-    margin-bottom: -90px;
+    margin-bottom: 20px;
+   
 }
 
 .container-hero {
@@ -24,11 +30,13 @@ body {
     align-items: center;
     min-height: 100vh; /* Tinggi minimal viewport agar tetap di tengah */
     padding: 20px; /* Beri ruang agar tidak terlalu mepet */
+    
 }
 
 
 .hero-name {
     font-size: 3rem;
+    color: #fff;
     font-weight: bold;
     text-transform: uppercase;
     text-shadow: 0 0 15px rgba(255, 140, 0, 0.8);
@@ -83,4 +91,58 @@ body {
 
 .btn-hero-page:hover {
     background-color: #0056b3;
+}
+
+/* hero talents */
+.talent-tree {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    border-collapse: separate;
+    border-spacing: 5px;
+    background-color: #1b1b1b; /* Warna gelap khas UI Dota 2 */
+    color: #d6b679; /* Warna emas khas Dota 2 */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.talent-tree tr {
+    position: relative;
+}
+
+.talent-tree td {
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* Talent text styling */
+.talent {
+    width: 40%;
+    background-color: #2a2a2a; /* Warna gelap untuk talent */
+    padding: 8px;
+    border: 1px solid #403d3d;
+    font-weight: bold;
+}
+
+/* Center column for levels */
+.level {
+    width: 20%;
+    background-color: #3a3a3a; /* Warna lebih terang */
+    border: 1px solid #555;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Membuat garis penghubung antar level */
+.talent-tree tr:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 15px;
+    background-color: #d6b679;
+    top: 100%;
+    transform: translateX(-50%);
 }
