@@ -14,9 +14,41 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }} ">
     <link rel="stylesheet" href="{{ asset('css/profile-view.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/home/style.css') }}">
 </head>
 
 <body>
+    <div class="header_section">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="index.html"><img src="images/logo2.png"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">HERO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">ITEM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="icecream.html">NEWS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">FORUM</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <div class="cart_bt"><a href="#">LOGIN</a></div>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- header section end -->
+    <!-- view -->
     <div class="row py-5 px-4">
         <div class="col-md-9 mx-auto"> <!-- Profile widget -->
             <div class="bg-white shadow rounded overflow-hidden">
