@@ -14,7 +14,24 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }} ">
     <link rel="stylesheet" href="{{ asset('css/profile-view.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/home/style.css') }}">
+    <!-- bootstrap css -->
+   <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
+   <link rel="stylesheet" type="text/css" href="{{ asset('css/home/bootstrap.min.css') }}">
+   <!-- style css -->
+   <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+   <link rel="stylesheet" type="text/css" href="{{ asset('css/home/style.css') }}">
+   <!-- Responsive-->
+   <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+   <link rel="stylesheet" href="{{ asset('css/home/responsive.css') }}">
+   <!-- fevicon -->
+   <!-- <link rel="icon" href="images/fevicon.png" type="{{ asset('images/logo.png') }}" /> -->
+   <!-- font css -->
+   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+   <!-- Scrollbar Custom CSS -->
+   <!-- <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css"> -->
+   <link rel="stylesheet" href="{{ asset('css/home/jquery.mCustomScrollbar.min.css') }}">
+   <!-- Tweaks for older IEs-->
+   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 </head>
 
 <body>
@@ -61,8 +78,8 @@
                             </a>
                         </div>
                         <div class="media-body mb-5 text-white">
-                            <h4 class="mt-0 mb-0">Name</h4>
-                            <p class="small mb-4"> <i class="fas fa-map-marker-alt mr-2"></i>@username</p>
+                            <h1 class="mt-0 mb-0">Name</h1>
+                            <h4 class="mt-0 mb-0">@username</h4>
                         </div>
                     </div>
                 </div>
@@ -103,6 +120,24 @@
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       <!-- copyright section end -->
+   <!-- Javascript files-->
+   <script src="js/home/jquery.min.js"></script>
+   <!-- <script src="{{ asset('js/home/jquery.min.js') }}"></script> -->
+   <script src="js/home/popper.min.js"></script>
+   <!-- <script src="{{ asset('js/home/popper.min.js') }}"></script> -->
+   <script src="js/home/bootstrap.bundle.min.js"></script>
+   <!-- <script src="{{ asset('js/home/bundle.min.js') }}"></script> -->
+   <script src="js/home/jquery-3.0.0.min.js"></script>
+   <!-- <script src="{{ asset('js/home/jquery-3.0.0.min.js') }}"></script> -->
+   <script src="js/home/plugin.js"></script>
+   <!-- <script src="{{ asset('js/home/plugin.js') }}"></script> -->
+   <!-- sidebar -->
+   <script src="js/home/jquery.mCustomScrollbar.concat.min.js"></script>
+   <!-- <script src="{{ asset('js/home/jquery.mCustomScrollbar.concat.min.js') }}"></script> -->
+   <script src="js/home/custom.js"></script>
+   <!-- <script src="{{ asset('js/home/custom.js') }}"></script> -->
+   <!-- javascript -->
 </body>
 
 </html>

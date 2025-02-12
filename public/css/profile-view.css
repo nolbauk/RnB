@@ -14,7 +14,6 @@ body {
     /* background: linear-gradient(to bottom, #111111, rgba(255, 215, 0, 0.8)); */
     min-height: 100vh;
     overflow-x:hidden;
-    color: #fff;
 }
 
 .profile img {
