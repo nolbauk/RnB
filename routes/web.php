@@ -44,3 +44,10 @@ Route::resource('adminheroes', HeroesController::class);
 
 Route::resource('adminroles', RoleController::class);
 
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/profile-view', function () {
+    return view('profile-view');
+});
