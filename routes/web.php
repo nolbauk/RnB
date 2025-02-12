@@ -44,3 +44,11 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('auth.register');
 });
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/profile-view', function () {
+    return view('profile-view');
+});

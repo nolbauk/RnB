@@ -1,0 +1,79 @@
+body {
+    background: #111111;
+}
+
+.form-control{
+    padding-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background-color: rgba(255, 215, 0, 1);
+    box-shadow: inset 8px 8px 8px rgba(255, 164, 0, 0.8), inset -8px -8px 8px #fff;
+}
+
+.form-control:focus {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background-color: rgba(255, 215, 0, 0.8);
+    box-shadow: inset 8px 8px 8px rgba(255, 164, 0, 0.8), inset -8px -8px 8px #fff;
+}
+
+.container{
+    background-color: rgba(255, 215, 0, 1);
+    border-radius: 30px;
+    /* box-shadow: 13px 13px 20px rgba(255, 215, 0, 0.8), -13px -13px 20px rgba(255, 215, 0, 0.8); */
+}
+
+.profile-button {
+    background: #111111;
+    color: rgba(255, 215, 0, 1);
+    box-shadow: none;
+    border: none;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.profile-button:hover {
+    background: #fff;
+    color: #111111
+}
+
+.profile-button:focus {
+    background: #111111;
+    color: rgba(255, 215, 0, 1);
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #111111;
+    color: rgba(255, 215, 0, 1);
+    box-shadow: none
+}
+
+.back:hover {
+    /* color: #682773; */
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+.add-experience:hover {
+    background: #111111;
+    color: rgba(255, 215, 0, 1);
+    cursor: pointer;
+    /* border: solid 1px #BA68C8 */
+}
+
+.default-profile-icon {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 215, 0, 1); /* Matches your theme */
+    color: #111111; /* Dark icon */
+    font-size: 60px; /* Adjust icon size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
