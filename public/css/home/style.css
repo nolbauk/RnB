@@ -55,7 +55,6 @@ h1,
 h2,
 h3,
 h4,
-h5,
 h6 {
     letter-spacing: 0;
     font-weight: normal;
@@ -84,7 +83,8 @@ h4 {
 }
 
 h5 {
-    font-size: 14px
+    font-size: 18px;
+    color: #000000;
 }
 
 h6 {
