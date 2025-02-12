@@ -139,10 +139,10 @@
                     </ul>
                 </div>
             </div>
-            <div class="row mt-4 align-items-center text-center bg-danger">
+            <h3 class="text-white mt-3">Stats</h3>
+            <div class="row mt-4 " style="background-color: #1b1b1b">
                 <!-- Bagian Kiri -->
-                <div class="col-4">
-                    <h3 class="text-white mt-3">Stats</h3>
+                <div class="col-4">  
                     <p>ATTACK</p>
                     <ul class="list-unstyled text-white">
                         <li class="mt-3">
@@ -170,7 +170,7 @@
                 
                 <!-- Bagian Tengah -->
                 <div class="col-4">
-                    <p>Defense</p>
+                    <p>DEFENSE</p>
                     <ul class="list-unstyled text-white">
                         <li class="mt-3">
                             <img src="{{ asset('images/Tameng.png') }}" alt="Armor" class="me-3">
@@ -187,7 +187,7 @@
             
                 <!-- Bagian Kanan -->
                 <div class="col-4">
-                    <p>Mobility</p>
+                    <p>MOBILITY</p>
                     <ul class="list-unstyled text-white">
                         <li class="mt-3">
                             <img src="{{ asset('images/Movement Speed.png') }}" alt="Armor" class="me-3">
