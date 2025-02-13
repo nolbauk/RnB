@@ -11,27 +11,27 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
     <title>PROFILE</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }} ">
     <link rel="stylesheet" href="{{ asset('css/profile-view.css') }}">
     <!-- bootstrap css -->
-   <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
-   <link rel="stylesheet" type="text/css" href="{{ asset('css/home/bootstrap.min.css') }}">
-   <!-- style css -->
-   <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
-   <link rel="stylesheet" type="text/css" href="{{ asset('css/home/style.css') }}">
-   <!-- Responsive-->
-   <!-- <link rel="stylesheet" href="css/responsive.css"> -->
-   <link rel="stylesheet" href="{{ asset('css/home/responsive.css') }}">
-   <!-- fevicon -->
-   <!-- <link rel="icon" href="images/fevicon.png" type="{{ asset('images/logo.png') }}" /> -->
-   <!-- font css -->
-   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
-   <!-- Scrollbar Custom CSS -->
-   <!-- <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css"> -->
-   <link rel="stylesheet" href="{{ asset('css/home/jquery.mCustomScrollbar.min.css') }}">
-   <!-- Tweaks for older IEs-->
-   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/home/bootstrap.min.css') }}">
+    <!-- style css -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/home/style.css') }}">
+    <!-- Responsive-->
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <link rel="stylesheet" href="{{ asset('css/home/responsive.css') }}">
+    <!-- fevicon -->
+    <!-- <link rel="icon" href="images/fevicon.png" type="{{ asset('images/logo.png') }}" /> -->
+    <!-- font css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <!-- Scrollbar Custom CSS -->
+    <!-- <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css"> -->
+    <link rel="stylesheet" href="{{ asset('css/home/jquery.mCustomScrollbar.min.css') }}">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 </head>
 
 <body>
@@ -65,79 +65,256 @@
         </div>
     </div>
     <!-- header section end -->
-    <!-- view -->
-    <div class="row py-5 px-4">
-        <div class="col-md-9 mx-auto"> <!-- Profile widget -->
-            <div class="bg-white shadow rounded overflow-hidden">
-                <div class="px-4 pt-0 pb-4 cover">
-                    <div class="media align-items-end profile-head">
-                        <div class="profile mr-3">
-                            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" alt="..." class="rounded-circle mb-2 img-thumbnail">
-                            <a href="#" class="btn btn-outline-dark btn-sm btn-block">
-                                Edit profile
-                            </a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="content" class="content content-full-width">
+                    <!-- begin profile -->
+                    <div class="profile">
+                        <div class="profile-header">
+                            <!-- BEGIN profile-header-cover -->
+                            <div class="profile-header-cover"></div>
+                            <!-- END profile-header-cover -->
+                            <!-- BEGIN profile-header-content -->
+                            <div class="profile-header-content">
+                                <!-- BEGIN profile-header-img -->
+                                <div class="profile-header-img">
+                                    <img src="images/itembkb.jpg" alt="">
+                                </div>
+                                <!-- END profile-header-img -->
+                                <!-- BEGIN profile-header-info -->
+                                <div class="profile-header-info">
+                                    <h3 class="m-t-10 m-b-5">Sean Ngu</h3>
+                                    <h4 class="m-b-10">UXUI + Frontend Developer</h4>
+                                    <a href="#" class="btn btn-sm btn-info mb-2">Edit Profile</a>
+                                </div>
+                                <!-- END profile-header-info -->
+                            </div>
+                            <!-- END profile-header-content -->
+                            <!-- BEGIN profile-header-tab -->
+                            <ul class="profile-header-tab nav nav-tabs">
+                                <li class="nav-item"><a href="https://www.bootdey.com/snippets/view/bs4-profile-with-timeline-posts" target="__blank" class="nav-link_">RECENT POSTS</a></li>
+                            </ul>
+                            <!-- END profile-header-tab -->
                         </div>
-                        <div class="media-body mb-5 text-white">
-                            <h1 class="mt-0 mb-0">Name</h1>
-                            <h4 class="mt-0 mb-0">@username</h4>
+                    </div>
+                    <!-- end profile -->
+                    <!-- begin profile-content -->
+                    <div class="profile-content">
+                        <!-- begin tab-content -->
+                        <div class="tab-content p-0">
+                            <!-- begin #profile-post tab -->
+                            <div class="tab-pane fade active show" id="profile-post">
+                                <!-- begin timeline -->
+                                <ul class="timeline">
+                                    <li>
+                                        <!-- begin timeline-time -->
+                                        <div class="timeline-time">
+                                            <span class="date">today</span>
+                                            <span class="time">04:20</span>
+                                        </div>
+                                        <!-- end timeline-time -->
+                                        <!-- begin timeline-icon -->
+                                        <div class="timeline-icon">
+                                            <a href="javascript:;">&nbsp;</a>
+                                        </div>
+                                        <!-- end timeline-icon -->
+                                        <!-- begin timeline-body -->
+                                        <div class="timeline-body">
+                                            <div class="timeline-header">
+                                                <span class="userimage"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt=""></span>
+                                                <span class="username"><a href="javascript:;">Sean Ngu</a> <small></small></span>
+                                                <span class="pull-right text-muted">18 Views</span>
+                                            </div>
+                                            <div class="timeline-content">
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus turpis quis tincidunt luctus.
+                                                    Nam sagittis dui in nunc consequat, in imperdiet nunc sagittis.
+                                                </p>
+                                            </div>
+                                            <div class="timeline-likes">
+                                                <div class="stats-right">
+                                                    <span class="stats-text">259 Shares</span>
+                                                    <span class="stats-text">21 Comments</span>
+                                                </div>
+                                                <div class="stats">
+                                                    <span class="fa-stack fa-fw stats-icon">
+                                                        <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                                                        <i class="fa fa-heart fa-stack-1x fa-inverse t-plus-1"></i>
+                                                    </span>
+                                                    <span class="fa-stack fa-fw stats-icon">
+                                                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                                        <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
+                                                    </span>
+                                                    <span class="stats-total">4.3k</span>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-footer">
+                                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i> Like</a>
+                                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a>
+                                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-share fa-fw fa-lg m-r-3"></i> Share</a>
+                                            </div>
+                                            <div class="timeline-comment-box">
+                                                <div class="user"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"></div>
+                                                <div class="input">
+                                                    <form action="">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control rounded-corner" placeholder="Write a comment...">
+                                                            <span class="input-group-btn p-l-10">
+                                                                <button class="btn btn-primary f-s-12 rounded-corner" type="button">Comment</button>
+                                                            </span>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end timeline-body -->
+                                    </li>
+                                    <li>
+                                        <!-- begin timeline-time -->
+                                        <div class="timeline-time">
+                                            <span class="date">yesterday</span>
+                                            <span class="time">20:17</span>
+                                        </div>
+                                        <!-- end timeline-time -->
+                                        <!-- begin timeline-icon -->
+                                        <div class="timeline-icon">
+                                            <a href="javascript:;">&nbsp;</a>
+                                        </div>
+                                        <!-- end timeline-icon -->
+                                        <!-- begin timeline-body -->
+                                        <div class="timeline-body">
+                                            <div class="timeline-header">
+                                                <span class="userimage"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt=""></span>
+                                                <span class="username">Sean Ngu</span>
+                                                <span class="pull-right text-muted">82 Views</span>
+                                            </div>
+                                            <div class="timeline-content">
+                                                <p>Location: United States</p>
+                                            </div>
+                                            <div class="timeline-footer">
+                                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i> Like</a>
+                                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a>
+                                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-share fa-fw fa-lg m-r-3"></i> Share</a>
+                                            </div>
+                                        </div>
+                                        <!-- end timeline-body -->
+                                    </li>
+                                    <li>
+                                        <!-- begin timeline-time -->
+                                        <div class="timeline-time">
+                                            <span class="date">24 February 2014</span>
+                                            <span class="time">08:17</span>
+                                        </div>
+                                        <!-- end timeline-time -->
+                                        <!-- begin timeline-icon -->
+                                        <div class="timeline-icon">
+                                            <a href="javascript:;">&nbsp;</a>
+                                        </div>
+                                        <!-- end timeline-icon -->
+                                        <!-- begin timeline-body -->
+                                        <div class="timeline-body">
+                                            <div class="timeline-header">
+                                                <span class="userimage"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt=""></span>
+                                                <span class="username">Sean Ngu</span>
+                                                <span class="pull-right text-muted">1,282 Views</span>
+                                            </div>
+                                            <div class="timeline-content">
+                                                <p class="lead">
+                                                    <i class="fa fa-quote-left fa-fw pull-left"></i>
+                                                    Quisque sed varius nisl. Nulla facilisi. Phasellus consequat sapien sit amet nibh molestie placerat. Donec nulla quam, ullamcorper ut velit vitae, lobortis condimentum magna. Suspendisse mollis in sem vel mollis.
+                                                    <i class="fa fa-quote-right fa-fw pull-right"></i>
+                                                </p>
+                                            </div>
+                                            <div class="timeline-footer">
+                                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i> Like</a>
+                                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a>
+                                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-share fa-fw fa-lg m-r-3"></i> Share</a>
+                                            </div>
+                                        </div>
+                                        <!-- end timeline-body -->
+                                    </li>
+                                    <li>
+                                        <!-- begin timeline-time -->
+                                        <div class="timeline-time">
+                                            <span class="date">10 January 2014</span>
+                                            <span class="time">20:43</span>
+                                        </div>
+                                        <!-- end timeline-time -->
+                                        <!-- begin timeline-icon -->
+                                        <div class="timeline-icon">
+                                            <a href="javascript:;">&nbsp;</a>
+                                        </div>
+                                        <!-- end timeline-icon -->
+                                        <!-- begin timeline-body -->
+                                        <div class="timeline-body">
+                                            <div class="timeline-header">
+                                                <span class="userimage"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt=""></span>
+                                                <span class="username">Sean Ngu</span>
+                                                <span class="pull-right text-muted">1,021,282 Views</span>
+                                            </div>
+                                            <div class="timeline-content">
+                                                <h4 class="template-title">
+                                                    <i class="fa fa-map-marker text-danger fa-fw"></i>
+                                                    795 Folsom Ave, Suite 600 San Francisco, CA 94107
+                                                </h4>
+                                                <p>In hac habitasse platea dictumst. Pellentesque bibendum id sem nec faucibus. Maecenas molestie, augue vel accumsan rutrum, massa mi rutrum odio, id luctus mauris nibh ut leo.</p>
+                                                <p class="m-t-20">
+                                                    <img src="../assets/img/gallery/gallery-5.jpg" alt="">
+                                                </p>
+                                            </div>
+                                            <div class="timeline-footer">
+                                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i> Like</a>
+                                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a>
+                                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-share fa-fw fa-lg m-r-3"></i> Share</a>
+                                            </div>
+                                        </div>
+                                        <!-- end timeline-body -->
+                                    </li>
+                                    <li>
+                                        <!-- begin timeline-icon -->
+                                        <div class="timeline-icon">
+                                            <a href="javascript:;">&nbsp;</a>
+                                        </div>
+                                        <!-- end timeline-icon -->
+                                        <!-- begin timeline-body -->
+                                        <div class="timeline-body">
+                                            Loading...
+                                        </div>
+                                        <!-- begin timeline-body -->
+                                    </li>
+                                </ul>
+                                <!-- end timeline -->
+                            </div>
+                            <!-- end #profile-post tab -->
                         </div>
+                        <!-- end tab-content -->
                     </div>
-                </div>
-                <div class="bg-light p-4 d-flex justify-content-end text-center">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item">
-                            <h5 class="font-weight-bold mb-0 d-block">215</h5><small class="text-muted"> <i class="fas fa-image mr-1"></i>Photos</small>
-                        </li>
-                        <li class="list-inline-item">
-                            <h5 class="font-weight-bold mb-0 d-block">745</h5><small class="text-muted"> <i class="fas fa-user mr-1"></i>Followers</small>
-                        </li>
-                        <li class="list-inline-item">
-                            <h5 class="font-weight-bold mb-0 d-block">340</h5><small class="text-muted"> <i class="fas fa-user mr-1"></i>Following</small>
-                        </li>
-                    </ul>
-                </div>
-                <div class="px-4 py-3">
-                    <h5 class="mb-0">About</h5>
-                    <div class="p-4 rounded shadow-sm bg-light">
-                        <p class="font-italic mb-0">Web Developer</p>
-                        <p class="font-italic mb-0">Lives in New York</p>
-                        <p class="font-italic mb-0">Photographer</p>
-                    </div>
-                </div>
-                <div class="py-4 px-4">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <h5 class="mb-0">Recent photos</h5><a href="#" class="btn btn-link text-muted">Show all</a>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6 mb-2 pr-lg-1"><img src="https://images.unsplash.com/photo-1469594292607-7bd90f8d3ba4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="" class="img-fluid rounded shadow-sm"></div>
-                        <div class="col-lg-6 mb-2 pl-lg-1"><img src="https://images.unsplash.com/photo-1493571716545-b559a19edd14?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="" class="img-fluid rounded shadow-sm"></div>
-                        <div class="col-lg-6 pr-lg-1 mb-2"><img src="https://images.unsplash.com/photo-1453791052107-5c843da62d97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="" class="img-fluid rounded shadow-sm"></div>
-                        <div class="col-lg-6 pl-lg-1"><img src="https://images.unsplash.com/photo-1475724017904-b712052c192a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="" class="img-fluid rounded shadow-sm"></div>
-                    </div>
+                    <!-- end profile-content -->
                 </div>
             </div>
         </div>
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-       <!-- copyright section end -->
-   <!-- Javascript files-->
-   <script src="js/home/jquery.min.js"></script>
-   <!-- <script src="{{ asset('js/home/jquery.min.js') }}"></script> -->
-   <script src="js/home/popper.min.js"></script>
-   <!-- <script src="{{ asset('js/home/popper.min.js') }}"></script> -->
-   <script src="js/home/bootstrap.bundle.min.js"></script>
-   <!-- <script src="{{ asset('js/home/bundle.min.js') }}"></script> -->
-   <script src="js/home/jquery-3.0.0.min.js"></script>
-   <!-- <script src="{{ asset('js/home/jquery-3.0.0.min.js') }}"></script> -->
-   <script src="js/home/plugin.js"></script>
-   <!-- <script src="{{ asset('js/home/plugin.js') }}"></script> -->
-   <!-- sidebar -->
-   <script src="js/home/jquery.mCustomScrollbar.concat.min.js"></script>
-   <!-- <script src="{{ asset('js/home/jquery.mCustomScrollbar.concat.min.js') }}"></script> -->
-   <script src="js/home/custom.js"></script>
-   <!-- <script src="{{ asset('js/home/custom.js') }}"></script> -->
-   <!-- javascript -->
+    <!-- copyright section end -->
+    <!-- Javascript files-->
+    <script src="js/home/jquery.min.js"></script>
+    <!-- <script src="{{ asset('js/home/jquery.min.js') }}"></script> -->
+    <script src="js/home/popper.min.js"></script>
+    <!-- <script src="{{ asset('js/home/popper.min.js') }}"></script> -->
+    <script src="js/home/bootstrap.bundle.min.js"></script>
+    <!-- <script src="{{ asset('js/home/bundle.min.js') }}"></script> -->
+    <script src="js/home/jquery-3.0.0.min.js"></script>
+    <!-- <script src="{{ asset('js/home/jquery-3.0.0.min.js') }}"></script> -->
+    <script src="js/home/plugin.js"></script>
+    <!-- <script src="{{ asset('js/home/plugin.js') }}"></script> -->
+    <!-- sidebar -->
+    <script src="js/home/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- <script src="{{ asset('js/home/jquery.mCustomScrollbar.concat.min.js') }}"></script> -->
+    <script src="js/home/custom.js"></script>
+    <!-- <script src="{{ asset('js/home/custom.js') }}"></script> -->
+    <!-- javascript -->
 </body>
 
 </html>

@@ -9,7 +9,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', function () {
     return view('home');
-}); 
+});
 
 Route::get('/item', function () {
     return view('item');
