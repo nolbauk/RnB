@@ -86,7 +86,7 @@
                                 <div class="profile-header-info">
                                     <h3 class="m-t-10 m-b-5">Sean Ngu</h3>
                                     <h4 class="m-b-10">UXUI + Frontend Developer</h4>
-                                    <a href="#" class="btn btn-sm btn-info mb-2">Edit Profile</a>
+                                    <a href="#" class="btn mb-2">Edit Profile</a>
                                 </div>
                                 <!-- END profile-header-info -->
                             </div>
@@ -161,7 +161,7 @@
                                                         <div class="input-group">
                                                             <input type="text" class="form-control rounded-corner" placeholder="Write a comment...">
                                                             <span class="input-group-btn p-l-10">
-                                                                <button class="btn btn-primary f-s-12 rounded-corner" type="button">Comment</button>
+                                                                <button class="btn f-s-12 rounded-corner" type="button">Comment</button>
                                                             </span>
                                                         </div>
                                                     </form>
