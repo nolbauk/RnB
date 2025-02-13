@@ -42,12 +42,13 @@ body {
     text-shadow: 0 0 15px rgba(255, 140, 0, 0.8);
 }
 
-.hero-image {
+/* .hero-image {
     max-width: 100%;
-    border-radius: 10px;
-    border: 3px solid #fff;
-}
+} */
 
+.card{
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
 .abilities {
     display: flex;
     gap: 10px;
@@ -96,7 +97,6 @@ body {
 /* hero talents */
 .talent-tree {
     width: 100%;
-    max-width: 500px;
     margin: auto;
     border-collapse: separate;
     border-spacing: 5px;
