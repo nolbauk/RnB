@@ -41,7 +41,7 @@
             Need an Account? <a href="register">Sign up</a>
         </div>
         <div class="text-center fs-6">
-            <a href="#">Back to Home</a>
+            <a href="/">Back to Home</a>
         </div>
     </div>
 
