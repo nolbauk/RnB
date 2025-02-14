@@ -8,7 +8,7 @@ use App\Http\Controllers\GalleryHeroController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
-
+// fix
 Route::get('/', function () {
     return view('home');
 });

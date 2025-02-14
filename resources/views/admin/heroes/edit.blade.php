@@ -26,13 +26,14 @@
 </head>
 
 <style>
+    
     .sidebar-brand-icon img {
         width: 100%;
         height: auto;
         object-fit: contain;
     }
 </style>
-
+{{-- fix --}}
 <body id="page-top">
 
     <!-- Page Wrapper -->

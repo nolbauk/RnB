@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable {
+    // fix
     use HasFactory, SoftDeletes;
 
     protected $fillable = [

@@ -37,6 +37,7 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
+        {{-- fix --}}
         <x-sidebarnavbar/>
                 <!-- Begin Page Content -->
                 <div class="container-fluid">

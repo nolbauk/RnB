@@ -11,6 +11,7 @@ class UserController extends Controller
 {
     public function index()
     {
+        // fix
         $users = User::all();
         return view('admin.users.index', compact('users'));
     }
