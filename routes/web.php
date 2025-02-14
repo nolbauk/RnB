@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HeroesController;
 use App\Http\Controllers\GalleryHeroController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', function () {
@@ -36,6 +37,11 @@ Route::get('/register', function () {
 Route::get('/hero', [GalleryHeroController::class, 'index'])->name('heroes.index');
 Route::get('/hero/{id}', [GalleryHeroController::class, 'show'])->name('hero.show');
 
+// ROUTE GUEST
+Route::resource('user', UserController::class)->only(['create', 'store']);
+
+// ROUTE USER
+Route::resource('user', UserController::class)->only(['edit', 'update']);
 
 // ROUTE ADMIN
 Route::resource('admindashboard', DashboardController::class);
@@ -43,4 +49,6 @@ Route::resource('admindashboard', DashboardController::class);
 Route::resource('adminheroes', HeroesController::class);
 
 Route::resource('adminroles', RoleController::class);
+
+Route::resource('adminusers', UserController::class);
 

@@ -56,18 +56,6 @@
                                 <form action="{{ route('adminheroes.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
 
-                                    {{-- Primary Attribute --}}
-                                    <div class="mb-3">
-                                        <label for="primary_attribute" class="form-label">Primary Attribute</label>
-                                        <select class="form-control" id="primary_attribute" name="primary_attribute" required>
-                                            <option value="Strength" {{ old('primary_attribute') == 'Strength' ? 'selected' : '' }}>Strength</option>
-                                            <option value="Agility" {{ old('primary_attribute') == 'Agility' ? 'selected' : '' }}>Agility</option>
-                                            <option value="Intelligence" {{ old('primary_attribute') == 'Intelligence' ? 'selected' : '' }}>Intelligence</option>
-                                            <option value="Universal" {{ old('primary_attribute') == 'Universal' ? 'selected' : '' }}>Universal</option>
-                                        </select>
-                                        @error('primary_attribute') <small class="text-danger">{{ $message }}</small> @enderror
-                                    </div>
-
                                     {{-- Nama Hero --}}
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Nama Hero</label>
@@ -95,6 +83,18 @@
                                         <label for="lore" class="form-label">Lore</label>
                                         <textarea class="form-control" id="lore" name="lore">{{ old('lore') }}</textarea>
                                         @error('lore') <small class="text-danger">{{ $message }}</small> @enderror
+                                    </div>
+
+                                    {{-- Primary Attribute --}}
+                                    <div class="mb-3">
+                                        <label for="primary_attribute" class="form-label">Primary Attribute</label>
+                                        <select class="form-control" id="primary_attribute" name="primary_attribute" required>
+                                            <option value="Strength" {{ old('primary_attribute') == 'Strength' ? 'selected' : '' }}>Strength</option>
+                                            <option value="Agility" {{ old('primary_attribute') == 'Agility' ? 'selected' : '' }}>Agility</option>
+                                            <option value="Intelligence" {{ old('primary_attribute') == 'Intelligence' ? 'selected' : '' }}>Intelligence</option>
+                                            <option value="Universal" {{ old('primary_attribute') == 'Universal' ? 'selected' : '' }}>Universal</option>
+                                        </select>
+                                        @error('primary_attribute') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
 
                                     {{-- Attack Type --}}
@@ -296,7 +296,9 @@
                                         </div>
                                     </div>
 
-                                    <h4>Attack</h4>
+                                    <h4 class="mt-3">Stats</h4>
+
+                                    <h5>Attack</h5>
                                     <div class="row mb-3">
                                         <div class="col-md-4">
                                             <label for="attack_dmg_min" class="form-label">Attack Damage Min</label>
@@ -321,8 +323,14 @@
                                         <input type="number" class="form-control" id="attack_range" name="attack_range" value="{{ old('attack_range') }}" min="1" required>
                                         @error('attack_range') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
+
+                                    <div class="mb-3">
+                                        <label for="projectile_speed" class="form-label">Projectile Speed</label>
+                                        <input type="number" class="form-control" id="projectile_speed" name="projectile_speed" value="{{ old('projectile_speed') }}" required>
+                                        @error('projectile_speed') <small class="text-danger">{{ $message }}</small> @enderror
+                                    </div>
                                     
-                                    <h4>Defense</h4>
+                                    <h5>Defense</h5>
                                     <div class="mb-3">
                                         <label for="armor" class="form-label">Armor</label>
                                         <input type="number" step="any" class="form-control" id="armor" name="armor" value="{{ old('armor') }}" required>
@@ -335,7 +343,7 @@
                                         @error('magic_resist') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
                                     
-                                    <h4>Mobility</h4>
+                                    <h5>Mobility</h5>
                                     <div class="mb-3">
                                         <label for="movement_speed" class="form-label">Movement Speed</label>
                                         <input type="number" class="form-control" id="movement_speed" name="movement_speed" value="{{ old('movement_speed') }}" min="1" required>
@@ -376,11 +384,6 @@
 
                                     {{-- Additional Combat Stats --}}
                                     <h4>Additional Combat Stats</h4>
-                                    <div class="mb-3">
-                                        <label for="projectile_speed" class="form-label">Projectile Speed</label>
-                                        <input type="number" class="form-control" id="projectile_speed" name="projectile_speed" value="{{ old('projectile_speed') }}" required>
-                                        @error('projectile_speed') <small class="text-danger">{{ $message }}</small> @enderror
-                                    </div>
                                     <div class="mb-3">
                                         <label for="collision_size" class="form-label">Collision Size</label>
                                         <input type="number" step="any" class="form-control" id="collision_size" name="collision_size" value="{{ old('collision_size') }}" required>

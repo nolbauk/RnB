@@ -146,7 +146,7 @@
     <script>
         function showHeroDetails(heroId) {
             $.ajax({
-                url: '/adminheroes/' + heroId, // Menyesuaikan rute untuk mendapatkan data hero
+                url: '/adminheroes/' + heroId,
                 method: 'GET',
                 success: function(response) {
                     var hero = response.hero;
@@ -157,85 +157,98 @@
                                 <div class="text-center mb-3">
                                     <img src="/storage/${hero.image}" alt="${hero.name}" class="img-fluid img-thumbnail" style="max-width: 250px;">
                                 </div>
-
-                                <h5 class="mt-3">General Information</h5>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p><strong>Primary Attribute:</strong> ${hero.primary_attribute}</p>
-                                        <p><strong>Attack Type:</strong> ${hero.attack_type}</p>
-                                        <p><strong>Complexity:</strong> ${hero.complexity}</p>
-                                        <p><strong>Bio:</strong> ${hero.bio || 'N/A'}</p>
+                                <div class="table-bordered mb-3 p-2">
+                                    <h5 class="text-center">General Information</h5>
+                                    <p><strong>Primary Attribute:</strong> ${hero.primary_attribute}</p>
+                                    <p><strong>Attack Type:</strong> ${hero.attack_type}</p>
+                                    <p><strong>Complexity:</strong> ${hero.complexity}</p>
+                                    <div class="table-bordered mb-3 p-2">
+                                        <p><strong>Bio:</strong></p>
+                                        <p> {!! nl2br(e($hero->bio ?? 'N/A')) !!}
                                     </div>
-                                    <div class="col-md-6">
-                                        <p><strong>Voice Actor:</strong> ${hero.voice_actor || 'N/A'}</p>
-                                        <p><strong>Lore:</strong> ${hero.lore || 'N/A'}</p>
-                                        <p><strong>Innate Title:</strong> ${hero.innate_title || 'N/A'}</p>
-                                        <p><strong>Innate Description:</strong> ${hero.innate_desc || 'N/A'}</p>
+                                    <div class="table-bordered mb-3 p-2">
+                                        <p><strong>Lore:</strong></p>
+                                        <p> {!! nl2br(e($hero->lore ?? 'N/A')) !!}
+                                    </div>
+                                    <div class="table-bordered mb-3 p-2">
+                                        <p><strong>Innate: </strong>${hero.innate_title || 'N/A'}</p>
+                                        <p> {!! nl2br(e($hero->innate_desc ?? 'N/A')) !!}
+                                    </div>
+                                    <p class="mt-3"><strong>Voice Actor:</strong> ${hero.voice_actor || 'N/A'}</p>
+                                </div>
+
+                                <div class="table-bordered mb-3 p-2">
+                                    <h5>Attributes</h5>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p><strong>Health:</strong> ${hero.health} (Regen: ${hero.health_regen})</p>
+                                            <p><strong>Mana:</strong> ${hero.mana} (Regen: ${hero.mana_regen})</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><strong>Strength:</strong> ${hero.primary_strength} (+${hero.strength_per_lvl}/lvl)</p>
+                                            <p><strong>Agility:</strong> ${hero.primary_agility} (+${hero.agility_per_lvl}/lvl)</p>
+                                            <p><strong>Intelligence:</strong> ${hero.primary_intelligence} (+${hero.intelligence_per_lvl}/lvl)</p>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <h5 class="mt-3">Hero Roles</h5>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><strong>Carry:</strong> ${hero.carry}</li>
-                                    <li class="list-group-item"><strong>Support:</strong> ${hero.support}</li>
-                                    <li class="list-group-item"><strong>Nuker:</strong> ${hero.nuker}</li>
-                                    <li class="list-group-item"><strong>Disabler:</strong> ${hero.disabler}</li>
-                                    <li class="list-group-item"><strong>Jungler:</strong> ${hero.jungler}</li>
-                                    <li class="list-group-item"><strong>Durable:</strong> ${hero.durable}</li>
-                                    <li class="list-group-item"><strong>Escape:</strong> ${hero.escape}</li>
-                                    <li class="list-group-item"><strong>Pusher:</strong> ${hero.pusher}</li>
-                                    <li class="list-group-item"><strong>Initiator:</strong> ${hero.initiator}</li>
-                                </ul>
-
-                                <h5 class="mt-3">Base Attributes</h5>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <p><strong>Strength:</strong> ${hero.primary_strength} (+${hero.strength_per_lvl}/lvl)</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <p><strong>Agility:</strong> ${hero.primary_agility} (+${hero.agility_per_lvl}/lvl)</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <p><strong>Intelligence:</strong> ${hero.primary_intelligence} (+${hero.intelligence_per_lvl}/lvl)</p>
+                                <div class="table-bordered mb-3 p-2">
+                                    <h5>Roles</h5>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <p><strong>Carry:</strong> ${hero.carry}</p>
+                                            <p><strong>Support:</strong> ${hero.support}</p>
+                                            <p><strong>Nuker:</strong> ${hero.nuker}</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p><strong>Disabler:</strong> ${hero.disabler}</p>
+                                            <p><strong>Jungler:</strong> ${hero.jungler}</p>
+                                            <p><strong>Durable:</strong> ${hero.durable}</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p><strong>Escape:</strong> ${hero.escape}</p>
+                                            <p><strong>Pusher:</strong> ${hero.pusher}</p>
+                                            <p><strong>Initiator:</strong> ${hero.initiator}</p>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <h5 class="mt-3">Combat Stats</h5>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p><strong>Health:</strong> ${hero.health} (Regen: ${hero.health_regen})</p>
-                                        <p><strong>Mana:</strong> ${hero.mana} (Regen: ${hero.mana_regen})</p>
-                                        <p><strong>Armor:</strong> ${hero.armor}</p>
-                                        <p><strong>Magic Resist:</strong> ${hero.magic_resist}%</p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p><strong>Attack Damage:</strong> ${hero.attack_dmg_min} - ${hero.attack_dmg_max}</p>
-                                        <p><strong>Attack Speed:</strong> ${hero.attack_speed}</p>
-                                        <p><strong>Attack Rate:</strong> ${hero.attack_rate}</p>
-                                        <p><strong>Attack Range:</strong> ${hero.attack_range}</p>
-                                    </div>
+                                <div class="table-bordered mb-3 p-2">
+                                    <h5>Stats</h5>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h6>Attack</h6>
+                                            <p><strong>Attack Damage:</strong> ${hero.attack_dmg_min} - ${hero.attack_dmg_max}</p>
+                                            <p><strong>Attack Rate:</strong> ${hero.attack_rate}</p>
+                                            <p><strong>Attack Range:</strong> ${hero.attack_range}</p>
+                                            <p><strong>Projectile Speed:</strong> ${hero.projectile_speed}</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6>Defense</h6>
+                                            <p><strong>Armor:</strong> ${hero.armor}</p>
+                                            <p><strong>Magic Resist:</strong> ${hero.magic_resist}%</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6>Mobility</h6>
+                                            <p><strong>Movement Speed:</strong> ${hero.movement_speed}</p>
+                                            <p><strong>Turn Rate:</strong> ${hero.turn_rate}</p>
+                                            <p><strong>Vision Range:</strong> ${hero.vision_range_day} / ${hero.vision_range_night}</p>
+                                        </div>
+                                    </div>                                    
                                 </div>
 
-                                <h5 class="mt-3">Movement & Vision</h5>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p><strong>Movement Speed:</strong> ${hero.movement_speed}</p>
-                                        <p><strong>Turn Rate:</strong> ${hero.turn_rate}</p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p><strong>Vision Range (Day):</strong> ${hero.vision_range_day}</p>
-                                        <p><strong>Vision Range (Night):</strong> ${hero.vision_range_night}</p>
-                                    </div>
-                                </div>
-
-                                <h5 class="mt-3">Additional Info</h5>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p><strong>Projectile Speed:</strong> ${hero.projectile_speed || 'N/A'}</p>
-                                        <p><strong>Collision Size:</strong> ${hero.collision_size}</p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p><strong>Bound Radius:</strong> ${hero.bound_radius}</p>
+                                <div class="table-bordered mb-3 p-2">
+                                    <h5>Additional Combat Stats</h5>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <p><strong>Collision Size:</strong> ${hero.collision_size}</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p><strong>Bound Radius:</strong> ${hero.bound_radius}</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p><strong>Attack Speed:</strong> ${hero.attack_speed}</p>
+                                        </div>
                                     </div>
                                 </div>
 

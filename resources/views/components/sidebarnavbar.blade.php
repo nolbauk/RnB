@@ -31,8 +31,8 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="">User List</a>
-                <a class="collapse-item" href="{{ route('adminroles.index') }}">Roles</a>
+                <a class="collapse-item" href="{{ route('adminusers.index') }}">User List</a>
+                <a class="collapse-item" href="{{ route('adminroles.index') }}">Role List</a>
             </div>
         </div>
     </li>
