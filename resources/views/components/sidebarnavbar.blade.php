@@ -25,7 +25,18 @@
     <li class="nav-item">
         <a class="nav-link" href="">
             <i class="fas fa-solid fa-users"></i>
+<<<<<<< HEAD
             <span>User List</span></a>
+=======
+            <span>User Management</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('adminusers.index') }}">User List</a>
+                <a class="collapse-item" href="{{ route('adminroles.index') }}">Role List</a>
+            </div>
+        </div>
+>>>>>>> 5-UserList
     </li>
 
     <!-- Divider -->
