@@ -19,6 +19,35 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('/images/logo.png') }}">
 </head>
+
+<style>
+    .role {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .box {
+        display: inline-block;
+        width: 30px;
+        height: 13px;
+        border: 1px solid white;
+        margin-left: 2px;
+        text-align: center;
+        line-height: 15px;
+        font-weight: bold;
+        background-color: transparent;
+        transform: skew(-15deg);
+    }
+    .box[data-value="active"] {
+        background-color: white;
+    }
+
+        .icon-container {
+            position: relative;
+            display: inline-block;
+        }
+</style>
+
 <body>
     <!-- Header Section -->
     <div class="header_section">
@@ -114,94 +143,141 @@
                     <ul class="list-unstyled">
                         <li><strong>Primary Attribute:</strong> {{ $hero->primary_attribute }}</li>
                         <li><strong>Attack Type:</strong> {{ $hero->attack_type }}</li>
-                        <li><strong>Roles:</strong> {{ $hero->roles }}</li>
                         <li><strong>Complexity:</strong> {{ $hero->complexity }}</li>
                     </ul>
                 </div>
             </div>
+             
+            {{-- <img src="{{ asset('images/TALENTS TREE BG.png') }}" alt="" width="100" height="100"> --}}
 
-            <!-- Talent Tree Section -->
-            <h3 class="mt-3 text-white">Hero Talent Tree</h3>
-            <table class="talent-tree">
-                <tr>
-                    <td class="talent talent-left">{{ $hero->talent_25_left }}</td>
-                    <td class="level">Level 25</td>
-                    <td class="talent talent-right">{{ $hero->talent_25_right }}</td>
-                </tr>
-                <tr>
-                    <td class="talent talent-left">{{ $hero->talent_20_left }}</td>
-                    <td class="level">Level 20</td>
-                    <td class="talent talent-right">{{ $hero->talent_20_right }}</td>
-                </tr>
-                <tr>
-                    <td class="talent talent-left">{{ $hero->talent_15_left }}</td>
-                    <td class="level">Level 15</td>
-                    <td class="talent talent-right">{{ $hero->talent_15_right }}</td>
-                </tr>
-                <tr>
-                    <td class="talent talent-left">{{ $hero->talent_10_left }}</td>
-                    <td class="level">Level 10</td>
-                    <td class="talent talent-right">{{ $hero->talent_10_right }}</td>
-                </tr>
-            </table>
+                        <!-- Talent Tree Section -->
+                        <div class="icon-container" onmouseover="showTalentTree()" onmouseout="hideTalentTree()">
+                            <img  src="{{ asset('images/TALENTS TREE BG.png') }}" alt="" width="100" height="100">
+                            <table class="talent-tree" id="talentTree">
+                                <h3 class="mt-3 text-white text-center">Hero Talent Tree</h3>
+                                <tr>
+                                    <td class="talent talent-left">{{ $hero->talent_25_left }}</td>
+                                    <td class="level">Level 25</td>
+                                    <td class="talent talent-right">{{ $hero->talent_25_right }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="talent talent-left">{{ $hero->talent_20_left }}</td>
+                                    <td class="level">Level 20</td>
+                                    <td class="talent talent-right">{{ $hero->talent_20_right }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="talent talent-left">{{ $hero->talent_15_left }}</td>
+                                    <td class="level">Level 15</td>
+                                    <td class="talent talent-right">{{ $hero->talent_15_right }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="talent talent-left">{{ $hero->talent_10_left }}</td>
+                                    <td class="level">Level 10</td>
+                                    <td class="talent talent-right">{{ $hero->talent_10_right }}</td>
+                                </tr>
+                            </table>
+                        </div>
 
-            <img src="{{ asset('images/TALENTS TREE BG.png') }}" alt="" width="100" height="100">
             <!-- Abilities -->
             <div class="abilities">
                 <img src="/storage/{{ $hero->ability1 }}" alt="Ability 1" class="ability-icon">
                 <img src="/storage/{{ $hero->ability2 }}" alt="Ability 2" class="ability-icon">
                 <img src="/storage/{{ $hero->ability3 }}" alt="Ability 3" class="ability-icon">
                 <img src="/storage/{{ $hero->ability4 }}" alt="Ability 4" class="ability-icon">
-                
-               
             </div>
             
             <!-- Stats Section -->
-            
             <div class="row mt-4 rounded" style="background-color: #1b1b1b">
                 <!-- KIRI -->
                 <div class="col-md-4">
-                    <div class="list-unstyled text-white">
-                        <div class="mt-3"><p class="text-left">ROLES</p></div>
-                        @if($hero->carry)
-                            <div class="mt-3"><span class="text-info">Carry</span></div>
-                        @endif
-                        @if($hero->support)
-                            <div class="mt-3"><span class="text-info">Support</span></div>
-                        @endif
-                        @if($hero->nuker)
-                            <div class="mt-3"><span class="text-info">Nuker</span></div>
-                        @endif
-                        @if($hero->disabler)
-                            <div class="mt-3"><span class="text-info">Disabler</span></div>
-                        @endif
-                        @if($hero->jungler)
-                            <div class="mt-3"><span class="text-info">Jungler</span></div>
-                        @endif
-                        @if($hero->durable)
-                            <div class="mt-3"><span class="text-info">Durable</span></div>
-                        @endif
-                        @if($hero->escape)
-                            <div class="mt-3"><span class="text-info">Escape</span></div>
-                        @endif
-                        @if($hero->pusher)
-                            <div class="mt-3"><span class="text-info">Pusher</span></div>
-                        @endif
-                        @if($hero->initiator)
-                            <div class="mt-3"><span class="text-info">Initiator</span></div>
-                        @endif
-                    </div>
+                   
                 </div>
                 <!-- TENGAH -->
-                <div class="col-md-4">
+                <div class="col-md-4 ">
+                    <div class="mt-3">
+                        
+                    </div>
                     <div class="row">
-                        <div class="col-4">
-                            <div class="list-unstyled text-white">
-
+                        <div class="col-md-4">
+                            <div class="role-wrapper">
+                                <div class="role-name">Carry</div>
+                                <div class="role-bar">
+                                    <span class="box" data-value="{{ $hero->carry >= 1 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->carry >= 2 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->carry >= 3 ? 'active' : '' }}"></span>
+                                </div>
+                            </div>
+                            <div class="role-wrapper">
+                                <div class="role-name">Support</div>
+                                <div class="role-bar">
+                                    <span class="box" data-value="{{ $hero->support >= 1 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->support >= 2 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->support >= 3 ? 'active' : '' }}"></span>
+                                </div>
+                            </div>
+                            <div class="role-wrapper">
+                                <div class="role-name">Nuker</div>
+                                <div class="role-bar">
+                                    <span class="box" data-value="{{ $hero->nuker >= 1 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->nuker >= 2 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->nuker >= 3 ? 'active' : '' }}"></span>
+                                </div>
                             </div>
                         </div>
-
+                        <div class="col-md-4">
+                            <div class="role-wrapper">
+                                <div class="role-name">Disabler</div>
+                                <div class="role-bar">
+                                    <span class="box" data-value="{{ $hero->disabler >= 1 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->disabler >= 2 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->disabler >= 3 ? 'active' : '' }}"></span>
+                                </div>
+                            </div>
+                            <div class="role-wrapper">
+                                <div class="role-name">Jungler</div>
+                                <div class="role-bar">
+                                    <span class="box" data-value="{{ $hero->jungler >= 1 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->jungler >= 2 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->jungler >= 3 ? 'active' : '' }}"></span>
+                                </div>
+                            </div>
+                            <div class="role-wrapper">
+                                <div class="role-name">Durable</div>
+                                <div class="role-bar">
+                                    <span class="box" data-value="{{ $hero->durable >= 1 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->durable >= 2 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->durable >= 3 ? 'active' : '' }}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="role-wrapper">
+                                <div class="role-name">Escape</div>
+                                <div class="role-bar">
+                                    <span class="box" data-value="{{ $hero->escape >= 1 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->escape >= 2 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->escape >= 3 ? 'active' : '' }}"></span>
+                                </div>
+                            </div>
+                            <div class="role-wrapper">
+                                <div class="role-name">Pusher</div>
+                                <div class="role-bar">
+                                    <span class="box" data-value="{{ $hero->pusher >= 1 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->pusher >= 2 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->pusher >= 3 ? 'active' : '' }}"></span>
+                                </div>
+                            </div>
+                            <div class="role-wrapper">
+                                <div class="role-name">Initiator</div>
+                                <div class="role-bar">
+                                    <span class="box" data-value="{{ $hero->initiator >= 1 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->initiator >= 2 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->initiator >= 3 ? 'active' : '' }}"></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <p class="text-center text-center">ROLES</p>
                 </div>
 
                 <div class="col-md-4">
@@ -242,7 +318,7 @@
                                     <span class="text-info">{{ $hero->magic_resist }}</span>
                                 </div>
                             </div>
-                            <h3 class="text-white mt-3">Stats</h3>
+                            {{-- <h3 class="text-white mt-3">Stats</h3> --}}
                         </div>
                         
                         <!-- Mobility Stats -->
@@ -263,6 +339,7 @@
                                 </div>
                             </div>
                         </div>
+                        <h3 class="text-white mt-3 text-center">Stats</h3>
                     </div>
                 </div>
             </div>
