@@ -46,6 +46,41 @@
             position: relative;
             display: inline-block;
         }
+        .abilities {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Jarak antara talent tree dan ability icons */
+}
+
+.icon-container {
+    position: relative;
+}
+
+.talent-tree {
+    display: none; /* Defaultnya tersembunyi */
+    position: absolute;
+    left: 110%; /* Geser ke kanan dari ability icons */
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.icon-container:hover .talent-tree {
+    display: block;
+}
+
+.ability-icons {
+    display: flex;
+    flex-direction: column; /* Supaya ability tersusun vertikal */
+    gap: 10px;
+}
+
+.ability-icon {
+    width: 64px;
+    height: 64px;
+}
 </style>
 
 <body>
@@ -145,46 +180,57 @@
                         <li><strong>Attack Type:</strong> {{ $hero->attack_type }}</li>
                         <li><strong>Complexity:</strong> {{ $hero->complexity }}</li>
                     </ul>
-                </div>
-            </div>
-             
-            {{-- <img src="{{ asset('images/TALENTS TREE BG.png') }}" alt="" width="100" height="100"> --}}
+                    
+                    
 
-                        <!-- Talent Tree Section -->
-                        <div class="icon-container" onmouseover="showTalentTree()" onmouseout="hideTalentTree()">
-                            <img  src="{{ asset('images/TALENTS TREE BG.png') }}" alt="" width="100" height="100">
-                            <table class="talent-tree" id="talentTree">
-                                <h3 class="mt-3 text-white text-center">Hero Talent Tree</h3>
-                                <tr>
-                                    <td class="talent talent-left">{{ $hero->talent_25_left }}</td>
-                                    <td class="level">Level 25</td>
-                                    <td class="talent talent-right">{{ $hero->talent_25_right }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="talent talent-left">{{ $hero->talent_20_left }}</td>
-                                    <td class="level">Level 20</td>
-                                    <td class="talent talent-right">{{ $hero->talent_20_right }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="talent talent-left">{{ $hero->talent_15_left }}</td>
-                                    <td class="level">Level 15</td>
-                                    <td class="talent talent-right">{{ $hero->talent_15_right }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="talent talent-left">{{ $hero->talent_10_left }}</td>
-                                    <td class="level">Level 10</td>
-                                    <td class="talent talent-right">{{ $hero->talent_10_right }}</td>
-                                </tr>
-                            </table>
-                        </div>
-
-            <!-- Abilities -->
-            <div class="abilities">
+        <!-- Abilities dan  Talent Tree -->
+        <div class="abilities">
+            <!-- Container untuk ability icons -->
+            <div class="ability-icons">
                 <img src="/storage/{{ $hero->ability1 }}" alt="Ability 1" class="ability-icon">
                 <img src="/storage/{{ $hero->ability2 }}" alt="Ability 2" class="ability-icon">
                 <img src="/storage/{{ $hero->ability3 }}" alt="Ability 3" class="ability-icon">
                 <img src="/storage/{{ $hero->ability4 }}" alt="Ability 4" class="ability-icon">
             </div>
+        
+            <!-- Talent Tree di sebelahnya -->
+            <div class="icon-container" onmouseover="showTalentTree()" onmouseout="hideTalentTree()">
+                <table class="talent-tree" id="talentTree">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="{{ asset('images/TALENTS TREE BG.png') }}" alt="" width="100" height="100">
+                        </div>
+                    </div>
+                    <tr>
+                        <td class="talent talent-left">{{ $hero->talent_25_left }}</td>
+                        <td class="level">Level 25</td>
+                        <td class="talent talent-right">{{ $hero->talent_25_right }}</td>
+                    </tr>
+                    <tr>
+                        <td class="talent talent-left">{{ $hero->talent_20_left }}</td>
+                        <td class="level">Level 20</td>
+                        <td class="talent talent-right">{{ $hero->talent_20_right }}</td>
+                    </tr>
+                    <tr>
+                        <td class="talent talent-left">{{ $hero->talent_15_left }}</td>
+                        <td class="level">Level 15</td>
+                        <td class="talent talent-right">{{ $hero->talent_15_right }}</td>
+                    </tr>
+                    <tr>
+                        <td class="talent talent-left">{{ $hero->talent_10_left }}</td>
+                        <td class="level">Level 10</td>
+                        <td class="talent talent-right">{{ $hero->talent_10_right }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+                </div>
+            </div>
+             
+            {{-- <img src="{{ asset('images/TALENTS TREE BG.png') }}" alt="" width="100" height="100"> --}}
+
+                        
             
             <!-- Stats Section -->
             <div class="row mt-4 rounded" style="background-color: #1b1b1b">
