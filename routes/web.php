@@ -41,12 +41,19 @@ Route::get('/register', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
+<<<<<<< HEAD
+
+Route::get('/profile-view', function () {
+    return view('profile-view');
+});
+=======
+>>>>>>> 5-UserList
 
 Route::get('/profile-view', function () {
     return view('profile-view');
 });
 
-// ROUTE GUEST
+// ROUTE GUESTttttt
 Route::resource('user', UserController::class)->only(['create', 'store']);
 
 // ROUTE USER
