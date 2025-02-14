@@ -11,7 +11,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', function () {
     return view('home');
-}); 
+});
 
 Route::get('/item', function () {
     return view('item');
@@ -25,6 +25,11 @@ Route::get('/qwerty', function () {
     return view('qwerty');
 });
 
+// HAKIM BERKERJA DI SINI FILTER
+Route::get('/hero', [GalleryHeroController::class, 'index'])->name('heroes.index');
+Route::get('/hero/{name}', [GalleryHeroController::class, 'show'])->name('hero.show');
+
+//HM
 Route::get('/login', function () {
     return view('auth.login');
 });
@@ -33,11 +38,15 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
-// HAKIM BERKERJA DI SINI FILTER
-Route::get('/hero', [GalleryHeroController::class, 'index'])->name('heroes.index');
-Route::get('/hero/{id}', [GalleryHeroController::class, 'show'])->name('hero.show');
+Route::get('/profile', function () {
+    return view('profile');
+});
 
-// ROUTE GUEST
+Route::get('/profile-view', function () {
+    return view('profile-view');
+});
+
+// ROUTE GUESTttttt
 Route::resource('user', UserController::class)->only(['create', 'store']);
 
 // ROUTE USER
