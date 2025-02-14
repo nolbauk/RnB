@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Hero extends Model
 {
+    // fix
     use HasFactory;
 
     protected $table = 'heroes';

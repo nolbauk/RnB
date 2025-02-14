@@ -11,6 +11,7 @@ class sidebarnavbar extends Component
     /**
      * Create a new component instance.
      */
+    // fix
     public function __construct()
     {
         //
