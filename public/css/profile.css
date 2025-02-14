@@ -6,7 +6,7 @@ body {
     padding-left: 10px;
     margin-bottom: 10px;
     border-radius: 20px;
-    background-color: #bbbbbb;
+    background-color: #dddddd;
 }
 
 .form-control:focus {
@@ -17,6 +17,14 @@ body {
     box-shadow: inset 8px 8px 8px rgba(255, 164, 0, 0.8), inset -8px -8px 8px #fff;
 }
 
+.form-control[readonly] {
+    background-color: #dddddd !important;
+    box-shadow: none;
+}
+.form-control[readonly]:focus {
+    background-color: #dddddd !important;
+    box-shadow: none;
+}
 .container{
     background-color: #FFF;
     border-radius: 30px;
