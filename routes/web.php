@@ -9,7 +9,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', function () {
     return view('home');
-}); 
+});
 
 Route::get('/item', function () {
     return view('item');
@@ -37,6 +37,7 @@ Route::resource('admindashboard', DashboardController::class);
 
 Route::resource('adminheroes', HeroesController::class);
 
+//HM
 Route::get('/login', function () {
     return view('auth.login');
 });
