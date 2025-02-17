@@ -6,8 +6,7 @@ body {
     padding-left: 10px;
     margin-bottom: 10px;
     border-radius: 20px;
-    background-color: rgba(255, 215, 0, 1);
-    box-shadow: inset 8px 8px 8px rgba(255, 164, 0, 0.8), inset -8px -8px 8px #fff;
+    background-color: #dddddd;
 }
 
 .form-control:focus {
@@ -18,15 +17,23 @@ body {
     box-shadow: inset 8px 8px 8px rgba(255, 164, 0, 0.8), inset -8px -8px 8px #fff;
 }
 
+.form-control[readonly] {
+    background-color: #dddddd !important;
+    box-shadow: none;
+}
+.form-control[readonly]:focus {
+    background-color: #dddddd !important;
+    box-shadow: none;
+}
 .container{
-    background-color: rgba(255, 215, 0, 1);
+    background-color: #FFF;
     border-radius: 30px;
     /* box-shadow: 13px 13px 20px rgba(255, 215, 0, 0.8), -13px -13px 20px rgba(255, 215, 0, 0.8); */
 }
 
 .profile-button {
-    background: #111111;
-    color: rgba(255, 215, 0, 1);
+    background: rgba(255, 215, 0, 1);
+    color: #111111;
     box-shadow: none;
     border: none;
     width: 100%;
@@ -35,8 +42,8 @@ body {
 }
 
 .profile-button:hover {
-    background: #fff;
-    color: #111111
+    background: #111111;
+    color: rgba(255, 215, 0, 1)
 }
 
 .profile-button:focus {
@@ -70,7 +77,6 @@ body {
 .default-profile-icon {
     width: 100px;
     height: 100px;
-    background-color: rgba(255, 215, 0, 1); /* Matches your theme */
     color: #111111; /* Dark icon */
     font-size: 60px; /* Adjust icon size */
     display: flex;
