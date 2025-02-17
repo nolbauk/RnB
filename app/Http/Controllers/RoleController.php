@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Role;
 use Illuminate\Http\Request;
 
+//oi
+
 class RoleController extends Controller
 {
     public function index()
     {
+        // fix
         $roles = Role::all();
         return view('admin.roles.index', compact('roles'));
     }

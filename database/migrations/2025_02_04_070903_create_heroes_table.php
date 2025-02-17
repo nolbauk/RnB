@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
+        // fix
         Schema::create('heroes', function (Blueprint $table) {
             $table->id();
             $table->string('image', 255)->nullable();
