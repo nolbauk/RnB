@@ -13,6 +13,7 @@ class HeroesController extends Controller
 {
     public function index()
     {
+        // fix
         $heroes = Hero::all();
         return view('admin.heroes.index', compact('heroes'));
     }

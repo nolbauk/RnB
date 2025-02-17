@@ -26,13 +26,14 @@
 </head>
 
 <style>
+    
     .sidebar-brand-icon img {
         width: 100%;
         height: auto;
         object-fit: contain;
     }
 </style>
-
+{{-- fix --}}
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -55,19 +56,7 @@
                             <div class="container">
                                 <form action="{{ route('adminheroes.update', $adminhero->id) }}" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                    @method('PUT')                                                     
-
-                                    {{-- Primary Attribute --}}
-                                    <div class="mb-3">
-                                        <label for="primary_attribute" class="form-label">Primary Attribute</label>
-                                        <select class="form-control" id="primary_attribute" name="primary_attribute" required>
-                                            <option value="Strength" {{ old('primary_attribute', $adminhero->primary_attribute) == 'Strength' ? 'selected' : '' }}>Strength</option>
-                                            <option value="Agility" {{ old('primary_attribute', $adminhero->primary_attribute) == 'Agility' ? 'selected' : '' }}>Agility</option>
-                                            <option value="Intelligence" {{ old('primary_attribute', $adminhero->primary_attribute) == 'Intelligence' ? 'selected' : '' }}>Intelligence</option>
-                                            <option value="Universal" {{ old('primary_attribute', $adminhero->primary_attribute) == 'Universal' ? 'selected' : '' }}>Universal</option>
-                                        </select>
-                                        @error('primary_attribute') <small class="text-danger">{{ $message }}</small> @enderror
-                                    </div>
+                                    @method('PUT')
 
                                     {{-- Nama Hero --}}
                                     <div class="mb-3">
@@ -91,6 +80,18 @@
                                         @endif
                                     </div>
 
+                                    {{-- Primary Attribute --}}
+                                    <div class="mb-3">
+                                        <label for="primary_attribute" class="form-label">Primary Attribute</label>
+                                        <select class="form-control" id="primary_attribute" name="primary_attribute" required>
+                                            <option value="Strength" {{ old('primary_attribute', $adminhero->primary_attribute) == 'Strength' ? 'selected' : '' }}>Strength</option>
+                                            <option value="Agility" {{ old('primary_attribute', $adminhero->primary_attribute) == 'Agility' ? 'selected' : '' }}>Agility</option>
+                                            <option value="Intelligence" {{ old('primary_attribute', $adminhero->primary_attribute) == 'Intelligence' ? 'selected' : '' }}>Intelligence</option>
+                                            <option value="Universal" {{ old('primary_attribute', $adminhero->primary_attribute) == 'Universal' ? 'selected' : '' }}>Universal</option>
+                                        </select>
+                                        @error('primary_attribute') <small class="text-danger">{{ $message }}</small> @enderror
+                                    </div>
+
                                     {{-- Bio --}}
                                     <div class="mb-3">
                                         <label for="bio" class="form-label">Bio</label>
@@ -101,7 +102,7 @@
                                     {{-- Lore --}}
                                     <div class="mb-3 mt-3">
                                         <label for="lore" class="form-label">Lore</label>
-                                        <textarea class="form-control" id="lore" name="lore">{{ old('lore', $adminhero->lore) }}</textarea>
+                                        <textarea class="form-control" id="lore" name="lore" rows="6" cols="50">{{ old('lore', $adminhero->lore) }}</textarea>
                                         @error('lore') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
 
@@ -220,7 +221,10 @@
                                         </div>
                                     @endforeach
 
-                                    <h4>Attack</h4>
+                                    <h4 class="mt-3">Stats</h4>
+
+                                    <h5>Attack</h5>
+                                    {{-- attack min - max --}}
                                     <div class="row mb-3">
                                         <div class="col-md-4">
                                             <label for="attack_dmg_min" class="form-label">Attack Damage Min</label>
@@ -235,29 +239,37 @@
                                             @error('attack_dmg_max') <small class="text-danger">{{ $message }}</small> @enderror
                                         </div>
                                     </div>
-                                    
+                                    {{-- attack rate --}}
                                     <div class="mb-3">
                                         <label for="attack_rate" class="form-label">Attack Rate</label>
                                         <input type="number" step="any" class="form-control" id="attack_rate" name="attack_rate"
                                                value="{{ old('attack_rate', $adminhero->attack_rate ?? 1.0) }}" min="0.1" required>
                                         @error('attack_rate') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
-                                    
+                                    {{-- attack range --}}
                                     <div class="mb-3">
                                         <label for="attack_range" class="form-label">Attack Range</label>
                                         <input type="number" class="form-control" id="attack_range" name="attack_range"
                                                value="{{ old('attack_range', $adminhero->attack_range ?? 1) }}" min="1" required>
                                         @error('attack_range') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
+                                    {{-- projectile speed --}}
+                                    <div class="mb-3">
+                                        <label for="projectile_speed" class="form-label">Projectile Speed</label>
+                                        <input type="number" class="form-control" id="projectile_speed" name="projectile_speed"
+                                            value="{{ old('projectile_speed', $adminhero->projectile_speed ?? 0) }}" required>
+                                        @error('projectile_speed') <small class="text-danger">{{ $message }}</small> @enderror
+                                    </div>
                                     
-                                    <h4>Defense</h4>
+                                    <h5>Defense</h5>
+                                    {{-- armor --}}
                                     <div class="mb-3">
                                         <label for="armor" class="form-label">Armor</label>
                                         <input type="number" step="any" class="form-control" id="armor" name="armor"
                                                value="{{ old('armor', $adminhero->armor ?? 0) }}" required>
                                         @error('armor') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
-                                    
+                                    {{-- magic resist --}}
                                     <div class="mb-3">
                                         <label for="magic_resist" class="form-label">Magic Resist (%)</label>
                                         <input type="number" step="any" class="form-control" id="magic_resist" name="magic_resist"
@@ -265,21 +277,22 @@
                                         @error('magic_resist') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
                                     
-                                    <h4>Mobility</h4>
+                                    <h5>Mobility</h5>
+                                    {{-- movement speed --}}
                                     <div class="mb-3">
                                         <label for="movement_speed" class="form-label">Movement Speed</label>
                                         <input type="number" class="form-control" id="movement_speed" name="movement_speed"
                                                value="{{ old('movement_speed', $adminhero->movement_speed ?? 1) }}" min="1" required>
                                         @error('movement_speed') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
-                                    
+                                    {{-- turn rate --}}
                                     <div class="mb-3">
                                         <label for="turn_rate" class="form-label">Turn Rate</label>
                                         <input type="number" step="any" class="form-control" id="turn_rate" name="turn_rate"
                                                value="{{ old('turn_rate', $adminhero->turn_rate ?? 0.1) }}" min="0.1" required>
                                         @error('turn_rate') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
-                                    
+                                    {{-- vision range day and night --}}
                                     <div class="row mb-3">
                                         <div class="col-md-4">
                                             <label for="vision_range_day" class="form-label">Vision Range Day</label>
@@ -311,12 +324,6 @@
 
                                     {{-- Additional Combat Stats --}}
                                     <h4>Additional Combat Stats</h4>
-                                    <div class="mb-3">
-                                        <label for="projectile_speed" class="form-label">Projectile Speed</label>
-                                        <input type="number" class="form-control" id="projectile_speed" name="projectile_speed"
-                                            value="{{ old('projectile_speed', $adminhero->projectile_speed ?? 0) }}" required>
-                                        @error('projectile_speed') <small class="text-danger">{{ $message }}</small> @enderror
-                                    </div>
                                     <div class="mb-3">
                                         <label for="collision_size" class="form-label">Collision Size</label>
                                         <input type="number" step="any" class="form-control" id="collision_size" name="collision_size"

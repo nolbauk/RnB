@@ -6,8 +6,9 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HeroesController;
 use App\Http\Controllers\GalleryHeroController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
-
+// fix
 Route::get('/', function () {
     return view('home');
 });
@@ -37,13 +38,6 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
-// ROUTE ADMIN
-Route::resource('admindashboard', DashboardController::class);
-
-Route::resource('adminheroes', HeroesController::class);
-
-Route::resource('adminroles', RoleController::class);
-
 Route::get('/profile', function () {
     return view('profile');
 });
@@ -51,3 +45,19 @@ Route::get('/profile', function () {
 Route::get('/profile-view', function () {
     return view('profile-view');
 });
+
+// ROUTE GUEST
+Route::resource('user', UserController::class)->only(['create', 'store']);
+
+// ROUTE USER
+Route::resource('user', UserController::class)->only(['edit', 'update']);
+
+// ROUTE ADMIN
+Route::resource('admindashboard', DashboardController::class);
+
+Route::resource('adminheroes', HeroesController::class);
+
+Route::resource('adminroles', RoleController::class);
+
+Route::resource('adminusers', UserController::class);
+
