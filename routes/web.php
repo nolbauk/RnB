@@ -46,7 +46,7 @@ Route::get('/profile-view', function () {
     return view('profile-view');
 });
 
-// ROUTE GUESTttttt
+// ROUTE GUEST
 Route::resource('user', UserController::class)->only(['create', 'store']);
 
 // ROUTE USER

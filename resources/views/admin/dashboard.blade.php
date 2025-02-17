@@ -50,7 +50,7 @@
                                         <div class="col mr-2">
                                             <div class="text-m font-weight-bold text-primary text-uppercase mb-1">
                                                 Users</div>
-                                            <div class="h5 mb-1 font-weight-bold text-gray-800">{{ $totalHero }}</div>
+                                            <div class="h5 mb-1 font-weight-bold text-gray-800">{{ $totalUser }}</div>
                                             <a href="{{ route('adminusers.index') }}" class="text-s font-weight-bold">Details</a>
                                         </div>
                                         <div class="col-auto">
