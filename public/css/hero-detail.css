@@ -94,55 +94,113 @@ body {
     background-color: #0056b3;
 }
 
-/* hero talents */
-.talent-tree {
-    width: 100%;
-    margin: auto;
-    border-collapse: separate;
-    border-spacing: 5px;
-    background-color: #1b1b1b; /* Warna gelap khas UI Dota 2 */
-    color: #d6b679; /* Warna emas khas Dota 2 */
-    font-family: Arial, sans-serif;
-    text-align: center;
-    border-radius: 10px;
-    padding: 10px;
-}
 
-.talent-tree tr {
-    position: relative;
-}
+    .role {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .box {
+        display: inline-block;
+        width: 30px;
+        height: 13px;
+        border: 1px solid white;
+        margin-left: 2px;
+        text-align: center;
+        line-height: 15px;
+        font-weight: bold;
+        background-color: transparent;
+        transform: skew(-15deg);
+    }
+    .box[data-value="active"] {
+        background-color: white;
+    }
 
-.talent-tree td {
-    padding: 8px;
-    border-radius: 5px;
-}
-
-/* Talent text styling */
-.talent {
-    width: 40%;
-    background-color: #2a2a2a; /* Warna gelap untuk talent */
-    padding: 8px;
-    border: 1px solid #403d3d;
-    font-weight: bold;
-}
-
-/* Center column for levels */
-.level {
-    width: 20%;
-    background-color: #3a3a3a; /* Warna lebih terang */
-    border: 1px solid #555;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-/* Membuat garis penghubung antar level */
-.talent-tree tr:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    width: 2px;
-    height: 15px;
-    background-color: #d6b679;
-    top: 100%;
-    transform: translateX(-50%);
-}
+    .abilities {
+        display: flex;
+        align-items: center;
+        gap: 20px; /* Jarak antara talent tree dan ability icons */
+    }
+    
+    .icon-container {
+        position: relative;
+        display: inline-block;
+        
+    }
+    
+    /* Menyembunyikan talent tree */
+    .talent-tree {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: -100px;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.9);
+        padding: 10px;
+        border-radius: 8px;
+        border: 2px solid #fff;
+        width: 500px; /* Lebar tetap agar tidak gepeng */
+        text-align: center;
+        z-index: 99999;
+    }
+    
+    /* Styling tabel agar lebih rapi */
+    .talent-tree table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    /* Styling tiap baris dalam tabel */
+    .talent-tree tr {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    /* Styling teks dalam talent tree */
+    .talent {
+        padding: 8px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+    .talent-row {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    /* Styling level agar lebih jelas */
+    .level {
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffd700; /* Warna emas biar keren */
+    }
+    
+    /* Hover efek untuk gambar Talent Tree */
+    .icon-container img {
+        transition: transform 0.2s ease-in-out;
+    }
+    
+    .icon-container:hover img {
+        transform: scale(1.1);
+    }
+    
+    /* Supaya talent tree tetap muncul saat hover */
+    .icon-container:hover .talent-tree {
+        display: block;
+    }
+    
+    /* Ability Icons */
+    .ability-icons {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .ability-icon {
+        width: 64px;
+        height: 64px;
+        transition: transform 0.2s ease-in-out;
+    }
+    
+    .ability-icon:hover {
+        transform: scale(1.1);
+    }

@@ -25,7 +25,7 @@ Route::get('/qwerty', function () {
 
 // HAKIM BERKERJA DI SINI FILTER
 Route::get('/hero', [GalleryHeroController::class, 'index'])->name('heroes.index');
-Route::get('/hero/{name}', [GalleryHeroController::class, 'show'])->name('hero.show');
+Route::get('/hero/{id}', [GalleryHeroController::class, 'show'])->name('hero.show');
 
 
 

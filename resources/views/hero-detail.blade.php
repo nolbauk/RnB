@@ -20,68 +20,7 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('/images/logo.png') }}">
 </head>
 
-<style>
-    .role {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-    }
-    .box {
-        display: inline-block;
-        width: 30px;
-        height: 13px;
-        border: 1px solid white;
-        margin-left: 2px;
-        text-align: center;
-        line-height: 15px;
-        font-weight: bold;
-        background-color: transparent;
-        transform: skew(-15deg);
-    }
-    .box[data-value="active"] {
-        background-color: white;
-    }
 
-        .icon-container {
-            position: relative;
-            display: inline-block;
-        }
-        .abilities {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Jarak antara talent tree dan ability icons */
-}
-
-.icon-container {
-    position: relative;
-}
-
-.talent-tree {
-    display: none; /* Defaultnya tersembunyi */
-    position: absolute;
-    left: 110%; /* Geser ke kanan dari ability icons */
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.8);
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.icon-container:hover .talent-tree {
-    display: block;
-}
-
-.ability-icons {
-    display: flex;
-    flex-direction: column; /* Supaya ability tersusun vertikal */
-    gap: 10px;
-}
-
-.ability-icon {
-    width: 64px;
-    height: 64px;
-}
-</style>
 
 <body>
     <!-- Header Section -->
@@ -112,6 +51,7 @@
 
     <!-- Hero Detail Section -->
     <div class="container-hero">
+
         <div class="hero-detail">
             <div class="row">
                 <!-- Left Column: Hero Image and Stats -->
@@ -145,7 +85,7 @@
                 </div> --}}
 
                     <!-- Attributes Section -->
-                    <h3 class="mt-3 text-white">Attributes</h3>
+                    
                     <ul class="list-unstyled text-white">
                         <li class="mt-3">
                             <img src="{{ asset('images/hero_strength.png') }}" alt="Strength">
@@ -176,54 +116,61 @@
                     <p class="fst-italic">{{ $hero->bio }}</p>
                     <p>{!! nl2br(e($hero->lore ?? 'N/A')) !!}
                     <ul class="list-unstyled">
-                        <li><strong>Primary Attribute:</strong> {{ $hero->primary_attribute }}</li>
                         <li><strong>Attack Type:</strong> {{ $hero->attack_type }}</li>
                         <li><strong>Complexity:</strong> {{ $hero->complexity }}</li>
                     </ul>
                     
                     
-
-        <!-- Abilities dan  Talent Tree -->
-        <div class="abilities">
-            <!-- Container untuk ability icons -->
-            <div class="ability-icons">
-                <img src="/storage/{{ $hero->ability1 }}" alt="Ability 1" class="ability-icon">
-                <img src="/storage/{{ $hero->ability2 }}" alt="Ability 2" class="ability-icon">
-                <img src="/storage/{{ $hero->ability3 }}" alt="Ability 3" class="ability-icon">
-                <img src="/storage/{{ $hero->ability4 }}" alt="Ability 4" class="ability-icon">
-            </div>
+    
+       <div class="abilities">
+        <div class="icon-container">
         
-            <!-- Talent Tree di sebelahnya -->
-            <div class="icon-container" onmouseover="showTalentTree()" onmouseout="hideTalentTree()">
-                <table class="talent-tree" id="talentTree">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <img src="{{ asset('images/TALENTS TREE BG.png') }}" alt="" width="100" height="100">
-                        </div>
-                    </div>
-                    <tr>
+            <div class="talent-tree">
+                <table>
+                    <tr class="talent-row">
                         <td class="talent talent-left">{{ $hero->talent_25_left }}</td>
-                        <td class="level">Level 25</td>
+                        <td class="level">25</td>
                         <td class="talent talent-right">{{ $hero->talent_25_right }}</td>
                     </tr>
-                    <tr>
+                    <tr class="talent-row">
                         <td class="talent talent-left">{{ $hero->talent_20_left }}</td>
-                        <td class="level">Level 20</td>
+                        <td class="level">20</td>
                         <td class="talent talent-right">{{ $hero->talent_20_right }}</td>
                     </tr>
-                    <tr>
+                    <tr class="talent-row">
                         <td class="talent talent-left">{{ $hero->talent_15_left }}</td>
-                        <td class="level">Level 15</td>
+                        <td class="level">15</td>
                         <td class="talent talent-right">{{ $hero->talent_15_right }}</td>
                     </tr>
-                    <tr>
+                    <tr class="talent-row">
                         <td class="talent talent-left">{{ $hero->talent_10_left }}</td>
-                        <td class="level">Level 10</td>
+                        <td class="level">10</td>
                         <td class="talent talent-right">{{ $hero->talent_10_right }}</td>
                     </tr>
                 </table>
             </div>
+            <img src="{{ asset('images/TALENTS TREE BG.png') }}" alt="Talent Tree Icon" width="64" height="64" class="ability-icon">
+            
         </div>
+       
+   
+    
+
+    <!-- Ability Icons (menyamping) -->
+    <div class="ability-icons">
+        <div class="icon-container">
+            {{-- <img src="{{ asset('images/TALENTS TREE BG.png') }}" alt="Talent Tree Icon" width="64" height="64" class="ability-icon"> --}}
+        </div>
+        <img src="{{ asset('images/innate_icon.png') }}" alt="innate Tree Icon" width="64" height="64" class="ability-icon">
+        <img src="/storage/{{ $hero->ability1 }}" alt="Ability 1" class="ability-icon">
+        <img src="/storage/{{ $hero->ability2 }}" alt="Ability 2" class="ability-icon">
+        <img src="/storage/{{ $hero->ability3 }}" alt="Ability 3" class="ability-icon">
+        <img src="/storage/{{ $hero->ability4 }}" alt="Ability 4" class="ability-icon">
+        
+    </div>
+</div>
+        
+        
         
                 </div>
             </div>
@@ -238,6 +185,7 @@
                 <div class="col-md-4">
                    
                 </div>
+
                 <!-- TENGAH -->
                 <div class="col-md-4 ">
                     <div class="mt-3">
