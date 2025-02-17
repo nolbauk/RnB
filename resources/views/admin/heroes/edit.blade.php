@@ -102,7 +102,7 @@
                                     {{-- Lore --}}
                                     <div class="mb-3 mt-3">
                                         <label for="lore" class="form-label">Lore</label>
-                                        <textarea class="form-control" id="lore" name="lore">{{ old('lore', $adminhero->lore) }}</textarea>
+                                        <textarea class="form-control" id="lore" name="lore" rows="6" cols="50">{{ old('lore', $adminhero->lore) }}</textarea>
                                         @error('lore') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
 

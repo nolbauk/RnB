@@ -41,7 +41,7 @@ class UserController extends Controller
             'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role_id' => 1, // Default sebagai user
+            'role_id' => 2, // Default sebagai user
             'name' => $request->name,
             'bio' => $request->bio,
             'birth' => $request->birth,

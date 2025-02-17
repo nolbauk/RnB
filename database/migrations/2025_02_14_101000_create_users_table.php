@@ -12,7 +12,7 @@ return new class extends Migration {
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('password');
-            $table->foreignId('role_id')->default(1)->constrained('roles')->onDelete('cascade');
+            $table->foreignId('role_id')->default(2)->constrained('roles')->onDelete('cascade');
             $table->string('profile_picture')->nullable();
             $table->string('name')->nullable();
             $table->text('bio')->nullable();
