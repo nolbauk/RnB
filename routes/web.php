@@ -61,3 +61,7 @@ Route::resource('adminroles', RoleController::class);
 
 Route::resource('adminusers', UserController::class);
 
+//FORUM
+Route::get('/art', function () {
+    return view('forum.art');
+});
