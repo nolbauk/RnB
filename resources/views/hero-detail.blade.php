@@ -19,6 +19,9 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('/images/logo.png') }}">
 </head>
+
+
+
 <body>
     <!-- Header Section -->
     <div class="header_section">
@@ -27,8 +30,7 @@
                 <a class="navbar-brand" href="index.html">
                     <img src="/images/logo2.png" alt="Logo">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 
@@ -49,76 +51,42 @@
 
     <!-- Hero Detail Section -->
     <div class="container-hero">
+
         <div class="hero-detail">
             <div class="row">
                 <!-- Left Column: Hero Image and Stats -->
                 <div class="col-md-6">
                     <div class="card" style="width: 35rem; background-color: #2a2a2a;">
                         <img class="card-img-top img-fluid hero-image" src="/storage/{{ $hero->image }}" alt="{{ $hero->name }}">
-                        <div class="card-body">
-                            <div class="abilities">
-                                <img src="/storage/{{ $hero->ability1 }}" alt="Ability 1" class="ability-icon">
-                                <img src="/storage/{{ $hero->ability2 }}" alt="Ability 2" class="ability-icon">
-                                <img src="/storage/{{ $hero->ability3 }}" alt="Ability 3" class="ability-icon">
-                                <img src="/storage/{{ $hero->ability4 }}" alt="Ability 4" class="ability-icon">
+                        <div class="card-body text-white p-0">
+                            <div class="health bg-success text-center">
+                                <span class="text-success text-white">{{ $hero->health }}</span>
+                                <span class="text-info text-white">(+{{ $hero->health_regen }})</span>
+                            </div>
+                            <div class="mana bg-primary text-white text-center">
+                                <span class="text-primary text-white">{{ $hero->mana }}</span>
+                                <span class="text-info text-white">(+{{ $hero->mana_regen }})</span>
                             </div>
                         </div>
                     </div>
-
                     <!-- Attributes Section -->
-                    <h3 class="mt-3 text-white">Attributes</h3>
-                    <ul class="list-unstyled text-white">
-                        <li>
-                            <strong>Health:</strong> 
-                            <span class="text-success">{{ $hero->health }}</span>
-                            <span class="text-info">(+{{ $hero->health_regen }})</span>
-                        </li>
-                        <li>
-                            <strong>Mana:</strong>
-                            <span class="text-primary">{{ $hero->mana }}</span>
-                            <span class="text-info">(+{{ $hero->mana_regen }})</span>
-                        </li>
-                        <li>
-                            <strong>Strength:</strong>
+                    <ul class="list-unstyled text-white position-static">
+                        <li class="mt-3">
+                            <img src="{{ asset('images/hero_strength.png') }}" alt="Strength">
                             <span class="text-danger">{{ $hero->primary_strength }}</span>
                             <span class="text-info">(+{{ $hero->strength_per_lvl }})</span>
                         </li>
-                        <li>
-                            <strong>Agility:</strong>
+                        <li class="mt-3">
+                            <img src="{{ asset('images/hero_agility.png') }}" alt="Agility">
                             <span class="text-success">{{ $hero->primary_agility }}</span>
                             <span class="text-info">(+{{ $hero->agility_per_lvl }})</span>
                         </li>
-                        <li>
-                            <strong>Intelligence:</strong>
+                        <li class="mt-3">
+                            <img src="{{ asset('images/hero_Intelligence.png') }}" alt="Intelligence">
                             <span class="text-warning">{{ $hero->primary_intelligence }}</span>
                             <span class="text-info">(+{{ $hero->intelligence_per_lvl }})</span>
                         </li>
                     </ul>
-
-                    <!-- Talent Tree Section -->
-                    <h3 class="mt-3 text-white">Hero Talent Tree</h3>
-                    <table class="talent-tree">
-                        <tr>
-                            <td class="talent talent-left">{{ $hero->talent_25_left }}</td>
-                            <td class="level">Level 25</td>
-                            <td class="talent talent-right">{{ $hero->talent_25_right }}</td>
-                        </tr>
-                        <tr>
-                            <td class="talent talent-left">{{ $hero->talent_20_left }}</td>
-                            <td class="level">Level 20</td>
-                            <td class="talent talent-right">{{ $hero->talent_20_right }}</td>
-                        </tr>
-                        <tr>
-                            <td class="talent talent-left">{{ $hero->talent_15_left }}</td>
-                            <td class="level">Level 15</td>
-                            <td class="talent talent-right">{{ $hero->talent_15_right }}</td>
-                        </tr>
-                        <tr>
-                            <td class="talent talent-left">{{ $hero->talent_10_left }}</td>
-                            <td class="level">Level 10</td>
-                            <td class="talent talent-right">{{ $hero->talent_10_right }}</td>
-                        </tr>
-                    </table>
 
                     <!-- Voice Actor Section -->
                     <h3 class="text-white mt-3">Voice Actor</h3>
@@ -130,86 +98,235 @@
                     <p>{{ $hero->primary_attribute }}</p>
                     <h1 class="hero-name">{{ $hero->name }}</h1>
                     <p class="fst-italic">{{ $hero->bio }}</p>
-                    <p>{{ $hero->lore }}</p>
+                    <p>{!! nl2br(e($hero->lore ?? 'N/A')) !!}
                     <ul class="list-unstyled">
-                        <li><strong>Primary Attribute:</strong> {{ $hero->primary_attribute }}</li>
-                        <li><strong>Attack Type:</strong> {{ $hero->attack_type }}</li>
-                        <li><strong>Roles:</strong> {{ $hero->roles }}</li>
+                        <li><strong>Attack Type:</strong></li>
+                        @if($hero->attack_type == 'Melee')
+                            <img src="{{ asset('images/male.png') }}" alt="Melee">
+                        @elseif($hero->attack_type == 'Ranged')
+                            <img src="{{ asset('images/ranged.png') }}" alt="Ranged">
+                        @endif
                         <li><strong>Complexity:</strong> {{ $hero->complexity }}</li>
                     </ul>
+                    
+                  
+                    
+       <div class="abilities">
+        <div class="icon-container">
+        
+            <div class="talent-tree">
+                <table>
+                    <tr class="talent-row">
+                        <td class="talent talent-left">{{ $hero->talent_25_left }}</td>
+                        <td class="level">25</td>
+                        <td class="talent talent-right">{{ $hero->talent_25_right }}</td>
+                    </tr>
+                    <tr class="talent-row">
+                        <td class="talent talent-left">{{ $hero->talent_20_left }}</td>
+                        <td class="level">20</td>
+                        <td class="talent talent-right">{{ $hero->talent_20_right }}</td>
+                    </tr>
+                    <tr class="talent-row">
+                        <td class="talent talent-left">{{ $hero->talent_15_left }}</td>
+                        <td class="level">15</td>
+                        <td class="talent talent-right">{{ $hero->talent_15_right }}</td>
+                    </tr>
+                    <tr class="talent-row">
+                        <td class="talent talent-left">{{ $hero->talent_10_left }}</td>
+                        <td class="level">10</td>
+                        <td class="talent talent-right">{{ $hero->talent_10_right }}</td>
+                    </tr>
+                </table>
+            </div>
+            <img src="{{ asset('images/TALENTS TREE BG.png') }}" alt="Talent Tree Icon" width="64" height="64" class="ability-icon">
+            
+        </div>
+       
+   
+    
+
+    <!-- Ability Icons (menyamping) -->
+    <div class="ability-icons">
+        <div class="icon-container">
+            {{-- <img src="{{ asset('images/TALENTS TREE BG.png') }}" alt="Talent Tree Icon" width="64" height="64" class="ability-icon"> --}}
+        </div>
+        <img src="{{ asset('images/innate_icon.png') }}" alt="innate Tree Icon" width="64" height="64" class="ability-icon">
+        <img src="/storage/{{ $hero->ability1 }}" alt="Ability 1" class="ability-icon">
+        <img src="/storage/{{ $hero->ability2 }}" alt="Ability 2" class="ability-icon">
+        <img src="/storage/{{ $hero->ability3 }}" alt="Ability 3" class="ability-icon">
+        <img src="/storage/{{ $hero->ability4 }}" alt="Ability 4" class="ability-icon">
+        
+    </div>
+</div>
+        
+        
+        
                 </div>
             </div>
-            <h3 class="text-white mt-3">Stats</h3>
-            <div class="row mt-4 " style="background-color: #1b1b1b">
-                <!-- Bagian Kiri -->
-                <div class="col-4">  
-                    <p>ATTACK</p>
-                    <ul class="list-unstyled text-white">
-                        <li class="mt-3">
-                            <img src="{{ asset('images/pedang le.png') }}" alt="Attack Damage" class="me-3">
-                            <strong>Attack Damage:</strong>
-                            <span class="text-danger">{{ $hero->attack_dmg_min }} - {{ $hero->attack_dmg_max }}</span>
-                        </li>
-                        <li class="mt-3">
-                            <img src="{{ asset('images/waktu lek.png') }}" alt=" Attack Rate" class="me-3">
-                            <strong>Attack Rate:</strong>
-                            <span class="text-info">{{ $hero->attack_rate }}</span>
-                        </li>
-                        <li class="mt-3">
-                            <img src="{{ asset('images/Jarak diantara kita.png') }}" alt="Attack Range" class="me-3">
-                            <strong>Attack Range:</strong>
-                            <span class="text-warning">{{ $hero->attack_range }}</span>
-                        </li>
-                        <li class="mt-3">
-                            <img src="{{ asset('images/projektil kecepatan le.png') }}" alt="Projectile Speed" class="me-3">
-                            <strong>Projectile Speed: </strong>
-                            <span class="text-success">{{ $hero->projectile_speed }}</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Bagian Tengah -->
-                <div class="col-4">
-                    <p>DEFENSE</p>
-                    <ul class="list-unstyled text-white">
-                        <li class="mt-3">
-                            <img src="{{ asset('images/Tameng.png') }}" alt="Armor" class="me-3">
-                            <strong>Armor:</strong>
-                            <span class="text-danger">{{ $hero->armor }}</span>
-                        </li>
-                        <li class="mt-3">
-                            <img src="{{ asset('images/MAGIC MATA.png') }}" alt="Magic Resist" class="me-3">
-                            <strong>Magic Resist:</strong>
-                            <span class="text-info">{{ $hero->magic_resist }}</span>
-                        </li>
-                    </ul>
-                </div>
+             
+            {{-- <img src="{{ asset('images/TALENTS TREE BG.png') }}" alt="" width="100" height="100"> --}}
+
+                        
             
-                <!-- Bagian Kanan -->
-                <div class="col-4">
-                    <p>MOBILITY</p>
-                    <ul class="list-unstyled text-white">
-                        <li class="mt-3">
-                            <img src="{{ asset('images/Movement Speed.png') }}" alt="Armor" class="me-3">
-                            <strong>Movement Speed</strong>
-                            <span class="text-danger">{{ $hero->movement_speed }}</span>
-                        </li>
-                        <li class="mt-3">
-                            <img src="{{ asset('images/Kaki Ajaib.png') }}" alt="Magic Resist" class="me-3">
-                            <strong>Turn Rate:</strong>
-                            <span class="text-info">{{ $hero->turn_rate}}</span>
-                        </li>
-                        <li class="mt-3">
-                            <img src="{{ asset('images/Penglihatan.png') }}" alt="Magic Resist" class="me-3">
-                            <strong>Vision :</strong>
-                            <span class="text-info">{{ $hero->vision_range_day }} / {{ $hero->vision_range_night}}</span>
-                        </li>
-                    </ul>
+            <!-- Stats Section -->
+            <div class="row mt-4 rounded" style="background-color: #1b1b1b">
+                <!-- KIRI -->
+                <div class="col-md-4">
+                   
+                </div>
+
+                <!-- TENGAH -->
+                <div class="col-md-4 ">
+                    <div class="mt-3">
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="role-wrapper">
+                                <div class="role-name">Carry</div>
+                                <div class="role-bar">
+                                    <span class="box" data-value="{{ $hero->carry >= 1 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->carry >= 2 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->carry >= 3 ? 'active' : '' }}"></span>
+                                </div>
+                            </div>
+                            <div class="role-wrapper">
+                                <div class="role-name">Support</div>
+                                <div class="role-bar">
+                                    <span class="box" data-value="{{ $hero->support >= 1 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->support >= 2 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->support >= 3 ? 'active' : '' }}"></span>
+                                </div>
+                            </div>
+                            <div class="role-wrapper">
+                                <div class="role-name">Nuker</div>
+                                <div class="role-bar">
+                                    <span class="box" data-value="{{ $hero->nuker >= 1 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->nuker >= 2 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->nuker >= 3 ? 'active' : '' }}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="role-wrapper">
+                                <div class="role-name">Disabler</div>
+                                <div class="role-bar">
+                                    <span class="box" data-value="{{ $hero->disabler >= 1 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->disabler >= 2 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->disabler >= 3 ? 'active' : '' }}"></span>
+                                </div>
+                            </div>
+                            <div class="role-wrapper">
+                                <div class="role-name">Jungler</div>
+                                <div class="role-bar">
+                                    <span class="box" data-value="{{ $hero->jungler >= 1 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->jungler >= 2 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->jungler >= 3 ? 'active' : '' }}"></span>
+                                </div>
+                            </div>
+                            <div class="role-wrapper">
+                                <div class="role-name">Durable</div>
+                                <div class="role-bar">
+                                    <span class="box" data-value="{{ $hero->durable >= 1 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->durable >= 2 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->durable >= 3 ? 'active' : '' }}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="role-wrapper">
+                                <div class="role-name">Escape</div>
+                                <div class="role-bar">
+                                    <span class="box" data-value="{{ $hero->escape >= 1 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->escape >= 2 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->escape >= 3 ? 'active' : '' }}"></span>
+                                </div>
+                            </div>
+                            <div class="role-wrapper">
+                                <div class="role-name">Pusher</div>
+                                <div class="role-bar">
+                                    <span class="box" data-value="{{ $hero->pusher >= 1 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->pusher >= 2 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->pusher >= 3 ? 'active' : '' }}"></span>
+                                </div>
+                            </div>
+                            <div class="role-wrapper">
+                                <div class="role-name">Initiator</div>
+                                <div class="role-bar">
+                                    <span class="box" data-value="{{ $hero->initiator >= 1 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->initiator >= 2 ? 'active' : '' }}"></span>
+                                    <span class="box" data-value="{{ $hero->initiator >= 3 ? 'active' : '' }}"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center text-center">ROLES</p>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="row">
+                        <!-- Attack Stats -->
+                        <div class="col-4">
+                            <div class="list-unstyled text-white">
+                                <div class="mt-3"><p class="text-left">ATTACK</p></div>
+                                <div class="mt-3">
+                                    <img src="{{ asset('images/pedang le.png') }}" alt="Attack Damage" class="me-3">
+                                    <span class="text-danger">{{ $hero->attack_dmg_min }} - {{ $hero->attack_dmg_max }}</span>
+                                </div>
+                                <div class="mt-3">
+                                    <img src="{{ asset('images/waktu lek.png') }}" alt="Attack Rate" class="me-3">
+                                    <span class="text-info">{{ $hero->attack_rate }}</span>
+                                </div>
+                                <div class="mt-3">
+                                    <img src="{{ asset('images/Jarak diantara kita.png') }}" alt="Attack Range" class="me-3">
+                                    <span class="text-warning">{{ $hero->attack_range }}</span>
+                                </div>
+                                <div class="mt-3">
+                                    <img src="{{ asset('images/projektil kecepatan le.png') }}" alt="Projectile Speed" class="me-3">
+                                    <span class="text-success">{{ $hero->projectile_speed }}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Defense Stats -->
+                        <div class="col-4">
+                            <div class="list-unstyled text-white">
+                                <div class="mt-3"><p class="text-left">DEFENSE</p></div>
+                                <div class="mt-3">
+                                    <img src="{{ asset('images/Tameng.png') }}" alt="Armor" class="me-3">
+                                    <span class="text-danger">{{ $hero->armor }}</span>
+                                </div>
+                                <div class="mt-3">
+                                    <img src="{{ asset('images/MAGIC MATA.png') }}" alt="Magic Resist" class="me-3">
+                                    <span class="text-info">{{ $hero->magic_resist }}</span>
+                                </div>
+                            </div>
+                            {{-- <h3 class="text-white mt-3">Stats</h3> --}}
+                        </div>
+                        
+                        <!-- Mobility Stats -->
+                        <div class="col-4">
+                            <div class="list-unstyled text-white">
+                                <div class="mt-3"><p class="text-left">MOBILITY</p></div>
+                                <div class="mt-3">
+                                    <img src="{{ asset('images/Movement Speed.png') }}" alt="Movement Speed" class="me-3">
+                                    <span class="text-danger">{{ $hero->movement_speed }}</span>
+                                </div>
+                                <div class="mt-3">
+                                    <img src="{{ asset('images/Kaki Ajaib.png') }}" alt="Turn Rate" class="me-3">
+                                    <span class="text-info">{{ $hero->turn_rate }}</span>
+                                </div>
+                                <div class="mt-3">
+                                    <img src="{{ asset('images/Penglihatan.png') }}" alt="Vision Range" class="me-3">
+                                    <span class="text-info">{{ $hero->vision_range_day }} / {{ $hero->vision_range_night }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-white mt-3 text-center">Stats</h3>
+                    </div>
                 </div>
             </div>
         </div>
-       
-          
     </div>
     
     <!-- Scripts -->

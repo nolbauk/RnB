@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->enum('primary_attribute', ['Strength', 'Agility', 'Intelligence', 'Universal']);
             $table->enum('attack_type', ['Melee', 'Ranged']);
             $table->enum('complexity', ['Easy', 'Medium', 'Hard']);
-            // Roles
+            // ROLES
             $table->integer('carry')->nullable();
             $table->integer('support')->nullable();
             $table->integer('nuker')->nullable();
@@ -55,7 +55,6 @@ return new class extends Migration {
             $table->integer('vision_range_day');
             $table->integer('vision_range_night');
             // end stats
-            
             
             //belum tau, ada di dota2, tapi tidak ada di web
             $table->float('attack_speed');
