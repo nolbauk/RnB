@@ -69,24 +69,8 @@
                             </div>
                         </div>
                     </div>
-
-                     <!-- Health and Mana -->
-                {{-- <div class="health-mana">
-                    <div class="health">
-                        <strong>Health:</strong> 
-                        <span class="text-success">{{ $hero->health }}</span>
-                        <span class="text-info">(+{{ $hero->health_regen }})</span>
-                    </div>
-                    <div class="mana mt-2">
-                        <strong>Mana:</strong>
-                        <span class="text-primary">{{ $hero->mana }}</span>
-                        <span class="text-info">(+{{ $hero->mana_regen }})</span>
-                    </div>
-                </div> --}}
-
                     <!-- Attributes Section -->
-                    
-                    <ul class="list-unstyled text-white">
+                    <ul class="list-unstyled text-white position-static">
                         <li class="mt-3">
                             <img src="{{ asset('images/hero_strength.png') }}" alt="Strength">
                             <span class="text-danger">{{ $hero->primary_strength }}</span>
@@ -116,12 +100,17 @@
                     <p class="fst-italic">{{ $hero->bio }}</p>
                     <p>{!! nl2br(e($hero->lore ?? 'N/A')) !!}
                     <ul class="list-unstyled">
-                        <li><strong>Attack Type:</strong> {{ $hero->attack_type }}</li>
+                        <li><strong>Attack Type:</strong></li>
+                        @if($hero->attack_type == 'Melee')
+                            <img src="{{ asset('images/male.png') }}" alt="Melee">
+                        @elseif($hero->attack_type == 'Ranged')
+                            <img src="{{ asset('images/ranged.png') }}" alt="Ranged">
+                        @endif
                         <li><strong>Complexity:</strong> {{ $hero->complexity }}</li>
                     </ul>
                     
+                  
                     
-    
        <div class="abilities">
         <div class="icon-container">
         
