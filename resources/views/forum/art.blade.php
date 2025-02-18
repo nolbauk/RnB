@@ -6,10 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art</title>
     <link rel="stylesheet" href="{{ asset('/css/forum.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/home/responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/home/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/header2.css') }}">
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }} ">
 </head>
 
 <body>
+    <div class="header_section">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="index.html"><img src="images/logo2.png"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="hero">HERO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="item">ITEM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="icecream.html">NEWS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">FORUM</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <div class="cart_bt"><a href="login">LOGIN</a></div>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </div>
     <main class="main">
         <div class="container">
             <div class="middle">
@@ -21,7 +53,7 @@
                         type="text"
                         placeholder="Haiyaaa.."
                         id="create-post" />
-                    <input type="submit" value="Post" class="btn btn-primary" />
+                    <input type="submit" value="Post" class="post post-primary" />
                 </form>
 
                 <div class="feeds">
@@ -57,13 +89,12 @@
                             <span><img src="https://res.cloudinary.com/freecodez/image/upload/v1698067298/images/fy8azbqxhgdrbbijhipe.webp" /></span>
                             <span><img src="https://64.media.tumblr.com/7b28774544438d73ca8c1daad11402e0/88958e5f55a67155-fd/s250x400/a9ef3dad54f6c57a53fdeef1a793f0143a9aea27.jpg" /></span>
                             <span><img src="https://64.media.tumblr.com/2d678d77b051ee352d722d1f7fd2c029/88958e5f55a67155-7d/s250x400/74d69559d55329719bb0a50d8e9d77cbf0ec6da0.jpg" /></span>
-                            ,
-                            <p>Liked by <b>Enrest Achiever</b>snd <b>220 others</b></p>
+                            , <p>Liked by <b>Enrest Achiever</b>snd <b>220 others</b></p>
                         </div>
 
                         <div class="caption">
                             <p>
-                                <b>Lana Rose</b>Lorem ipsum dolor storiesquiquam eius.
+                                <b>Lana Rose</b> Lorem ipsum dolor storiesquiquam eius.
                                 <span class="hash-tag">#lifestyle</span>
                             </p>
                         </div>
@@ -343,6 +374,23 @@
         </div>
     </main>
     <script src="{{ asset('/js/forum.js') }}"></script>
+       <!-- Javascript files-->
+   <script src="/js/home/jquery.min.js"></script>
+   <!-- <script src="{{ asset('js/home/jquery.min.js') }}"></script> -->
+   <script src="/js/home/popper.min.js"></script>
+   <!-- <script src="{{ asset('js/home/popper.min.js') }}"></script> -->
+   <script src="/js/home/bootstrap.bundle.min.js"></script>
+   <!-- <script src="{{ asset('js/home/bundle.min.js') }}"></script> -->
+   <script src="/js/home/jquery-3.0.0.min.js"></script>
+   <!-- <script src="{{ asset('js/home/jquery-3.0.0.min.js') }}"></script> -->
+   <script src="/js/home/plugin.js"></script>
+   <!-- <script src="{{ asset('js/home/plugin.js') }}"></script> -->
+   <!-- sidebar -->
+   <script src="/js/home/jquery.mCustomScrollbar.concat.min.js"></script>
+   <!-- <script src="{{ asset('js/home/jquery.mCustomScrollbar.concat.min.js') }}"></script> -->
+   <script src="/js/home/custom.js"></script>
+   <!-- <script src="{{ asset('js/home/custom.js') }}"></script> -->
+   <!-- javascript -->
 </body>
 
 </html>

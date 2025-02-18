@@ -1,7 +1,7 @@
 :root {
     --border-radius: 2rem;
     --card-border-radius: 1rem;
-    --btn-padding: 0.6rem 2rem;
+    --post-padding: 0.6rem 2rem;
     --search-padding: 0.6rem 1rem;
     --card-padding: 1rem;
     --color-white: hsl(252, 30%, 100%);
@@ -43,6 +43,8 @@ input {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-top: 70px;
+    background-color: #111111;
 }
 
 .container {
@@ -66,20 +68,20 @@ img {
     width: 100%;
 }
 
-.btn {
+.post {
     display: inline-block;
-    padding: var(--btn-padding);
+    padding: var(--post-padding);
     font-weight: 500;
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: all 300ms ease;
 }
 
-.btn:hover {
+.post:hover {
     opacity: 0.8;
 }
 
-.btn-primary {
+.post-primary {
     background: var(--color-primary);
     color: white;
 }
@@ -201,7 +203,7 @@ img {
     .sidebar h3 {
       display: none;
     }
-    .left .btn {
+    .left .post {
       display: none;
     }
   }
