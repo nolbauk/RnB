@@ -47,10 +47,8 @@ Route::get('/profile-view', function () {
 });
 
 // ROUTE GUEST
-Route::resource('user', UserController::class)->only(['create', 'store']);
 
 // ROUTE USER
-Route::resource('user', UserController::class)->only(['edit', 'update']);
 
 // ROUTE ADMIN
 Route::resource('admindashboard', DashboardController::class);
@@ -60,4 +58,5 @@ Route::resource('adminheroes', HeroesController::class);
 Route::resource('adminroles', RoleController::class);
 
 Route::resource('adminusers', UserController::class);
+Route::patch('/adminusers/{id}/restore', [UserController::class, 'restore'])->name('adminusers.restore');
 

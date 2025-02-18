@@ -9,50 +9,80 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // fix
-        $users = User::all();
-        return view('admin.users.index', compact('users'));
+        $filter = $request->query('filter', 'active');
+    
+        if ($filter === 'deleted') {
+            $users = User::onlyTrashed()->get();
+        } else {
+            $users = User::all();
+        }
+    
+        return view('admin.users.index', compact('users', 'filter'));
     }
+    
 
-    // public function create()
-    // {
-    //     return view('register');
-    // }
+    public function create()
+    {
+        $roles = \App\Models\Role::all();
+        return view('admin.users.create', compact('roles'));
+    }    
 
     public function store(Request $request) {
-        $validator = Validator::make($request->all(), [
+        $request->validate([
             'username' => 'required|string|unique:users,username',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|string|min:8',
+            'password' => 'required|string|min:8|confirmed',
             'name' => 'nullable|string',
             'bio' => 'nullable|string',
             'birth' => 'nullable|date',
             'phone' => 'nullable|string',
             'profile_picture' => 'nullable|string',
         ]);
-
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
-        }
-
-        $user = User::create([
+    
+        User::create([
             'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role_id' => 2, // Default sebagai user
+            'role_id' => 2,
             'name' => $request->name,
             'bio' => $request->bio,
             'birth' => $request->birth,
             'phone' => $request->phone,
             'profile_picture' => $request->profile_picture,
         ]);
-
-        return response()->json(['message' => 'User created successfully', 'user' => $user], 201);
+    
+        return redirect()->route('adminusers.index')->with('success', 'User berhasil ditambahkan');
     }
 
-    public function destroy(){
+    public function show($id)
+    {
+        $user = User::with('role')->withTrashed()->find($id);
         
+        if (!$user) {
+            return response()->json(['error' => 'User not found'], 404);
+        }
+    
+        return response()->json([
+            'user' => $user
+        ], 200);
+    }      
+
+    public function destroy($id)
+    {
+        $user = User::findOrFail($id);
+        $user->delete(); // Soft delete
+    
+        return redirect()->route('adminusers.index')->with('success', 'User berhasil dihapus');
     }
+
+    public function restore($id)
+    {
+        $user = User::onlyTrashed()->findOrFail($id);
+        $user->restore();
+    
+        return redirect()->route('adminusers.index')->with('success', 'User berhasil dikembalikan');
+    }
+    
 }
