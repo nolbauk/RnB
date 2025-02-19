@@ -7,10 +7,7 @@
   
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-<<<<<<< HEAD
-=======
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
->>>>>>> 7-LnR
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
@@ -26,25 +23,27 @@
         <div class="text-center mt-4 name">
             Sign Up
         </div>
-        <form class="p-3 mt-3">
+        <form class="p-3 mt-3" method="POST" action="{{ route('register') }}">
+            @csrf
             <div class="form-field d-flex align-items-center">
                 <span class="fa-solid fa-user"></span>
-                <input type="text" name="username" id="username" placeholder="Username">
+                <input type="text" name="username" id="username" placeholder="Username" required>
             </div>
             <div class="form-field d-flex align-items-center">
                 <span class="fa-solid fa-at"></span>
-                <input type="text" name="email" id="email" placeholder="Email">
+                <input type="email" name="email" id="email" placeholder="Email" required>
             </div>
             <div class="form-field d-flex align-items-center">
                 <span class="fas fa-key"></span>
-                <input type="password" name="password" id="pwd" placeholder="Password">
+                <input type="password" name="password" id="password" placeholder="Password" required>
             </div>
             <div class="form-field d-flex align-items-center">
                 <span class="fa-solid fa-arrows-rotate"></span>
-                <input type="confirmpassword" name="confirmpassword" id="pwd" placeholder="Confirm Password">
+                <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirm Password" required>
             </div>
-            <button class="btn mt-3">Sign Up</button>
+            <button type="submit" class="btn mt-3">Sign Up</button>
         </form>
+        
         <div class="text-center fs-6">
             Already Have Account? <a href="login">Login</a>
         </div>

@@ -38,9 +38,14 @@
                                             @method('PATCH')
                                             <button type="submit" class="btn btn-warning btn-sm">Restore</button>
                                         </form>
+                                        <form action="{{ route('adminusers.forceDelete', $user->id) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus user ini secara permanen?')">Hapus Permanen</button>
+                                        </form>
                                     @else
                                         <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#userDetailsModal" onclick="showUserDetails('{{ $user->id }}')">Details</button>
-                                        {{-- <a href="{{ route('adminheroes.edit', $hero->id) }}" class="btn btn-warning btn-sm">Edit</a> --}}
+                                        <a href="{{ route('adminusers.edit', $user->id) }}" class="btn btn-warning btn-sm">Edit</a>
                                         <form action="{{ route('adminusers.destroy', $user->id) }}" method="POST" style="display:inline;">
                                             @csrf
                                             @method('DELETE')
