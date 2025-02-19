@@ -178,3 +178,43 @@ header .login a:hover {
     align-items: center;
     flex-direction: column;
 }
+
+.navbar-bawah {
+    background-color: #1b1b1b;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    max-width: 1200px; /* Batasi lebar maksimal */
+    margin: 0 auto; /* Posisikan di tengah */
+    width: 90%; /* Agar responsif */
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.filter-label {
+    color: white;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.filter-dropdown {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+.filter-dropdown option {
+    background-color: #1b1b1b;
+    color: white;
+}
+
+.hero-card {
+    display: block;
+}
+

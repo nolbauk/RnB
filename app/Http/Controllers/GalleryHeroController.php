@@ -22,4 +22,21 @@ class GalleryHeroController extends Controller
         $hero = Hero::findOrFail($id);
         return view('hero-detail', compact('hero'));
     }
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+        
+        // Cek jika query kosong, kembalikan semua hero (opsional)
+        if (!$query) {
+            return response()->json([]);
+        }
+    
+        // Pencarian lebih fleksibel, bisa berdasarkan nama atau primary attribute
+        $heroes = Hero::where('name', 'LIKE', "%{$query}%")
+                      ->orWhere('primary_attribute', 'LIKE', "%{$query}%")
+                      ->get();
+    
+        return response()->json($heroes);
+    }
 }
+
