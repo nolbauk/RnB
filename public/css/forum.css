@@ -244,3 +244,39 @@ img {
       display: none;
     }
   }
+
+  .gallery-grid {
+    column-count: 4; /* Adjusts number of columns */
+    column-gap: 5px; /* Small gap for a tighter layout */
+}
+
+.gallery-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 5px; /* Removes big vertical gaps */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto; /* Keeps natural aspect ratio */
+    display: block;
+    border-radius: 5px; /* Optional: Slight rounding for a clean look */
+}
+
+@media (max-width: 992px) {
+    .gallery-grid {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        column-count: 1;
+    }
+}

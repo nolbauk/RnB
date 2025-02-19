@@ -374,23 +374,23 @@
         </div>
     </main>
     <script src="{{ asset('/js/forum.js') }}"></script>
-       <!-- Javascript files-->
-   <script src="/js/home/jquery.min.js"></script>
-   <!-- <script src="{{ asset('js/home/jquery.min.js') }}"></script> -->
-   <script src="/js/home/popper.min.js"></script>
-   <!-- <script src="{{ asset('js/home/popper.min.js') }}"></script> -->
-   <script src="/js/home/bootstrap.bundle.min.js"></script>
-   <!-- <script src="{{ asset('js/home/bundle.min.js') }}"></script> -->
-   <script src="/js/home/jquery-3.0.0.min.js"></script>
-   <!-- <script src="{{ asset('js/home/jquery-3.0.0.min.js') }}"></script> -->
-   <script src="/js/home/plugin.js"></script>
-   <!-- <script src="{{ asset('js/home/plugin.js') }}"></script> -->
-   <!-- sidebar -->
-   <script src="/js/home/jquery.mCustomScrollbar.concat.min.js"></script>
-   <!-- <script src="{{ asset('js/home/jquery.mCustomScrollbar.concat.min.js') }}"></script> -->
-   <script src="/js/home/custom.js"></script>
-   <!-- <script src="{{ asset('js/home/custom.js') }}"></script> -->
-   <!-- javascript -->
+    <!-- Javascript files-->
+    <script src="/js/home/jquery.min.js"></script>
+    <!-- <script src="{{ asset('js/home/jquery.min.js') }}"></script> -->
+    <script src="/js/home/popper.min.js"></script>
+    <!-- <script src="{{ asset('js/home/popper.min.js') }}"></script> -->
+    <script src="/js/home/bootstrap.bundle.min.js"></script>
+    <!-- <script src="{{ asset('js/home/bundle.min.js') }}"></script> -->
+    <script src="/js/home/jquery-3.0.0.min.js"></script>
+    <!-- <script src="{{ asset('js/home/jquery-3.0.0.min.js') }}"></script> -->
+    <script src="/js/home/plugin.js"></script>
+    <!-- <script src="{{ asset('js/home/plugin.js') }}"></script> -->
+    <!-- sidebar -->
+    <script src="/js/home/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- <script src="{{ asset('js/home/jquery.mCustomScrollbar.concat.min.js') }}"></script> -->
+    <script src="/js/home/custom.js"></script>
+    <!-- <script src="{{ asset('js/home/custom.js') }}"></script> -->
+    <!-- javascript -->
 </body>
 
 </html>
