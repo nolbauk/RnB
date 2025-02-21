@@ -15,7 +15,7 @@
 <body>
     <div class="header_section">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="index.html"><img src="images/logo2.png"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -42,7 +42,7 @@
             </nav>
         </div>
     </div>
-    <div class="container mt-4">
+    <div class="container" style="margin-top: 80px;">
         <div class="gallery-grid">
             @php
             $images = [

@@ -18,7 +18,7 @@
 }
 
 .bg-light {
-    background-color: transparent !important;
+    background-color: rgba(0, 0, 0, 0.8);   
 }
 
 .ml-auto,
@@ -62,8 +62,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0);
-    padding: 15px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 20px;
     z-index: 1000; /* Ensures navbar stays above other elements */
 }
 

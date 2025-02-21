@@ -277,6 +277,6 @@ img {
 
 @media (max-width: 480px) {
     .gallery-grid {
-        column-count: 1;
+        column-count: 2;
     }
 }
