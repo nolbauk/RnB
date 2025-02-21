@@ -114,3 +114,20 @@
     border: 1px solid #ffffff;
     color: #ffffff;
 }
+
+.navbar-brand img {
+    height: 60px; /* Default size for desktop */
+    width: auto; /* Maintain aspect ratio */
+}
+
+@media (max-width: 768px) {
+    .navbar-brand img {
+        height: 70px; /* Reduce size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-brand img {
+        height: 60px; /* Further reduce size for smaller phones */
+    }
+}
