@@ -6,9 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art</title>
     <link rel="stylesheet" href="{{ asset('/css/forum.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/home/responsive.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('css/home/responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/home/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/header2.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/home/style.css') }}"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/header2.css') }}"> -->
+     <!-- bootstrap css -->
+   <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
+   <link rel="stylesheet" type="text/css" href="{{ asset('css/home/bootstrap.min.css') }}">
+   <!-- style css -->
+   <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+   <link rel="stylesheet" type="text/css" href="{{ asset('css/home/style.css') }}">
+   <!-- Responsive-->
+   <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+   <link rel="stylesheet" href="{{ asset('css/home/responsive.css') }}">
+   <!-- fevicon -->
+   <!-- <link rel="icon" href="images/fevicon.png" type="{{ asset('images/logo.png') }}" /> -->
+   <!-- font css -->
+   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+   <!-- Scrollbar Custom CSS -->
+   <!-- <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css"> -->
+   <link rel="stylesheet" href="{{ asset('css/home/jquery.mCustomScrollbar.min.css') }}">
+   <!-- Tweaks for older IEs-->
+   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }} ">
 </head>
 
@@ -22,7 +41,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
+                        <li class="nav-item ">
                             <a class="nav-link" href="hero">HERO</a>
                         </li>
                         <li class="nav-item">
