@@ -38,5 +38,22 @@ class GalleryHeroController extends Controller
     
         return response()->json($heroes);
     }
+    public function filter(Request $request)
+    {
+        $complexityMap = [
+            1 => 'Easy',
+            2 => 'Medium',
+            3 => 'Hard'
+        ];
+    
+        $complexity = $complexityMap[$request->complexity] ?? null;
+    
+        if (!$complexity) {
+            return response()->json([]);
+        }
+    
+        $heroes = Hero::where('complexity', $complexity)->get();
+    
+        return response()->json($heroes);
+    }
 }
-

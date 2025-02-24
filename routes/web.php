@@ -30,25 +30,10 @@ Route::get('/hero', [GalleryHeroController::class, 'index'])->name('heroes.index
 Route::get('/hero/{name}', [GalleryHeroController::class, 'show'])->name('hero.show');
 Route::get('/search-hero', [GalleryHeroController::class, 'search'])->name('heroes.search');
 
-Route::get('/filter-heroes', function (Request $request) {
-    $query = Hero::query();
+Route::get('/heroes/filter', [GalleryHeroController::class, 'filter'])->name('heroes.filter');
 
-    if ($request->has('complexity') && $request->complexity != '') {
-        $query->where('complexity', $request->complexity);
-    }
 
-    if ($request->has('role') && $request->role != '') {
-        $query->whereHas('roles', function ($q) use ($request) {
-            $q->where('name', $request->role);
-        });
-    }
 
-    if ($request->has('attack_type') && $request->attack_type != '') {
-        $query->where('attack_type', $request->attack_type);
-    }
-
-    return response()->json($query->get());
-});
 
 //HM
 Route::get('/login', function () {
