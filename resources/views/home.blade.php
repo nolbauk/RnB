@@ -62,7 +62,7 @@
                <form class="form-inline my-2 my-lg-0">
                   <div class="voltage-button cart_bt">
 
-                     <button>LOGIN</button>
+                     <button type="button" onclick="window.location.href='/login'">LOGIN</button>
 
                      <!-- SVG Party -->
                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 234.6 61.3" preserveAspectRatio="none" xml:space="preserve">
