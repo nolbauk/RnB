@@ -6,9 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art</title>
     <link rel="stylesheet" href="{{ asset('/css/forum.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/home/responsive.css') }}">
+    <!-- bootstrap css -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/home/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/header2.css') }}">
+    <!-- style css -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/home/style.css') }}">
+    <!-- Responsive-->
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <link rel="stylesheet" href="{{ asset('css/home/responsive.css') }}">
+    <!-- fevicon -->
+    <!-- <link rel="icon" href="images/fevicon.png" type="{{ asset('images/logo.png') }}" /> -->
+    <!-- font css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <!-- Scrollbar Custom CSS -->
+    <!-- <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css"> -->
+    <link rel="stylesheet" href="{{ asset('css/home/jquery.mCustomScrollbar.min.css') }}">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    </li>
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }} ">
 </head>
 
@@ -64,32 +80,10 @@
                                 <img src="https://64.media.tumblr.com/7b28774544438d73ca8c1daad11402e0/88958e5f55a67155-fd/s250x400/a9ef3dad54f6c57a53fdeef1a793f0143a9aea27.jpg" alt="" />
                             </div>
                             <div class="info">
-                                <h3>Lana Rose</h3>
+                                <h5>Lana Rose</h5>
                                 <small>Dubai, 15 MINUTES AGO</small>
                             </div>
                             <span class="edit"><i class="uil uil-ellipsis-h"></i></span>
-                        </div>
-
-                        <div class="photo">
-                            <img src="https://png.pngtree.com/background/20230512/original/pngtree-nature-background-sunset-wallpaer-with-beautiful-flower-farms-picture-image_2503007.jpg" alt="" />
-                        </div>
-
-                        <div class="action-button">
-                            <div class="interaction-button">
-                                <span><i class="uil uil-thumbs-up"></i></span>
-                                <span><i class="uil uil-comment"></i></span>
-                                <span><i class="uil uil-share"></i></span>
-                            </div>
-                            <div class="bookmark">
-                                <span><i class="uil uil-bookmark"></i></span>
-                            </div>
-                        </div>
-
-                        <div class="liked-by">
-                            <span><img src="https://res.cloudinary.com/freecodez/image/upload/v1698067298/images/fy8azbqxhgdrbbijhipe.webp" /></span>
-                            <span><img src="https://64.media.tumblr.com/7b28774544438d73ca8c1daad11402e0/88958e5f55a67155-fd/s250x400/a9ef3dad54f6c57a53fdeef1a793f0143a9aea27.jpg" /></span>
-                            <span><img src="https://64.media.tumblr.com/2d678d77b051ee352d722d1f7fd2c029/88958e5f55a67155-7d/s250x400/74d69559d55329719bb0a50d8e9d77cbf0ec6da0.jpg" /></span>
-                            , <p>Liked by <b>Enrest Achiever</b>snd <b>220 others</b></p>
                         </div>
 
                         <div class="caption">
@@ -108,35 +102,11 @@
                                 <img src="https://res.cloudinary.com/freecodez/image/upload/v1698067298/images/fy8azbqxhgdrbbijhipe.webp" alt="" />
                             </div>
                             <div class="info">
-                                <h3>Chris Brown</h3>
+                                <h5>Chris Brown</h5>
                                 <small>New York, 1 HOUR AGO</small>
                             </div>
                             <span class="edit"><i class="uil uil-ellipsis-h"></i></span>
                         </div>
-
-                        <div class="photo">
-                            <img src="https://img.freepik.com/premium-photo/lavender-field-with-tree-field-beautiful-image-lavender-field-summer-sunset-landscape_995887-2689.jpg" alt="" />
-                        </div>
-
-                        <div class="action-button">
-                            <div class="interaction-button">
-                                <span><i class="uil uil-thumbs-up"></i></span>
-                                <span><i class="uil uil-comment"></i></span>
-                                <span><i class="uil uil-share"></i></span>
-                            </div>
-                            <div class="bookmark">
-                                <span><i class="uil uil-bookmark"></i></span>
-                            </div>
-                        </div>
-
-                        <div class="liked-by">
-                            <span><img src="https://res.cloudinary.com/freecodez/image/upload/v1698067298/images/fy8azbqxhgdrbbijhipe.webp" /></span>
-                            <span><img src="https://64.media.tumblr.com/7b28774544438d73ca8c1daad11402e0/88958e5f55a67155-fd/s250x400/a9ef3dad54f6c57a53fdeef1a793f0143a9aea27.jpg" /></span>
-                            <span><img src="https://64.media.tumblr.com/2d678d77b051ee352d722d1f7fd2c029/88958e5f55a67155-7d/s250x400/74d69559d55329719bb0a50d8e9d77cbf0ec6da0.jpg" /></span>
-                            ,
-                            <p>Liked by <b>Enrest Achiever</b>snd <b>188 others</b></p>
-                        </div>
-
                         <div class="caption">
                             <p>
                                 <b>Chirs Brown</b>Lorem ipsum dolor storiesquiquam eius.
@@ -145,232 +115,9 @@
                         </div>
                         <div class="comments text-muted">View all 40 comments</div>
                     </div>
-
-                    <div class="feed">
-                        <div class="head"></div>
-                        <div class="user">
-                            <div class="profile-pic">
-                                <img src="https://64.media.tumblr.com/7b28774544438d73ca8c1daad11402e0/88958e5f55a67155-fd/s250x400/a9ef3dad54f6c57a53fdeef1a793f0143a9aea27.jpg" alt="" />
-                            </div>
-                            <div class="info">
-                                <h3>John Samron</h3>
-                                <small>Amsterdam, 7 HOURS AGO</small>
-                            </div>
-                            <span class="edit"><i class="uil uil-ellipsis-h"></i></span>
-                        </div>
-
-                        <div class="photo">
-                            <img src="https://img.freepik.com/premium-photo/ai-generated-lavender-field-with-bridge-background_812649-829.jpg" alt="" />
-                        </div>
-
-                        <div class="action-button">
-                            <div class="interaction-button">
-                                <span><i class="uil uil-thumbs-up"></i></span>
-                                <span><i class="uil uil-comment"></i></span>
-                                <span><i class="uil uil-share"></i></span>
-                            </div>
-                            <div class="bookmark">
-                                <span><i class="uil uil-bookmark"></i></span>
-                            </div>
-                        </div>
-
-                        <div class="liked-by">
-                            <span><img src="https://res.cloudinary.com/freecodez/image/upload/v1698067298/images/fy8azbqxhgdrbbijhipe.webp" /></span>
-                            <span><img src="https://64.media.tumblr.com/7b28774544438d73ca8c1daad11402e0/88958e5f55a67155-fd/s250x400/a9ef3dad54f6c57a53fdeef1a793f0143a9aea27.jpg" /></span>
-                            <span><img src="https://64.media.tumblr.com/2d678d77b051ee352d722d1f7fd2c029/88958e5f55a67155-7d/s250x400/74d69559d55329719bb0a50d8e9d77cbf0ec6da0.jpg" /></span>
-                            ,
-                            <p>Liked by <b>Enrest Achiever</b>snd <b>130 others</b></p>
-                        </div>
-
-                        <div class="caption">
-                            <p>
-                                <b>John Samron</b>Lorem ipsum dolor storiesquiquam eius.
-                                <span class="hash-tag">#lifestyle</span>
-                            </p>
-                        </div>
-                        <div class="comments text-muted">View all 15 comments</div>
-                    </div>
-
-                    <div class="feed">
-                        <div class="head"></div>
-                        <div class="user">
-                            <div class="profile-pic">
-                                <img src="https://64.media.tumblr.com/2d678d77b051ee352d722d1f7fd2c029/88958e5f55a67155-7d/s250x400/74d69559d55329719bb0a50d8e9d77cbf0ec6da0.jpg" alt="" />
-                            </div>
-                            <div class="info">
-                                <h3>Kareena Joshua</h3>
-                                <small>USA, 3 HOURS AGO</small>
-                            </div>
-                            <span class="edit"><i class="uil uil-ellipsis-h"></i></span>
-                        </div>
-
-                        <div class="photo">
-                            <img src="https://wallpapers.com/images/hd/beautiful-nature-pictures-qjcss5r32ziry34t.jpg" alt="" />
-                        </div>
-
-                        <div class="action-button">
-                            <div class="interaction-button">
-                                <span><i class="uil uil-thumbs-up"></i></span>
-                                <span><i class="uil uil-comment"></i></span>
-                                <span><i class="uil uil-share"></i></span>
-                            </div>
-                            <div class="bookmark">
-                                <span><i class="uil uil-bookmark"></i></span>
-                            </div>
-                        </div>
-
-                        <div class="liked-by">
-                            <span><img src="https://res.cloudinary.com/freecodez/image/upload/v1698067298/images/fy8azbqxhgdrbbijhipe.webp" /></span>
-                            <span><img src="https://64.media.tumblr.com/7b28774544438d73ca8c1daad11402e0/88958e5f55a67155-fd/s250x400/a9ef3dad54f6c57a53fdeef1a793f0143a9aea27.jpg" /></span>
-                            <span><img src="https://64.media.tumblr.com/2d678d77b051ee352d722d1f7fd2c029/88958e5f55a67155-7d/s250x400/74d69559d55329719bb0a50d8e9d77cbf0ec6da0.jpg" /></span>
-                            ,
-                            <p>Liked by <b>Enrest Achiever</b>snd <b>280 others</b></p>
-                        </div>
-
-                        <div class="caption">
-                            <p>
-                                <b>Kareena Joshua</b>Lorem ipsum dolor storiesquiquam eius.
-                                <span class="hash-tag">#lifestyle</span>
-                            </p>
-                        </div>
-                        <div class="comments text-muted">View all 110 comments</div>
-                    </div>
-
-                    <div class="feed">
-                        <div class="head"></div>
-                        <div class="user">
-                            <div class="profile-pic">
-                                <img src="https://64.media.tumblr.com/41a17a13076c206f31100e160079b96b/fe5088991ccc40df-ea/s540x810/338c3cc1cd7b9fe3d24a886385bc65d302fb0db8.jpg" alt="" />
-                            </div>
-                            <div class="info">
-                                <h3>Dan Smith</h3>
-                                <small>Paris, 1 DAY AGO</small>
-                            </div>
-                            <span class="edit"><i class="uil uil-ellipsis-h"></i></span>
-                        </div>
-
-                        <div class="photo">
-                            <img src="https://pikwizard.com/pw/small/bb1e96385189a5e792d8466f5030f889.jpg" alt="" />
-                        </div>
-
-                        <div class="action-button">
-                            <div class="interaction-button">
-                                <span><i class="uil uil-thumbs-up"></i></span>
-                                <span><i class="uil uil-comment"></i></span>
-                                <span><i class="uil uil-share"></i></span>
-                            </div>
-                            <div class="bookmark">
-                                <span><i class="uil uil-bookmark"></i></span>
-                            </div>
-                        </div>
-
-                        <div class="liked-by">
-                            <span><img src="https://res.cloudinary.com/freecodez/image/upload/v1698067298/images/fy8azbqxhgdrbbijhipe.webp" /></span>
-                            <span><img src="https://64.media.tumblr.com/7b28774544438d73ca8c1daad11402e0/88958e5f55a67155-fd/s250x400/a9ef3dad54f6c57a53fdeef1a793f0143a9aea27.jpg" /></span>
-                            <span><img src="https://64.media.tumblr.com/2d678d77b051ee352d722d1f7fd2c029/88958e5f55a67155-7d/s250x400/74d69559d55329719bb0a50d8e9d77cbf0ec6da0.jpg" /></span>
-                            ,
-                            <p>Liked by <b>Enrest Achiever</b>snd <b>420 others</b></p>
-                        </div>
-
-                        <div class="caption">
-                            <p>
-                                <b>Dan Smith</b>Lorem ipsum dolor storiesquiquam eius.
-                                <span class="hash-tag">#lifestyle</span>
-                            </p>
-                        </div>
-                        <div class="comments text-muted">View all 120 comments</div>
-                    </div>
-
-                    <div class="feed">
-                        <div class="head"></div>
-                        <div class="user">
-                            <div class="profile-pic">
-                                <img src="https://64.media.tumblr.com/2d678d77b051ee352d722d1f7fd2c029/88958e5f55a67155-7d/s250x400/74d69559d55329719bb0a50d8e9d77cbf0ec6da0.jpg" alt="" />
-                            </div>
-                            <div class="info">
-                                <h3>Karim Benzema</h3>
-                                <small>Mumbai, 30 MINUTES AGO</small>
-                            </div>
-                            <span class="edit"><i class="uil uil-ellipsis-h"></i></span>
-                        </div>
-
-                        <div class="photo">
-                            <img src="https://assets.hongkiat.com/uploads/nature-photography/autumn-poolside.jpg" alt="" />
-                        </div>
-
-                        <div class="action-button">
-                            <div class="interaction-button">
-                                <span><i class="uil uil-thumbs-up"></i></span>
-                                <span><i class="uil uil-comment"></i></span>
-                                <span><i class="uil uil-share"></i></span>
-                            </div>
-                            <div class="bookmark">
-                                <span><i class="uil uil-bookmark"></i></span>
-                            </div>
-                        </div>
-
-                        <div class="liked-by">
-                            <span><img src="https://res.cloudinary.com/freecodez/image/upload/v1698067298/images/fy8azbqxhgdrbbijhipe.webp" /></span>
-                            <span><img src="https://64.media.tumblr.com/7b28774544438d73ca8c1daad11402e0/88958e5f55a67155-fd/s250x400/a9ef3dad54f6c57a53fdeef1a793f0143a9aea27.jpg" /></span>
-                            <span><img src="https://64.media.tumblr.com/2d678d77b051ee352d722d1f7fd2c029/88958e5f55a67155-7d/s250x400/74d69559d55329719bb0a50d8e9d77cbf0ec6da0.jpg" /></span>
-                            ,
-                            <p>Liked by <b>Enrest Achiever</b>snd <b>150 others</b></p>
-                        </div>
-
-                        <div class="caption">
-                            <p>
-                                <b>Karim Benzema</b>Lorem ipsum dolor storiesquiquam eius.
-                                <span class="hash-tag">#lifestyle</span>
-                            </p>
-                        </div>
-                        <div class="comments text-muted">View all 30 comments</div>
-                    </div>
-                    <div class="feed">
-                        <div class="head"></div>
-                        <div class="user">
-                            <div class="profile-pic">
-                                <img src="https://64.media.tumblr.com/7539d9b35db4932ae8cdf00ccf325e13/b72a609f6672794d-d9/s540x810/9e0a8dd4fd088e3c1513786e44609918ae8f18a2.jpg" alt="" />
-                            </div>
-                            <div class="info">
-                                <h3>Srishti Tirkey</h3>
-                                <small>Bangalore, 11 HOURS AGO</small>
-                            </div>
-                            <span class="edit"><i class="uil uil-ellipsis-h"></i></span>
-                        </div>
-
-                        <div class="photo">
-                            <img src="https://i.pinimg.com/originals/7f/a0/ef/7fa0ef0db20dca49be10bdba202a8917.jpg" alt="" />
-                        </div>
-
-                        <div class="action-button">
-                            <div class="interaction-button">
-                                <span><i class="uil uil-thumbs-up"></i></span>
-                                <span><i class="uil uil-comment"></i></span>
-                                <span><i class="uil uil-share"></i></span>
-                            </div>
-                            <div class="bookmark">
-                                <span><i class="uil uil-bookmark"></i></span>
-                            </div>
-                        </div>
-
-                        <div class="liked-by">
-                            <span><img src="https://res.cloudinary.com/freecodez/image/upload/v1698067298/images/fy8azbqxhgdrbbijhipe.webp" /></span>
-                            <span><img src="https://64.media.tumblr.com/7b28774544438d73ca8c1daad11402e0/88958e5f55a67155-fd/s250x400/a9ef3dad54f6c57a53fdeef1a793f0143a9aea27.jpg" /></span>
-                            <span><img src="https://64.media.tumblr.com/2d678d77b051ee352d722d1f7fd2c029/88958e5f55a67155-7d/s250x400/74d69559d55329719bb0a50d8e9d77cbf0ec6da0.jpg" /></span>
-                            ,
-                            <p>Liked by <b>Enrest Achiever</b>snd <b>530 others</b></p>
-                        </div>
-
-                        <div class="caption">
-                            <p>
-                                <b>Srishti Tirkey</b>Lorem ipsum dolor storiesquiquam eius.
-                                <span class="hash-tag">#lifestyle</span>
-                            </p>
-                        </div>
-                        <div class="comments text-muted">View all 190 comments</div>
-                    </div>
                 </div>
             </div>
+        </div>
         </div>
     </main>
     <script src="{{ asset('/js/forum.js') }}"></script>
