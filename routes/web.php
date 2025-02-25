@@ -42,6 +42,7 @@ Route::post('/register', [AuthController::class, 'register']);
 // Logout
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+// User
 Route::middleware(['auth', 'role:2'])->group(function () {
     Route::get('/profile', [UserController::class, 'profile'])->name('profile')->middleware('auth');   
 
@@ -52,12 +53,16 @@ Route::middleware(['auth', 'role:2'])->group(function () {
 
 // Admin
 Route::middleware(['auth', 'role:1'])->group(function () {
+    // Dashboard
     Route::resource('admindashboard', DashboardController::class);
-
+    
+    // Data Hero
     Route::resource('adminheroes', HeroesController::class);
 
+    // Data Role
     Route::resource('adminroles', RoleController::class);
 
+    // Data User
     Route::resource('adminusers', UserController::class);
     Route::patch('/adminusers/{id}/restore', [UserController::class, 'restore'])->name('adminusers.restore');
     Route::delete('/adminusers/{id}/force-delete', [UserController::class, 'forceDelete'])->name('adminusers.forceDelete');

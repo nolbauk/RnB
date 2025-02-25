@@ -14,6 +14,7 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
+                        <th>ID Role</th>
                         <th>Nama Role</th>
                         <th>Action</th>
                     </tr>
@@ -21,6 +22,7 @@
                 <tbody>
                     @foreach($roles as $role)
                         <tr>
+                            <td>{{ $role->id }}</td>
                             <td>
                                 {{ $role->name }} 
                                 @if(in_array($role->name, ['admin', 'user']))
