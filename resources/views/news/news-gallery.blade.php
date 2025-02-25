@@ -76,7 +76,7 @@
 
         <!-- Two boxes below -->
         <div class="row mt-3">
-            <div class="col-md-6 text-white text-center">
+            <div class="col-md-6 mb-3 text-white text-center">
                 <div class="row outline-box">
                     <div class="col-sm-6">
                         <h4 class="banner_taital_second">Roiy</h4>
@@ -85,18 +85,6 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="banner_img"><img src="{{ asset('images/tes1.jpg') }}"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 text-white text-center">
-                <div class="row outline-box">
-                    <div class="col-sm-6">
-                        <h4 class="banner_taital_second">Roiy</h4>
-                        <p class="banner_text_second">Roiy adalah seorang budak cinta dari seorang manusia bernama Celin</p>
-                        <div class="started_text_second"><a href="#">Read More</a></div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="banner_img"><img src="{{ asset('images/tes2.jpg') }}"></div>
                     </div>
                 </div>
             </div>

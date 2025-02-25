@@ -8,7 +8,7 @@
 
 .outline-box {
     border: 5px solid;
-    border-image: linear-gradient(to right, #111111, #fff) 1;
+    border-image: linear-gradient(to right, #111111, rgba(255, 215, 0, 1)) 1;
     border-radius: 10px; /* Optional for rounded corners */
     padding: 10px;
 }
