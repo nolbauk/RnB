@@ -9,10 +9,6 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 
-// Route::get('/bekasitem', function () {
-//     return view('bekasitem');
-// });
-
 // Route::get('/qwerty', function () {
 //     return view('qwerty');
 // });
