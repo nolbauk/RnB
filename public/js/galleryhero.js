@@ -87,15 +87,3 @@ document.head.appendChild(style);
 
 // Inisialisasi tampilan awal
 updateHeroSection(0);
-
-document.querySelectorAll('.diamond-box').forEach(button => {
-    button.addEventListener('click', function() {
-        this.classList.toggle('active');
-        let selectedFilters = Array.from(document.querySelectorAll('.diamond-box.active'))
-            .map(btn => btn.dataset.complexity);
-        console.log("Selected Complexity:", selectedFilters);
-        // Tambahkan logika filter hero berdasarkan selectedFilters
-    });
-});
-
-// complexity filter

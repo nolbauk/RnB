@@ -231,7 +231,7 @@ header .login a:hover {
 .diamond-box {
     width: 30px;
     height: 30px;
-    background-color: yellow ;
+    background-color: white ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -242,7 +242,7 @@ header .login a:hover {
     margin: 2px;
 }
 .diamond-box.active {
-    background-color: white;
+    background-color: yellow;
 }
 .diamond {
     width: 12px;
