@@ -68,3 +68,34 @@ Route::middleware(['auth', 'role:1'])->group(function () {
     Route::delete('/adminusers/{id}/force-delete', [UserController::class, 'forceDelete'])->name('adminusers.forceDelete');
 });
 
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/profile-view', function () {
+    return view('profile-view');
+});
+
+// ROUTE GUEST
+Route::resource('user', UserController::class)->only(['create', 'store']);
+
+// ROUTE USER
+Route::resource('user', UserController::class)->only(['edit', 'update']);
+
+// ROUTE ADMIN
+Route::resource('admindashboard', DashboardController::class);
+
+Route::resource('adminheroes', HeroesController::class);
+
+Route::resource('adminroles', RoleController::class);
+
+Route::resource('adminusers', UserController::class);
+
+//FORUM
+Route::get('/discuss', function () {
+    return view('forum.discuss');
+});
+
+Route::get('/gallery', function () {
+    return view('forum.gallery');
+});
