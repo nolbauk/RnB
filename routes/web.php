@@ -95,3 +95,8 @@ Route::get('/discuss', function () {
 Route::get('/gallery', function () {
     return view('forum.gallery');
 });
+
+//NEWS
+Route::get('/news', function () {
+    return view('news.news-gallery');
+});
