@@ -23,19 +23,20 @@
         <div class="text-center mt-4 name">
             Login
         </div>
-        <form class="p-3 mt-3">
+        <form class="p-3 mt-3" action="{{ route('login') }}" method="POST">
+            @csrf
             <div class="form-field d-flex align-items-center">
                 <span class="fa-solid fa-user"></span>
-                <input type="text" name="username/email" id="username/email" placeholder="Username/Email">
+                <input type="text" class="form-control" name="login" id="login" placeholder="Username or Email" required>
             </div>
             <div class="form-field d-flex align-items-center">
                 <span class="fas fa-key"></span>
-                <input type="password" name="password" id="pwd" placeholder="Password">
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
             </div>
             <div class="text-left">
                  <a href="#" class="forgot-password">Forgot your password?</a>
             </div>
-            <button class="btn mt-3">Login</button>
+            <button type="submit" class="btn btn-primary w-100 mt-3">Login</button>
         </form>
         <div class="text-center fs-6">
             Need an Account? <a href="register">Sign up</a>

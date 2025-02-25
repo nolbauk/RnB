@@ -1,107 +1,142 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.admin')
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+@section('title', 'Users')
 
-    <title>RnB - Users</title>
+@section('content')
+    <h1 class="h3 mb-2 text-gray-800">Data Users</h1>
+    <x-allert/>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <a href="{{ route('adminusers.create') }}" class="btn btn-success btn-sm">Tambah User</a>
+            <div>
+                <a href="{{ route('adminusers.index', ['filter' => 'active']) }}" class="btn btn-primary btn-sm {{ $filter === 'active' ? 'active' : '' }}">User Aktif</a>
+                <a href="{{ route('adminusers.index', ['filter' => 'deleted']) }}" class="btn btn-secondary btn-sm {{ $filter === 'deleted' ? 'active' : '' }}">User Dihapus</a>
+            </div>
+        </div>
+        <div class="card-body" style="max-height: 60vh; overflow-y: auto;">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse($users as $user)
+                            <tr>
+                                <td>{{ $user->username }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>{{ optional($user->role)->name ?? 'Tidak ada role' }}</td>
+                                <td>
+                                    @if ($filter === 'deleted')
+                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#userDetailsModal" onclick="showUserDetails('{{ $user->id }}')">Details</button>
+                                        <form action="{{ route('adminusers.restore', $user->id) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            @method('PATCH')
+                                            <button type="submit" class="btn btn-warning btn-sm">Restore</button>
+                                        </form>
+                                        <form action="{{ route('adminusers.forceDelete', $user->id) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus user ini secara permanen?')">Hapus Permanen</button>
+                                        </form>
+                                    @else
+                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#userDetailsModal" onclick="showUserDetails('{{ $user->id }}')">Details</button>
+                                        <a href="{{ route('adminusers.edit', $user->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                        <form action="{{ route('adminusers.destroy', $user->id) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus user ini?')">Hapus</button>
+                                        </form>
+                                    @endif
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="4" class="text-center">Data kosong</td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="{{ asset('/images/logo.png') }} ">
-</head>
-
-<style>
-    .sidebar-brand-icon img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-    }
-</style>
-
-<body id="page-top">
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-        <x-sidebarnavbar/>
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-            <!-- Page Heading -->
-            <h1 class="h3 mb-2 text-gray-800">Data Users</h1>
-
-            <x-allert/>
-
-            <div class="card shadow mb-4">
-                <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                    <h6 class="m-0 font-weight-bold text-primary">User List</h6>
-                    <a href="{{ route('user.create') }}" class="btn btn-success btn-sm">Register</a>
+    <!-- Modal user details -->
+    <div class="modal fade" id="userDetailsModal" tabindex="-1" role="dialog" aria-labelledby="userDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="userDetailsModalLabel">User Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Username</th>
-                                    <th>Email</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @forelse($users as $user)
-                                    <tr>
-                                        <td>{{ $user->username }}</td>
-                                        <td>{{ $user->email }}</td>
-                                        <td>
-                                            <form action="{{ route('adminusers.destroy', $user->id) }}" method="POST" style="display:inline;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus user ini?')">Hapus</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @empty
-                                    <tr>
-                                        <td colspan="3" class="text-center">Data kosong</td>
-                                    </tr>
-                                @endforelse
-                            </tbody>
-                        </table>
+                <div class="modal-body">
+                    <div id="userDetails">
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; RnB 2025</span>
-                </div>
-            </div>
-        </footer>
-        <!-- End of Footer -->
     </div>
-    <!-- End of Page Wrapper -->
+@endsection
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+@push('scripts')
+<script>
+    function showUserDetails(userId) {
+        $.ajax({
+            url: '/adminusers/' + userId,
+            method: 'GET',
+            success: function(response) {
+                var user = response.user;
+                var deletedAt = user.deleted_at ? new Date(user.deleted_at) : null;
+                
+                // Format deleted_at hanya menampilkan tanggal, bulan, dan tahun
+                var deletedAtFormatted = deletedAt ? deletedAt.toLocaleDateString('id-ID') : 'N/A';
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="js/sb-admin-2.min.js"></script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
-</body>
+                var detailsHtml = `
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">${user.name}</h4>
+                            <div class="text-center mb-3">
+                                <img src="/storage/${user.profile_picture}" alt="${user.name}" class="img-fluid img-thumbnail" style="max-width: 250px;">
+                            </div>
 
-</html>
+                            <div class="table-bordered mb-3 p-2">
+                                <h5 class="text-center">General Information</h5>
+                                <p><strong>Username:</strong> ${user.username}</p>
+                                <p><strong>Email:</strong> ${user.email}</p>
+                                <p><strong>Phone:</strong> ${user.phone || 'N/A'}</p>
+                                <p><strong>Birth Date:</strong> ${user.birth || 'N/A'}</p>
+                                <p><strong>Bio:</strong> ${user.bio || 'N/A'}</p>
+                            </div>
+
+                            <div class="table-bordered mb-3 p-2">
+                                <h5 class="text-center">Role</h5>
+                                <p><strong>Role:</strong> ${user.role.name}</p>
+                            </div>
+
+                            <div class="table-bordered mb-3 p-2">
+                                <h5 class="text-center">Account Status</h5>
+                                <p><strong>Deleted At:</strong> ${deletedAtFormatted}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                $('#userDetails').html(detailsHtml); // Menampilkan detail user di elemen dengan id 'userDetails'
+                $('#userDetailsModal').modal('show'); // Menampilkan modal
+            },
+            error: function(xhr, status, error) {
+                alert('Error fetching user details');
+            }
+        });
+    }
+</script>
+@endpush
