@@ -16,6 +16,15 @@
    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }} ">
    <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
 </head>
+<style>
+    .profile-img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #ddd;
+    }
+</style>
 
 <body>
    <div class="container rounded mt-5 mb-5">
@@ -23,7 +32,7 @@
          <div class="col-md-3 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
                @if(isset($user->profile_picture) && $user->profile_picture)
-               <img src="{{ asset('images/' . $user->profile_picture) }}" class="rounded-circle img-fluid profile-img" alt="Profile Picture">
+               <img src="{{ asset('storage/' . $user->profile_picture) }}" class="rounded-circle img-fluid profile-img" alt="Profile Picture">
                @else
                <div class="default-profile-icon">
                   <i class="fa-solid fa-circle-user"></i>
@@ -37,7 +46,7 @@
             <div class="mt-6 text-center"><button class="btn btn-primary profile-button" type="button">Cancel Change</button></div>
             <form action="{{ route('logout') }}" method="POST">
                @csrf
-            <button type="submit" class="btn btn-primary">Logout</button>
+            <button type="submit" class="btn btn-danger">Logout</button>
          </div>
          <div class="col-md-9 border-right">
             <div class="p-3 py-5">

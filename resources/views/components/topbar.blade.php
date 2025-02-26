@@ -18,7 +18,7 @@
                     <span class="mr-2 d-none d-lg-inline text-white small">{{ Auth::user()->username }}</span>
                     
                     @if(Auth::user()->profile_picture)
-                        <img class="img-profile rounded-circle" src="{{ asset('storage/' . Auth::user()->profile_picture) }}">
+                        <img class="img-profile" src="{{ asset('storage/' . Auth::user()->profile_picture) }}">
                     @else
                         <img class="img-profile rounded-circle" src="{{ asset('img/undraw_profile.svg') }}">
                     @endif

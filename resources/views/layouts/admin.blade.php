@@ -24,6 +24,13 @@
         height: auto;
         object-fit: contain;
     }
+
+    .img-profile {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
 </style>
 
 <body id="page-top">

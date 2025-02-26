@@ -13,34 +13,35 @@ use App\Http\Controllers\AuthController;
 //     return view('qwerty');
 // });
 
-// Halaman Utama
-Route::get('/', function () {
-    return view('home');
+// Guest
+Route::middleware(['guest'])->group(function () {
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AuthController::class, 'login']);
+
+    Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+    Route::post('/register', [AuthController::class, 'register']);
+
+    // Halaman Utama
+    Route::get('/', function () {
+        return view('home');
+    });
+
+    // Halaman Item
+    Route::get('/item', function () {
+        return view('item');
+    });
+
+    //NEWS
+    Route::get('/news', function () {
+        return view('news.news-gallery');
+    });
+
+    // Halaman Hero (Public)
+    Route::get('/hero', [GalleryHeroController::class, 'index'])->name('heroes.index');
+    Route::get('/hero/{id}', [GalleryHeroController::class, 'show'])->name('hero.show');
+
 });
 
-// Halaman Item
-Route::get('/item', function () {
-    return view('item');
-});
-
-//NEWS
-Route::get('/news', function () {
-    return view('news.news-gallery');
-});
-
-// Halaman Hero (Public)
-Route::get('/hero', [GalleryHeroController::class, 'index'])->name('heroes.index');
-Route::get('/hero/{id}', [GalleryHeroController::class, 'show'])->name('hero.show');
-
-// Login
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
-
-// Register
-Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [AuthController::class, 'register']);
-
-// Logout
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Auth User

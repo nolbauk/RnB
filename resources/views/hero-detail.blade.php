@@ -260,7 +260,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-center text-center">ROLES</p>
+                    <p class="text-center">ROLES</p>
                 </div>
 
                 <div class="col-md-4">
