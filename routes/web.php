@@ -23,6 +23,11 @@ Route::get('/item', function () {
     return view('item');
 });
 
+//NEWS
+Route::get('/news', function () {
+    return view('news.news-gallery');
+});
+
 // Halaman Hero (Public)
 Route::get('/hero', [GalleryHeroController::class, 'index'])->name('heroes.index');
 Route::get('/hero/{id}', [GalleryHeroController::class, 'show'])->name('hero.show');
@@ -38,16 +43,26 @@ Route::post('/register', [AuthController::class, 'register']);
 // Logout
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// User
+// Auth User
 Route::middleware(['auth', 'role:2'])->group(function () {
+    //profile
     Route::get('/profile', [UserController::class, 'profile'])->name('profile')->middleware('auth');   
 
     Route::get('/profile-view', function () {
         return view('profile-view');
     });
+
+    //FORUM
+    Route::get('/discuss', function () {
+        return view('forum.discuss');
+    });
+
+    Route::get('/gallery', function () {
+        return view('forum.gallery');
+    });
 });
 
-// Admin
+// Auth Admin
 Route::middleware(['auth', 'role:1'])->group(function () {
     // Dashboard
     Route::resource('admindashboard', DashboardController::class);
@@ -62,41 +77,4 @@ Route::middleware(['auth', 'role:1'])->group(function () {
     Route::resource('adminusers', UserController::class);
     Route::patch('/adminusers/{id}/restore', [UserController::class, 'restore'])->name('adminusers.restore');
     Route::delete('/adminusers/{id}/force-delete', [UserController::class, 'forceDelete'])->name('adminusers.forceDelete');
-});
-
-Route::get('/profile', function () {
-    return view('profile');
-});
-
-Route::get('/profile-view', function () {
-    return view('profile-view');
-});
-
-// ROUTE GUEST
-Route::resource('user', UserController::class)->only(['create', 'store']);
-
-// ROUTE USER
-Route::resource('user', UserController::class)->only(['edit', 'update']);
-
-// ROUTE ADMIN
-Route::resource('admindashboard', DashboardController::class);
-
-Route::resource('adminheroes', HeroesController::class);
-
-Route::resource('adminroles', RoleController::class);
-
-Route::resource('adminusers', UserController::class);
-
-//FORUM
-Route::get('/discuss', function () {
-    return view('forum.discuss');
-});
-
-Route::get('/gallery', function () {
-    return view('forum.gallery');
-});
-
-//NEWS
-Route::get('/news', function () {
-    return view('news.news-gallery');
 });

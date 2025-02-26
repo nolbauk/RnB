@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable {
-    // fix
+    
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
@@ -19,4 +19,18 @@ class User extends Authenticatable {
     public function role() {
         return $this->belongsTo(Role::class);
     }
+    public function questions()
+    {
+        return $this->hasMany(Question::class);
+    }
+    
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+    
+    public function commentReactions()
+    {
+        return $this->hasMany(CommentReaction::class);
+    }    
 }
