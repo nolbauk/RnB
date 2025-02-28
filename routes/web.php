@@ -29,7 +29,7 @@ Route::get('/qwerty', function () {
 Route::get('/hero', [GalleryHeroController::class, 'index'])->name('heroes.index');
 Route::get('/hero/{name}', [GalleryHeroController::class, 'show'])->name('hero.show');
 Route::get('/search-hero', [GalleryHeroController::class, 'search'])->name('heroes.search');
-
+// Search Dan Complexity 
 Route::get('/heroes/filter', [GalleryHeroController::class, 'filter'])->name('heroes.filter');
 
 

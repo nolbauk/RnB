@@ -1,3 +1,5 @@
+// Scrolling 
+
 // Inisialisasi variabel untuk tracking
 let currentIndex = 0;
 let isScrolling = false;
@@ -87,3 +89,6 @@ document.head.appendChild(style);
 
 // Inisialisasi tampilan awal
 updateHeroSection(0);
+
+
+

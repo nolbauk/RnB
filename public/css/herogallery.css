@@ -1,39 +1,54 @@
-html,body {
+body {
     font-family: Arial, Helvetica, sans-serif;
-    padding-top: 5px; /* Sesuaikan dengan tinggi header */
-    padding-bottom: 60px; /* Memberikan ruang untuk navbar fixed-bottom */
+    padding-top: 5px;
+    /* Sesuaikan dengan tinggi header */
+    padding-bottom: 60px;
+    /* Memberikan ruang untuk navbar fixed-bottom */
     /* Mencegah default scrolling */
-    overflow:hidden; ; 
+    overflow: hidden;
+    ;
     scroll-behavior: smooth;
 }
 
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: none;
-    cursor: pointer; /* Memberikan indikasi bahwa elemen dapat di klik */
-    width: 80px; /* Sesuaikan ukuran kartu */
-    height: 110px; /* Sesuaikan ukuran kartu */
-    overflow: hidden; /* Memastikan gambar tidak keluar dari kartu */
+    cursor: pointer;
+    /* Memberikan indikasi bahwa elemen dapat di klik */
+    width: 80px;
+    /* Sesuaikan ukuran kartu */
+    height: 110px;
+    /* Sesuaikan ukuran kartu */
+    overflow: hidden;
+    /* Memastikan gambar tidak keluar dari kartu */
     border-radius: 1px;
     position: relative;
 }
 
 .card:hover {
-    transform: scale(1.2); /* Lebih besar saat dihover */
-    box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.2); /* Efek bayangan lembut */
-    z-index: 1; /* Menempatkan kartu di atas kartu lain */
+    transform: scale(1.2);
+    /* Lebih besar saat dihover */
+    box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.2);
+    /* Efek bayangan lembut */
+    z-index: 1;
+    /* Menempatkan kartu di atas kartu lain */
 }
 
 .card img {
-    width: 100%; /* Membuat gambar menyesuaikan dengan lebar kartu */
-    height: 100%; /* Membuat gambar menyesuaikan dengan tinggi kartu */
-    object-fit: cover; /* Memastikan gambar terpotong sesuai dengan ukuran kartu */
+    width: 100%;
+    /* Membuat gambar menyesuaikan dengan lebar kartu */
+    height: 100%;
+    /* Membuat gambar menyesuaikan dengan tinggi kartu */
+    object-fit: cover;
+    /* Memastikan gambar terpotong sesuai dengan ukuran kartu */
 }
 
 .hero-container {
     display: flex;
-    flex-wrap: wrap; /* Membungkus baris jika lebih dari 15 item */
-    gap: 10px; /* Memberi jarak antar gambar */
+    flex-wrap: wrap;
+    /* Membungkus baris jika lebih dari 15 item */
+    gap: 10px;
+    /* Memberi jarak antar gambar */
     justify-content: center;
 }
 
@@ -51,7 +66,7 @@ header {
     align-items: center;
     padding: 10px 20px;
     color: white;
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -59,7 +74,8 @@ header {
 }
 
 header .logo img {
-    height: 70px; /* Menyesuaikan ukuran logo */
+    height: 70px;
+    /* Menyesuaikan ukuran logo */
     width: auto;
 }
 
@@ -68,23 +84,28 @@ header nav ul {
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding: 0; /* Menghilangkan padding default */
-    margin: 0; /* Menghilangkan margin default */
+    padding: 0;
+    /* Menghilangkan padding default */
+    margin: 0;
+    /* Menghilangkan margin default */
 }
 
 header nav ul li {
-    margin: 0; /* Menghilangkan margin default */
+    margin: 0;
+    /* Menghilangkan margin default */
 }
 
 header nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    transition: color 0.3s ease; /* Menambahkan transisi saat hover */
+    transition: color 0.3s ease;
+    /* Menambahkan transisi saat hover */
 }
 
 header nav ul li a:hover {
-    color: #ccc; /* Mengubah warna teks saat dihover */
+    color: #ccc;
+    /* Mengubah warna teks saat dihover */
 }
 
 header .login a {
@@ -94,7 +115,8 @@ header .login a {
     padding: 5px 10px;
     border-radius: 15px;
     border: 2px solid white;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Menambahkan transisi saat hover */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Menambahkan transisi saat hover */
 }
 
 header .login a:hover {
@@ -104,8 +126,9 @@ header .login a:hover {
 
 .navbar {
     background-color: #1b1b1b;
-    padding:10px;
-    border-radius: 5px 5px 0 0; /* Membulatkan sudut atas navbar */
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    /* Membulatkan sudut atas navbar */
 }
 
 .navbar p {
@@ -113,36 +136,26 @@ header .login a:hover {
     font-weight: bold;
 }
 
-.attribute-img {
-    width: 30px;
-    height: 30px;
-    margin: 0 5px;
-    filter: grayscale(100%);
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.attribute-img:hover {
-    filter: grayscale(0%);
-}
-
 .search-box {
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
     border: none;
+    width: 200px;
+    /* Sesuaikan dengan ukuran yang nyaman */
 }
+
+
+.position-relative {
+    margin-left: 20px;
+    /* Sesuaikan dengan jarak yang diinginkan */
+}
+
 
 .search-box::placeholder {
     color: #999;
 }
 
-.search-icon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
+
 
 .hero-section {
     height: 100vh;
@@ -155,7 +168,7 @@ header .login a:hover {
 .page-container {
     position: relative;
     width: 100%;
-    height: 100vh; 
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -170,9 +183,12 @@ header .login a:hover {
 
 
 .content {
-    height: 80vh; /* Sesuaikan tinggi konten */
-    overflow-y: auto; /* Menambahkan scroll pada konten */
-    width: 100%; /* Sesuaikan lebar konten */
+    height: 80vh;
+    /* Sesuaikan tinggi konten */
+    overflow-y: auto;
+    /* Menambahkan scroll pada konten */
+    width: 100%;
+    /* Sesuaikan lebar konten */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -181,57 +197,109 @@ header .login a:hover {
 
 .navbar-bawah {
     background-color: #1b1b1b;
+    display: flex;
+    justify-content: space-between;
     padding: 20px;
     border-radius: 5px 5px 0 0;
-    max-width: 1200px; /* Batasi lebar maksimal */
-    margin: 0 auto; /* Posisikan di tengah */
-    width: 90%; /* Agar responsif */
+    max-width: 1300px;
+    /* Batasi lebar maksimal */
+    margin: 0 auto;
+    /* Posisikan di tengah */
+    width: 90%;
+    /* Agar responsif */
+    height: 100px;
 }
 
-
-.filter-dropdown {
-    padding: 5px;
-    border-radius: 5px;
-    border: none;
-    background-color: #333;
-    color: white;
-    cursor: pointer;
+/* Pembungkus Navbar */
+.d-flex.align-items-center {
+    justify-content: center;
+    width: 100%;
 }
 
-.filter-dropdown option {
-    background-color: #1b1b1b;
-    color: white;
+/* .fitur-heroes {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-left: -30px;
+} */
+
+
+
+/* Role Box */
+/* Container utama */
+.role-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* Jarak antar baris */
 }
+
+/* Setiap baris */
+.role-row {
+    display: flex;
+    gap: 10px;
+    /* Jarak antar gambar */
+    justify-content: center;
+    width: 100%;
+    /* Pastikan kedua baris memiliki lebar yang sama */
+    max-width: 300px;
+    /* Batasi agar tidak terlalu lebar */
+}
+
+/* Gaya untuk gambar */
+.role-row img {
+    width: 60px;
+    /* Atur ukuran agar seragam */
+    height: 60px;
+    object-fit: contain;
+    /* Pastikan gambar tidak terpotong */
+}
+
+/* Attack type */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    /* Sejajarkan teks dengan ikon */
+    gap: 5px;
+    /* Jarak antara "ATTACK TYPE:" dan item */
+}
+
+.nav-item {
+    margin: 0;
+    /* Hapus margin yang membuatnya menjauh */
+}
+
+.item-attribute-attack .d-flex {
+    gap: 5px;
+    /* Atur jarak antar ikon */
+}
+
 
 .hero-card {
     display: block;
 }
 
-.item-attribute{
+.item-attribute,
+.item-attribute-attack {
     display: flex;
-    
 }
-.filter-group {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-}
-.filter-label {
-    font-size: 14px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-right: 10px;
-    letter-spacing: 1px;
-}
+
+
+
+
+
 .diamond-container {
     display: flex;
     gap: 5px;
 }
+
 .diamond-box {
     width: 30px;
     height: 30px;
-    background-color: white ;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -241,12 +309,91 @@ header .login a:hover {
     transition: background 0.3s;
     margin: 2px;
 }
+
 .diamond-box.active {
     background-color: yellow;
 }
+
 .diamond {
     width: 12px;
     height: 12px;
     background-color: #2b2f38;
     transform: rotate(45deg);
 }
+
+/* role hero */
+/* Styling untuk role filter */
+.item-attribute {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-attribute img {
+    width: 40px;
+    /* Ukuran ikon role */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    filter: invert(1) grayscale(80%);
+
+    /* Mengubah warna hitam menjadi putih */
+}
+
+.item-attribute img.active {
+    transform: scale(1.1);
+    filter: invert(1) grayscale(0%);
+    opacity: 1;
+
+}
+
+.item-attribute img:active {
+    transform: scale(1.2);
+    filter: invert(1) grayscale(0%);
+    opacity: 0.8;
+
+}
+
+
+/* item attribute attack */
+.item-attribute-attack {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-attribute-attack img {
+    width: 35px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    filter: invert(1) grayscale(80%);
+    transform: skew(15deg);
+    /* Pastikan tetap skew */
+}
+
+/* Efek ketika aktif (dipilih) */
+.item-attribute-attack img.active {
+    transform: skew(15deg) scale(1.1);
+    filter: invert(1) grayscale(0%);
+    opacity: 1;
+}
+
+/* Efek ketika ditekan */
+.item-attribute-attack img:active {
+    transform: skew(15deg) scale(1.2);
+    filter: invert(1) grayscale(0%);
+}
+
+/* Ukuran tambahan */
+.attribute-img-attack {
+    width: 40px;
+    height: 40px;
+}
+
+/* Pastikan skew tetap */
+.skew-15 {
+    transform: skew(15deg);
+}
+
+/* INI BETUL UNTUK STYLISH */

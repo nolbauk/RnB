@@ -22,30 +22,25 @@ class GalleryHeroController extends Controller
         $hero = Hero::findOrFail($id);
         return view('hero-detail', compact('hero'));
     }
-    public function search(Request $request)
-    {
+    public function filter(Request $request)
+{
+    if ($request->has('query')) {
+        // Search berdasarkan nama atau primary_attribute
         $query = $request->input('query');
-        
-        // Cek jika query kosong, kembalikan semua hero (opsional)
-        if (!$query) {
-            return response()->json([]);
-        }
-    
-        // Pencarian lebih fleksibel, bisa berdasarkan nama atau primary attribute
+
         $heroes = Hero::where('name', 'LIKE', "%{$query}%")
                       ->orWhere('primary_attribute', 'LIKE', "%{$query}%")
                       ->get();
-    
+        
         return response()->json($heroes);
-    }
-    public function filter(Request $request)
-    {
+    } elseif ($request->has('complexity')) {
+        // Filter berdasarkan complexity
         $complexityMap = [
             1 => 'Easy',
             2 => 'Medium',
             3 => 'Hard'
         ];
-    
+        
         $complexity = $complexityMap[$request->complexity] ?? null;
     
         if (!$complexity) {
@@ -56,4 +51,8 @@ class GalleryHeroController extends Controller
     
         return response()->json($heroes);
     }
+
+    return response()->json([]);
+}
+
 }
