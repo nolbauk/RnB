@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->text('lore')->nullable();
             $table->enum('primary_attribute', ['Strength', 'Agility', 'Intelligence', 'Universal']);
             $table->enum('attack_type', ['Melee', 'Ranged']);
+            // complexity
             $table->enum('complexity', ['Easy', 'Medium', 'Hard']);
             // ROLES
             $table->integer('carry')->nullable();

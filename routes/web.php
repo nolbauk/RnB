@@ -73,9 +73,16 @@ Route::middleware(['auth', 'role:1'])->group(function () {
 
     // Data Role
     Route::resource('adminroles', RoleController::class);
-
+    
     // Data User
     Route::resource('adminusers', UserController::class);
     Route::patch('/adminusers/{id}/restore', [UserController::class, 'restore'])->name('adminusers.restore');
     Route::delete('/adminusers/{id}/force-delete', [UserController::class, 'forceDelete'])->name('adminusers.forceDelete');
 });
+
+// HAKIM BERKERJA DI SINI FILTER
+Route::get('/hero', [GalleryHeroController::class, 'index'])->name('heroes.index');
+Route::get('/hero/{name}', [GalleryHeroController::class, 'show'])->name('hero.show');
+Route::get('/search-hero', [GalleryHeroController::class, 'search'])->name('heroes.search');
+// Search Dan Complexity 
+Route::get('/heroes/filter', [GalleryHeroController::class, 'filter'])->name('heroes.filter');
