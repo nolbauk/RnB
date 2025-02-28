@@ -63,7 +63,7 @@
             <div class="middle">
                 <form class="create-post">
                     <div class="profile-pic">
-                        <img src="https://res.cloudinary.com/freecodez/image/upload/v1698067298/images/fy8azbqxhgdrbbijhipe.webp" alt="" />
+                        <img src="https://64.media.tumblr.com/7b28774544438d73ca8c1daad11402e0/88958e5f55a67155-fd/s250x400/a9ef3dad54f6c57a53fdeef1a793f0143a9aea27.jpg" alt="" />
                     </div>
                     <input
                         type="text"
@@ -71,7 +71,6 @@
                         id="create-post" />
                     <input type="submit" value="Post" class="post post-primary" />
                 </form>
-
                 <div class="feeds">
                     <div class="feed">
                         <div class="head"></div>
