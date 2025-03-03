@@ -116,6 +116,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </main>
     <script src="{{ asset('/js/forum.js') }}"></script>
     <!-- Javascript files-->
