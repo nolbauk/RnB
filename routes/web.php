@@ -14,25 +14,25 @@ use App\Http\Controllers\ProfileController;
 //     return view('qwerty');
 // });
 
-// Routes untuk Guest (Belum Login)
-// Halaman Publik (Bisa diakses oleh siapa saja)
+// Halaman Publik
 Route::view('/', 'home');
 Route::view('/item', 'item');
 Route::view('/news', 'news.news-gallery');
 Route::get('/hero', [GalleryHeroController::class, 'index'])->name('heroes.index');
 Route::get('/hero/{id}', [GalleryHeroController::class, 'show'])->name('hero.show');
 
-// Routes untuk Guest (Belum Login)
-Route::middleware(['guest'])->group(function () {
-    // Auth
+// Login dan Register hanya untuk Guest
+Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [AuthController::class, 'login']);
     Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
     Route::post('/register', [AuthController::class, 'register']);
 });
 
-// Logout (Berlaku untuk semua user yang sudah login)
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+// Logout
+Route::match(['get', 'post'], '/logout', [AuthController::class, 'logout'])
+    ->middleware('auth')
+    ->name('logout');
 
 // Routes untuk User (Role: 2)
 Route::middleware(['auth', 'role:2'])->group(function () {
@@ -47,16 +47,16 @@ Route::middleware(['auth', 'role:2'])->group(function () {
 // Routes untuk Admin (Role: 1)
 Route::middleware(['auth', 'role:1'])->prefix('admin')->group(function () {
     // Dashboard
-    Route::resource('/dashboard', DashboardController::class);
+    Route::resource('admindashboard', DashboardController::class);
     
     // Data Hero
-    Route::resource('/heroes', HeroesController::class);
-    
+    Route::resource('adminheroes', HeroesController::class);
+
     // Data Role
-    Route::resource('/roles', RoleController::class);
+    Route::resource('adminroles', RoleController::class);
     
     // Data User
-    Route::resource('/users', UserController::class);
-    Route::patch('/users/{id}/restore', [UserController::class, 'restore'])->name('adminusers.restore');
-    Route::delete('/users/{id}/force-delete', [UserController::class, 'forceDelete'])->name('adminusers.forceDelete');
+    Route::resource('adminusers', UserController::class);
+    Route::patch('/adminusers/{id}/restore', [UserController::class, 'restore'])->name('adminusers.restore');
+    Route::delete('/adminusers/{id}/force-delete', [UserController::class, 'forceDelete'])->name('adminusers.forceDelete');
 });

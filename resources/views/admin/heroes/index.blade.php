@@ -72,7 +72,7 @@
     <script>
         function showHeroDetails(heroId) {
             $.ajax({
-                url: '/adminheroes/' + heroId,
+                url: '/admin/adminheroes/' + heroId,
                 method: 'GET',
                 success: function(response) {
                     var hero = response.hero;
