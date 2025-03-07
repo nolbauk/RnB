@@ -86,3 +86,43 @@ Route::get('/hero/{name}', [GalleryHeroController::class, 'show'])->name('hero.s
 Route::get('/search-hero', [GalleryHeroController::class, 'search'])->name('heroes.search');
 // Search Dan Complexity 
 Route::get('/heroes/filter', [GalleryHeroController::class, 'filter'])->name('heroes.filter');
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/profile-view', function () {
+    return view('profile-view');
+});
+
+// ROUTE GUEST
+Route::resource('user', UserController::class)->only(['create', 'store']);
+
+// ROUTE USER
+Route::resource('user', UserController::class)->only(['edit', 'update']);
+
+// ROUTE ADMIN
+Route::resource('admindashboard', DashboardController::class);
+
+Route::resource('adminheroes', HeroesController::class);
+
+Route::resource('adminroles', RoleController::class);
+
+Route::resource('adminusers', UserController::class);
+
+//FORUM
+Route::get('/discuss', function () {
+    return view('forum.discuss');
+});
+
+Route::get('/gallery', function () {
+    return view('forum.gallery');
+});
+
+Route::get('/discuss-detail', function () {
+    return view('forum.discuss-detail');
+});
+
+//NEWS
+Route::get('/news', function () {
+    return view('news.news-gallery');
+});

@@ -57,10 +57,48 @@ input {
 
 .profile-pic {
     width: 50px;
+    height: 50px;
     aspect-ratio: 1/1;
     border-radius: 50%;
     object-fit: cover;
     overflow: hidden;
+    flex-shrink: 0;
+}
+
+.profile-pic-reply {
+    width: 35px;
+    height: 35px; /* Explicitly set height */
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    display: block; /* Ensures no extra spacing */
+}
+
+.info h7 {
+    font-size: 13px;
+    color: #111111;
+    letter-spacing: 0;
+    font-weight: normal;
+    position: relative;
+    padding: 0 0 10px 0;
+    font-weight: normal;
+    line-height: normal;
+    margin-bottom: 2px;
+    margin: 0
+}
+
+.info h8 {
+    display: block;
+    font-size: 10px;
+    color: #111111;
+    letter-spacing: 0;
+    font-weight: normal;
+    position: relative;
+    padding: 0 0 10px 0;
+    font-weight: normal;
+    line-height: normal;
+    margin-bottom: 2px;
+    margin: 0
 }
 
 /* img {
@@ -143,11 +181,11 @@ input {
 }
 
 .middle .feed .action-button {
-    display: flex;
+    display:flex;
     justify-content: space-between;
-    align-items: center;
-    font-size: 1.4rem;
-    margin: 0.6rem;
+    /* align-items: center; */
+    font-size: 14px;
+    /* margin: 0.6rem; */
 }
 
 .middle .liked-by {
@@ -184,6 +222,37 @@ input {
 .hash-tag {
     color: var(--color-primary);
 }
+
+.bahan {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 24px;
+    color: #111111;
+    /* margin-bottom: 5px; */
+    margin-top: 5px;
+}
+
+.bahan-reply {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 24px;
+    color: #111111;
+}
+
+.reply {
+    margin-left: 15px;
+    padding-left: 10px;
+    border-left: 2px solid;
+    border-image: linear-gradient(to top, #111111, rgba(255, 215, 0, 1)) 1;
+    border-radius: 10px; /* Optional for rounded corners */
+}
+
+.gabaw {
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, #111111, rgba(255, 215, 0, 1)) 1;
+    border-radius: 10px; /* Optional for rounded corners */
+}
+
 
 @media screen and (max-width: 1200px) {
     .container {
