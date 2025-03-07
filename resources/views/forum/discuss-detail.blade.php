@@ -116,6 +116,66 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="reply">
+                            <div class="caption">
+                                <div class="liked-by">
+                                    <div class="user">
+                                        <div class="profile-pic-reply">
+                                            <img src="https://64.media.tumblr.com/7b28774544438d73ca8c1daad11402e0/88958e5f55a67155-fd/s250x400/a9ef3dad54f6c57a53fdeef1a793f0143a9aea27.jpg" alt="" />
+                                        </div>
+                                        <div class="info">
+                                            <h7>Lana Rose</h7>
+                                            <h8>15 MINUTES AGO</h8>
+                                        </div>
+                                        <span class="edit"><i class="uil uil-ellipsis-h"></i></span>
+                                    </div>
+                                </div>
+                                <div class="bahan-reply">
+                                    Lorem ipsum dolor storiesquiquam eius.
+                                    <span class="hash-tag">#lifestyle</span>
+                                </div>
+                                <div class="action-button">
+                                    <div class="interaction-button">
+                                        <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                        <span><i class="fa-solid fa-thumbs-down"></i></span>
+                                        <span><i class="fa-solid fa-comments"></i></span>
+                                        <span><i class="fa-solid fa-share"></i></span>
+                                    </div>
+                                    <div class="bookmark">
+                                        <span><i class="fa-solid fa-bookmark"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="caption">
+                                <div class="liked-by">
+                                    <div class="user">
+                                        <div class="profile-pic-reply">
+                                            <img src="https://64.media.tumblr.com/7b28774544438d73ca8c1daad11402e0/88958e5f55a67155-fd/s250x400/a9ef3dad54f6c57a53fdeef1a793f0143a9aea27.jpg" alt="" />
+                                        </div>
+                                        <div class="info">
+                                            <h7>Lana Rose</h7>
+                                            <h8>15 MINUTES AGO</h8>
+                                        </div>
+                                        <span class="edit"><i class="uil uil-ellipsis-h"></i></span>
+                                    </div>
+                                </div>
+                                <div class="bahan-reply">
+                                    Lorem ipsum dolor storiesquiquam eius.
+                                    <span class="hash-tag">#lifestyle</span>
+                                </div>
+                                <div class="action-button">
+                                    <div class="interaction-button">
+                                        <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                        <span><i class="fa-solid fa-thumbs-down"></i></span>
+                                        <span><i class="fa-solid fa-comments"></i></span>
+                                        <span><i class="fa-solid fa-share"></i></span>
+                                    </div>
+                                    <div class="bookmark">
+                                        <span><i class="fa-solid fa-bookmark"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div>
                         <div class="caption">
@@ -144,6 +204,37 @@
                                 </div>
                                 <div class="bookmark">
                                     <span><i class="fa-solid fa-bookmark"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reply">
+                            <div class="caption">
+                                <div class="liked-by">
+                                    <div class="user">
+                                        <div class="profile-pic-reply">
+                                            <img src="https://64.media.tumblr.com/7b28774544438d73ca8c1daad11402e0/88958e5f55a67155-fd/s250x400/a9ef3dad54f6c57a53fdeef1a793f0143a9aea27.jpg" alt="" />
+                                        </div>
+                                        <div class="info">
+                                            <h7>Lana Rose</h7>
+                                            <h8>15 MINUTES AGO</h8>
+                                        </div>
+                                        <span class="edit"><i class="uil uil-ellipsis-h"></i></span>
+                                    </div>
+                                </div>
+                                <div class="bahan-reply">
+                                    Lorem ipsum dolor storiesquiquam eius.
+                                    <span class="hash-tag">#lifestyle</span>
+                                </div>
+                                <div class="action-button">
+                                    <div class="interaction-button">
+                                        <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                        <span><i class="fa-solid fa-thumbs-down"></i></span>
+                                        <span><i class="fa-solid fa-comments"></i></span>
+                                        <span><i class="fa-solid fa-share"></i></span>
+                                    </div>
+                                    <div class="bookmark">
+                                        <span><i class="fa-solid fa-bookmark"></i></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
