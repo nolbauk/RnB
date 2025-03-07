@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art</title>
+    <title>NEWS</title>
     <link rel="stylesheet" href="{{ asset('/css/news.css') }}">
     <!-- bootstrap css -->
     <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
@@ -79,8 +79,8 @@
             <div class="col-md-6 mb-3 text-white text-center">
                 <div class="row outline-box">
                     <div class="col-sm-6">
-                        <h4 class="banner_taital_second">Roiy</h4>
-                        <p class="banner_text_second">Roiy adalah seorang budak cinta dari seorang manusia bernama Celin</p>
+                        <h4 class="banner_taital_second">Takim</h4>
+                        <p class="banner_text_second">Takim is a powerfull mere human that can talk to fish</p>
                         <div class="started_text_second"><a href="#">Read More</a></div>
                     </div>
                     <div class="col-sm-6">
