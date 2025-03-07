@@ -141,9 +141,6 @@
                                         <span><i class="fa-solid fa-comments"></i></span>
                                         <span><i class="fa-solid fa-share"></i></span>
                                     </div>
-                                    <div class="bookmark">
-                                        <span><i class="fa-solid fa-bookmark"></i></span>
-                                    </div>
                                 </div>
                             </div>
                             <div class="caption">
@@ -169,9 +166,6 @@
                                         <span><i class="fa-solid fa-thumbs-down"></i></span>
                                         <span><i class="fa-solid fa-comments"></i></span>
                                         <span><i class="fa-solid fa-share"></i></span>
-                                    </div>
-                                    <div class="bookmark">
-                                        <span><i class="fa-solid fa-bookmark"></i></span>
                                     </div>
                                 </div>
                             </div>
@@ -231,9 +225,6 @@
                                         <span><i class="fa-solid fa-thumbs-down"></i></span>
                                         <span><i class="fa-solid fa-comments"></i></span>
                                         <span><i class="fa-solid fa-share"></i></span>
-                                    </div>
-                                    <div class="bookmark">
-                                        <span><i class="fa-solid fa-bookmark"></i></span>
                                     </div>
                                 </div>
                             </div>
