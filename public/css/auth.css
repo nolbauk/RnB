@@ -126,3 +126,20 @@ body {
         padding: 40px 15px 15px 15px;
     }
 }
+
+.wrapper .form-field input:focus {
+    outline: none;
+    box-shadow: none; /* Ensure no shadow is added by Bootstrap */
+}
+
+/* Remove autofill background and keep it consistent with other inputs */
+.wrapper .form-field input:-webkit-autofill,
+.wrapper .form-field input:-webkit-autofill:hover,
+.wrapper .form-field input:-webkit-autofill:focus,
+.wrapper .form-field input:-webkit-autofill:active {
+    -webkit-box-shadow: none;
+    background-color: transparent !important;
+    color: #111111 !important;
+    font-size: 1.2rem;
+    transition: background-color 9999s ease-in-out 0s; /* Prevents autofill from overriding styles */
+}
