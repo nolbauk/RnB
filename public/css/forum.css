@@ -239,8 +239,14 @@ input {
     color: #111111;
 }
 
-.reply {
+/* .reply {
     border-top: 2px solid;
+    border-image: linear-gradient(to right, #111111, rgba(255, 215, 0, 1)) 1;
+    border-radius: 10px;
+} */
+
+.gabaw {
+    border-bottom: 2px solid;
     border-image: linear-gradient(to right, #111111, rgba(255, 215, 0, 1)) 1;
     border-radius: 10px; /* Optional for rounded corners */
 }
