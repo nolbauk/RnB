@@ -14,7 +14,7 @@ use App\Http\Controllers\AuthController;
 // });
 
 // Guest
-Route::middleware(['guest'])->group(function () {
+
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [AuthController::class, 'login']);
 
@@ -39,8 +39,6 @@ Route::middleware(['guest'])->group(function () {
     // Halaman Hero (Public)
     Route::get('/hero', [GalleryHeroController::class, 'index'])->name('heroes.index');
     Route::get('/hero/{id}', [GalleryHeroController::class, 'show'])->name('hero.show');
-
-});
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
@@ -86,3 +84,5 @@ Route::get('/hero/{name}', [GalleryHeroController::class, 'show'])->name('hero.s
 Route::get('/search-hero', [GalleryHeroController::class, 'search'])->name('heroes.search');
 // Search Dan Complexity 
 Route::get('/heroes/filter', [GalleryHeroController::class, 'filter'])->name('heroes.filter');
+//roles filter 
+Route::get('/filter-heroes', [GalleryHeroController::class, 'filterByRole']);
