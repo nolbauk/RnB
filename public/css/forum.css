@@ -240,7 +240,7 @@ input {
 }
 
 .reply {
-    margin-left: 10px;
+    margin-left: 15px;
     padding-left: 10px;
     border-left: 2px solid;
     border-image: linear-gradient(to top, #111111, rgba(255, 215, 0, 1)) 1;
