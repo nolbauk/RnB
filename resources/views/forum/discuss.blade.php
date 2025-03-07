@@ -87,8 +87,8 @@
 
                         <div class="caption">
                             <p>
-                                Lorem ipsum dolor storiesquiquam eius.
-                                <span class="hash-tag">#lifestyle</span>
+                            <h5>Lorem ipsum dolor storiesquiquam eius.</h5>
+                            <h5 class="hash-tag">#lifestyle</h5>
                             </p>
                         </div>
                         <div class="comments text-muted">View all 130 comments</div>
@@ -108,8 +108,8 @@
                         </div>
                         <div class="caption">
                             <p>
-                                Lorem ipsum dolor storiesquiquam eius.
-                                <span class="hash-tag">#lifestyle</span>
+                            <h5>Lorem ipsum dolor storiesquiquam eius.</h5>
+                            <h5 class="hash-tag">#lifestyle</h5>
                             </p>
                         </div>
                         <div class="comments text-muted">View all 40 comments</div>
