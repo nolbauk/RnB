@@ -87,7 +87,7 @@
 
                         <div class="caption">
                             <p>
-                                <b>Lana Rose</b> Lorem ipsum dolor storiesquiquam eius.
+                                Lorem ipsum dolor storiesquiquam eius.
                                 <span class="hash-tag">#lifestyle</span>
                             </p>
                         </div>
@@ -108,7 +108,7 @@
                         </div>
                         <div class="caption">
                             <p>
-                                <b>Chirs Brown</b>Lorem ipsum dolor storiesquiquam eius.
+                                Lorem ipsum dolor storiesquiquam eius.
                                 <span class="hash-tag">#lifestyle</span>
                             </p>
                         </div>
