@@ -37,6 +37,7 @@ Route::match(['get', 'post'], '/logout', [AuthController::class, 'logout'])
 // Routes untuk User (Role: 2)
 Route::middleware(['auth', 'role:2'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::view('/profile-view', 'profile-view');
     
     // Forum User
