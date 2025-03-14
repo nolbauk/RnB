@@ -14,30 +14,34 @@
    <meta name="keywords" content="">
    <meta name="description" content="">
    <meta name="author" content="">
-   <!-- bootstrap css -->
-   <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
-   <link rel="stylesheet" type="text/css" href="{{ asset('css/home/bootstrap.min.css') }}">
-   <!-- style css -->
-   <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
-   <link rel="stylesheet" type="text/css" href="{{ asset('css/home/style.css') }}">
-   <!-- Responsive-->
-   <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+   
+   {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/home/bootstrap.min.css') }}">
+   
+   <link rel="stylesheet" type="text/css" href="{{ asset('css/home/style.css') }}"> 
+   
    <link rel="stylesheet" href="{{ asset('css/home/responsive.css') }}">
-   <!-- fevicon -->
-   <!-- <link rel="icon" href="images/fevicon.png" type="{{ asset('images/logo.png') }}" /> -->
-   <!-- font css -->
+   
+
    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
-   <!-- Scrollbar Custom CSS -->
-   <!-- <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css"> -->
-   <link rel="stylesheet" href="{{ asset('css/home/jquery.mCustomScrollbar.min.css') }}">
-   <!-- Tweaks for older IEs-->
-   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  
+   <link rel="stylesheet" href="{{ asset('css/home/jquery.mCustomScrollbar.min.css') }}"> 
+
+ 
+   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"> --}}
+
+   {{-- Item --}}
+   <link rel="stylesheet" href="css/item.css">
+   <link rel="stylesheet" href="css/herogallery.css">
+   {{-- <link rel="stylesheet" href="css/herogallery.css"> --}}
 </head>
 
+{{-- Sekarang Kerja Di sini --}}
+@include('header')
 <body>
    <div class="header_section">
       <div class="container">
-         <nav class="navbar navbar-expand-lg navbar-light ">
+         @include('header')
+         {{-- <nav class="navbar navbar-expand-lg navbar-light ">
             <a class="navbar-brand" href="index.html"><img src="images/logo2.png"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
@@ -61,59 +65,43 @@
                   <div class="cart_bt"><a href="login">LOGIN</a></div>
                </form>
             </div>
-         </nav>
+         </nav> --}}
+         
       </div>
-      <!-- services section start -->
+      {{-- item start --}}
       <div>
          <div class="container">
-            <div class="row">
-               <div class="col-md-1">
-                  <h1 class="services_taital">Artifact</h1>
-               </div>
-            </div>
+            <h1 class="services_taital mb-3">Artifact</h1>
             <div class="services_section_2">
-               <div class="row">
-                  <div class="col-md-2">
-                     <div class="services_box">
-                        <h5 class="tasty_text"><span class="icon_img"><img src="images/itembkb.jpg"></span>Black King Bar</h5>
-                        <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat </p>
-                     </div>
-                  </div>
-                  <div class="col-md-2">
-                     <div class="services_box">
-                        <h5 class="tasty_text"><span class="icon_img"><img src="images/itemdeso.jpg"></span>Desolator</h5>
-                        <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat </p>
-                     </div>
-                  </div>
-                  <div class="col-md-2">
-                     <div class="services_box">
-                        <h5 class="tasty_text"><span class="icon_img"><img src="images/itemshiva.jpg"></span>Shiva Guard</h5>
-                        <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat </p>
-                     </div>
-                  </div>
-                  <div class="col-md-2">
-                     <div class="services_box">
-                        <h5 class="tasty_text"><span class="icon_img"><img src="images/itembkb.jpg"></span>Black King Bar</h5>
-                        <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat </p>
-                     </div>
-                  </div>
-                  <div class="col-md-2">
-                     <div class="services_box">
-                        <h5 class="tasty_text"><span class="icon_img"><img src="images/itemdeso.jpg"></span>Desolator</h5>
-                        <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat </p>
-                     </div>
-                  </div>
-                  <div class="col-md-2">
-                     <div class="services_box">
-                        <h5 class="tasty_text"><span class="icon_img"><img src="images/itemshiva.jpg"></span>Shiva Guard</h5>
-                        <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat </p>
-                     </div>
-                  </div>
+               <div class="services_box">
+                  <h5 class="tasty_text"><span class="icon_img"><img src="images/itembkb.jpg"></span>Black King Bar</h5>
+                  <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat</p>
+               </div>
+               <div class="services_box">
+                  <h5 class="tasty_text"><span class="icon_img"><img src="images/itemdeso.jpg"></span>Desolator</h5>
+                  <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat</p>
+               </div>
+               <div class="services_box">
+                  <h5 class="tasty_text"><span class="icon_img"><img src="images/itemshiva.jpg"></span>Shiva Guard</h5>
+                  <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat</p>
+               </div>
+               <div class="services_box">
+                  <h5 class="tasty_text"><span class="icon_img"><img src="images/itembkb.jpg"></span>Black King Bar</h5>
+                  <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat</p>
+               </div>
+               <div class="services_box">
+                  <h5 class="tasty_text"><span class="icon_img"><img src="images/itemdeso.jpg"></span>Desolator</h5>
+                  <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat</p>
+               </div>
+               <div class="services_box">
+                  <h5 class="tasty_text"><span class="icon_img"><img src="images/itemshiva.jpg"></span>Shiva Guard</h5>
+                  <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat</p>
                </div>
             </div>
          </div>
       </div>
-      <!-- services section end -->
+      
+      {{-- <!-- services section end -->
       <!-- Javascript files-->
       <script src="js/home/jquery.min.js"></script>
       <!-- <script src="{{ asset('js/home/jquery.min.js') }}"></script> -->
@@ -130,7 +118,7 @@
       <!-- <script src="{{ asset('js/home/jquery.mCustomScrollbar.concat.min.js') }}"></script> -->
       <script src="js/home/custom.js"></script>
       <!-- <script src="{{ asset('js/home/custom.js') }}"></script> -->
-      <!-- javascript -->
+      <!-- javascript --> --}}
       <script src="{{ asset('js/item.js') }}"></script>
 </body>
 

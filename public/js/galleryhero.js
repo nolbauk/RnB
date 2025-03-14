@@ -17,10 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // Fungsi untuk mengganti tampilan section dengan animasi smooth
 function updateHeroSection(index) {
     const sections = document.querySelectorAll('.hero-section');
-    if (!sections[index]) return;
+    
+    if (!sections[index]) {
+        currentIndex = 0; // Reset ke awal jika index tidak valid
+        return;
+    }
+
     isScrolling = true;
 
-    // Tambahkan class transitioning
     sections[currentIndex].classList.add('transitioning');
 
     sections[currentIndex].style.opacity = '0';
@@ -38,11 +42,12 @@ function updateHeroSection(index) {
 
         setTimeout(() => {
             isScrolling = false;
-            sections[index].classList.remove('transitioning'); // Hapus class setelah selesai
+            sections[index].classList.remove('transitioning');
             addClickEventToHeroes();
         }, 500);
     }, 300);
 }
+
 
 // Tambahkan event listener untuk klik pada hero
 function addClickEventToHeroes() {
