@@ -31,7 +31,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
 
             // Redirect berdasarkan role
-            return redirect()->route(Auth::user()->role_id == 1 ? 'admindashboard.index' : 'profile');
+            return redirect()->route(Auth::user()->role_id == 1 ? 'dashboard.index' : 'profile');
         }
 
         return back()->with('error', 'Invalid login credentials.');

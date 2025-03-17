@@ -68,7 +68,7 @@ class UserController extends Controller
             'profile_picture' => $profilePicture,
         ]);
     
-        return redirect()->route('adminusers.index')->with('success', 'User berhasil ditambahkan');
+        return redirect()->route('users.index')->with('success', 'User berhasil ditambahkan');
     }
     
 
@@ -137,7 +137,7 @@ class UserController extends Controller
     
         $user->save();
     
-        return redirect()->route('adminusers.index')->with('success', 'User berhasil diperbarui.');
+        return redirect()->route('users.index')->with('success', 'User berhasil diperbarui.');
     }
     
 
@@ -146,7 +146,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->delete(); // Soft delete
     
-        return redirect()->route('adminusers.index')->with('success', 'User berhasil dihapus');
+        return redirect()->route('users.index')->with('success', 'User berhasil dihapus');
     }
 
     public function restore($id)
@@ -154,7 +154,7 @@ class UserController extends Controller
         $user = User::onlyTrashed()->findOrFail($id);
         $user->restore();
     
-        return redirect()->route('adminusers.index')->with('success', 'User berhasil dikembalikan');
+        return redirect()->route('users.index')->with('success', 'User berhasil dikembalikan');
     }
 
     public function forceDelete($id)
@@ -162,6 +162,6 @@ class UserController extends Controller
         $user = User::onlyTrashed()->findOrFail($id);
         $user->forceDelete(); // Hapus permanen dari database
 
-        return redirect()->route('adminusers.index', ['filter' => 'deleted'])->with('success', 'User berhasil dihapus permanen.');
+        return redirect()->route('users.index', ['filter' => 'deleted'])->with('success', 'User berhasil dihapus permanen.');
     }
 }

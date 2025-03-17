@@ -89,7 +89,7 @@ class HeroesController extends Controller
     
             Hero::create($heroData);
     
-            return redirect()->route('adminheroes.index')->with('success', 'Hero berhasil ditambahkan!');
+            return redirect()->route('heroes.index')->with('success', 'Hero berhasil ditambahkan!');
         } catch (ValidationException $e) {
             return redirect()->back()->withErrors($e->validator)->withInput();
         }
@@ -183,7 +183,7 @@ class HeroesController extends Controller
     
             $adminhero->update($validated);
     
-            return redirect()->route('adminheroes.index')->with('success', 'Hero berhasil diperbarui!');
+            return redirect()->route('heroes.index')->with('success', 'Hero berhasil diperbarui!');
         } catch (ValidationException $e) {
             return redirect()->back()->withErrors($e->errors())->withInput();
         } catch (QueryException $e) {
@@ -203,7 +203,7 @@ class HeroesController extends Controller
 
         $hero->delete();
 
-        return redirect()->route('adminheroes.index')->with('success', 'Hero berhasil dihapus!');
+        return redirect()->route('heroes.index')->with('success', 'Hero berhasil dihapus!');
     }
 
 

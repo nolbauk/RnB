@@ -11,7 +11,7 @@
         </div>
         <div class="card-body" style="max-height: 60vh; overflow-y: auto;">
             <div class="container">
-                <form action="{{ route('adminheroes.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('heroes.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     {{-- Nama Hero --}}
@@ -397,7 +397,7 @@
             
                     {{-- Tombol Submit --}}
                     <button type="submit" class="btn btn-primary mt-4">Simpan Hero</button>
-                    <a href="{{ route('adminheroes.index') }}" class="btn btn-secondary mt-4">Batal</a>
+                    <a href="{{ route('heroes.index') }}" class="btn btn-secondary mt-4">Batal</a>
             
                 </form>
             </div>

@@ -7,7 +7,7 @@
 <x-allert/>
 <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex justify-content-between align-items-center">
-        <a href="{{ route('adminroles.create') }}" class="btn btn-success btn-sm">Tambah Role</a>
+        <a href="{{ route('roles.create') }}" class="btn btn-success btn-sm">Tambah Role</a>
     </div>
     <div class="card-body" style="max-height: 60vh; overflow-y: auto;">
         <div class="table-responsive">
@@ -31,8 +31,8 @@
                             </td>
                             <td>
                                 @if(!in_array($role->name, ['admin', 'user']))
-                                    <a href="{{ route('adminroles.edit', $role->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                    <form action="{{ route('adminroles.destroy', $role->id) }}" method="POST" style="display:inline;">
+                                    <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                    <form action="{{ route('roles.destroy', $role->id) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus role ini?')">Hapus</button>

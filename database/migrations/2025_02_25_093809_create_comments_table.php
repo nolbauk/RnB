@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->foreignId('parent_id')->nullable()->constrained('comments')->onDelete('cascade');
             $table->text('content');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -11,7 +11,7 @@
     </div>
     <div class="card-body" style="max-height: 60vh; overflow-y: auto;">
         <div class="container">
-            <form action="{{ route('adminusers.update', $user->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('users.update', $user->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
@@ -94,7 +94,7 @@
             
                 <!-- Tombol Simpan & Batal -->
                 <button type="submit" class="btn btn-primary mt-4">Update User</button>
-                <a href="{{ route('adminusers.index') }}" class="btn btn-secondary mt-4">Batal</a>
+                <a href="{{ route('users.index') }}" class="btn btn-secondary mt-4">Batal</a>
             </form>
         </div>
     </div>

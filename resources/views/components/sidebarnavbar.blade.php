@@ -3,7 +3,7 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center"
-        href="{{ route('admindashboard.index') }}">
+        href="{{ route('dashboard.index') }}">
         <div class="sidebar-brand-icon">
             <img src="/img/icon.png" />
         </div>
@@ -15,7 +15,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('admindashboard.index') }}">
+        <a class="nav-link" href="{{ route('dashboard.index') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -31,8 +31,8 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('adminusers.index') }}">User List</a>
-                <a class="collapse-item" href="{{ route('adminroles.index') }}">Role List</a>
+                <a class="collapse-item" href="{{ route('users.index') }}">User List</a>
+                <a class="collapse-item" href="{{ route('roles.index') }}">Role List</a>
             </div>
         </div>
     </li>
@@ -48,7 +48,7 @@
         </a>
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('adminheroes.index') }}">Hero List</a>
+                <a class="collapse-item" href="{{ route('heroes.index') }}">Hero List</a>
                 <a class="collapse-item" href="">Item List</a>
                 <a class="collapse-item" href="">Skill List</a>
             </div>

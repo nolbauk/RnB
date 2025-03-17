@@ -7,10 +7,10 @@
     <x-allert/>
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
-            <a href="{{ route('adminusers.create') }}" class="btn btn-success btn-sm">Tambah User</a>
+            <a href="{{ route('users.create') }}" class="btn btn-success btn-sm">Tambah User</a>
             <div>
-                <a href="{{ route('adminusers.index', ['filter' => 'active']) }}" class="btn btn-primary btn-sm {{ $filter === 'active' ? 'active' : '' }}">User Aktif</a>
-                <a href="{{ route('adminusers.index', ['filter' => 'deleted']) }}" class="btn btn-secondary btn-sm {{ $filter === 'deleted' ? 'active' : '' }}">User Dihapus</a>
+                <a href="{{ route('users.index', ['filter' => 'active']) }}" class="btn btn-primary btn-sm {{ $filter === 'active' ? 'active' : '' }}">User Aktif</a>
+                <a href="{{ route('users.index', ['filter' => 'deleted']) }}" class="btn btn-secondary btn-sm {{ $filter === 'deleted' ? 'active' : '' }}">User Dihapus</a>
             </div>
         </div>
         <div class="card-body" style="max-height: 60vh; overflow-y: auto;">
@@ -33,20 +33,20 @@
                                 <td>
                                     @if ($filter === 'deleted')
                                         <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#userDetailsModal" onclick="showUserDetails('{{ $user->id }}')">Details</button>
-                                        <form action="{{ route('adminusers.restore', $user->id) }}" method="POST" style="display:inline;">
+                                        <form action="{{ route('users.restore', $user->id) }}" method="POST" style="display:inline;">
                                             @csrf
                                             @method('PATCH')
                                             <button type="submit" class="btn btn-warning btn-sm">Restore</button>
                                         </form>
-                                        <form action="{{ route('adminusers.forceDelete', $user->id) }}" method="POST" style="display:inline;">
+                                        <form action="{{ route('users.forceDelete', $user->id) }}" method="POST" style="display:inline;">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus user ini secara permanen?')">Hapus Permanen</button>
                                         </form>
                                     @else
                                         <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#userDetailsModal" onclick="showUserDetails('{{ $user->id }}')">Details</button>
-                                        <a href="{{ route('adminusers.edit', $user->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                        <form action="{{ route('adminusers.destroy', $user->id) }}" method="POST" style="display:inline;">
+                                        <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                        <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus user ini?')">Hapus</button>
@@ -91,7 +91,7 @@
 <script>
     function showUserDetails(userId) {
         $.ajax({
-            url: '/adminusers/' + userId,
+            url: '/admin/users/' + userId,
             method: 'GET',
             success: function(response) {
                 var user = response.user;

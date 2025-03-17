@@ -23,16 +23,16 @@
     <!-- <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css"> -->
     <link rel="stylesheet" href="{{ asset('css/home/jquery.mCustomScrollbar.min.css') }}">
     <!-- Tweaks for older IEs-->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     </li>
-    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }} ">
+    <link rel="icon" type="image" href="/images/logo.png">
 </head>
 
 <body>
     <div class="header_section">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="index.html"><img src="images/logo2.png"></a>
+                <a class="navbar-brand" href="index.html"><img src="/images/logo2.png"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -61,64 +61,57 @@
     <main class="main">
         <div class="container">
             <div class="middle">
-                <form class="create-post">
+                <!-- Form untuk membuat pertanyaan -->
+                <form class="create-post" action="{{ route('questions.store') }}" method="POST">
+                    @csrf
                     <div class="profile-pic">
-                        <img src="https://64.media.tumblr.com/7b28774544438d73ca8c1daad11402e0/88958e5f55a67155-fd/s250x400/a9ef3dad54f6c57a53fdeef1a793f0143a9aea27.jpg" alt="" />
+                        <img src="{{ Auth::user()->profile_picture ? Storage::url(Auth::user()->profile_picture) : 'https://via.placeholder.com/50' }}" alt="Profile Picture">
                     </div>
-                    <input
-                        type="text"
-                        placeholder="Haiyaaa.."
-                        id="create-post" />
+                    <input type="text" name="content" placeholder="Haiyaaa.." id="create-post" required />
                     <input type="submit" value="Post" class="post post-primary" />
                 </form>
+    
+                <!-- Feed pertanyaan -->
                 <div class="feeds">
+                    @foreach($questions as $question)
                     <div class="feed">
-                        <div class="head"></div>
                         <div class="user">
                             <div class="profile-pic">
-                                <img src="https://64.media.tumblr.com/7b28774544438d73ca8c1daad11402e0/88958e5f55a67155-fd/s250x400/a9ef3dad54f6c57a53fdeef1a793f0143a9aea27.jpg" alt="" />
-                            </div>
+                                <img src="{{ $question->user->profile_picture ? Storage::url($question->user->profile_picture) : 'https://via.placeholder.com/50' }}" alt="Profile Picture">
+                            </div>                            
                             <div class="info">
-                                <h5>Lana Rose</h5>
-                                <small>Dubai, 15 MINUTES AGO</small>
+                                <h5>{{ $question->user->username }}</h5>
+                                <small>{{ $question->created_at->diffForHumans() }}</small>
                             </div>
-                            <span class="edit"><i class="uil uil-ellipsis-h"></i></span>
-                        </div>
-
-                        <div class="caption">
-                            <p>
-                            <h5>Lorem ipsum dolor storiesquiquam eius.</h5>
-                            <h5 class="hash-tag">#lifestyle</h5>
-                            </p>
-                        </div>
-                        <div class="comments text-muted">View all 130 comments</div>
-                    </div>
-
-                    <div class="feed">
-                        <div class="head"></div>
-                        <div class="user">
-                            <div class="profile-pic">
-                                <img src="https://res.cloudinary.com/freecodez/image/upload/v1698067298/images/fy8azbqxhgdrbbijhipe.webp" alt="" />
-                            </div>
-                            <div class="info">
-                                <h5>Chris Brown</h5>
-                                <small>New York, 1 HOUR AGO</small>
-                            </div>
-                            <span class="edit"><i class="uil uil-ellipsis-h"></i></span>
                         </div>
                         <div class="caption">
                             <p>
-                            <h5>Lorem ipsum dolor storiesquiquam eius.</h5>
-                            <h5 class="hash-tag">#lifestyle</h5>
+                                <h5>{{ $question->content }}</h5>
                             </p>
                         </div>
-                        <div class="comments text-muted">View all 40 comments</div>
+    
+                        <div class="d-flex align-items-center">
+                            @if(Auth::user()->role_id == 1)
+                            <form action="{{ route('questions.destroy', $question->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus?');" class="m-0 p-0">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="border-0 bg-transparent text-danger p-0 mx-2" style="cursor: pointer;">
+                                    Delete
+                                </button>
+                            </form>
+                            <span class="mx-1">|</span>
+                            @endif
+                            <a href="{{ route('questions.show', $question->id) }}" class="text-primary mx-2">
+                                View
+                            </a>
+                        </div>                                                                    
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>
-        </div>
     </main>
+    
     <script src="{{ asset('/js/forum.js') }}"></script>
     <!-- Javascript files-->
     <script src="/js/home/jquery.min.js"></script>

@@ -30,13 +30,13 @@ class RoleController extends Controller
             'name' => $request->name
         ]);
 
-        return redirect()->route('adminroles.index')->with('success', 'Role berhasil ditambahkan');
+        return redirect()->route('roles.index')->with('success', 'Role berhasil ditambahkan');
     }
 
     public function edit(Role $adminrole)
     {
         if (in_array($adminrole->name, ['admin', 'user'])) {
-            return redirect()->route('adminroles.index')->with('error', 'Role ini tidak bisa diedit!');
+            return redirect()->route('roles.index')->with('error', 'Role ini tidak bisa diedit!');
         }
     
         return view('admin.roles.edit', compact('adminrole'));
@@ -45,7 +45,7 @@ class RoleController extends Controller
     public function update(Request $request, Role $adminrole)
     {
         if (in_array($adminrole->name, ['admin', 'user'])) {
-            return redirect()->route('adminroles.index')->with('error', 'Role ini tidak bisa diubah!');
+            return redirect()->route('roles.index')->with('error', 'Role ini tidak bisa diubah!');
         }
     
         $request->validate([
@@ -56,7 +56,7 @@ class RoleController extends Controller
             'name' => $request->name
         ]);
     
-        return redirect()->route('adminroles.index')->with('success', 'Role berhasil diperbarui');
+        return redirect()->route('roles.index')->with('success', 'Role berhasil diperbarui');
     }
     
 
@@ -64,12 +64,12 @@ class RoleController extends Controller
         $role = Role::findOrFail($id);
     
         if (in_array($role->name, ['admin', 'user'])) {
-            return redirect()->route('adminroles.index')->with('error', 'Role ini tidak bisa dihapus!');
+            return redirect()->route('roles.index')->with('error', 'Role ini tidak bisa dihapus!');
         }
     
         $role->delete();
     
-        return redirect()->route('adminroles.index')->with('success', 'Role berhasil dihapus!');
+        return redirect()->route('roles.index')->with('success', 'Role berhasil dihapus!');
     }
     
     

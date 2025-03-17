@@ -8,7 +8,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
-            <a href="{{ route('adminheroes.create') }}" class="btn btn-success btn-sm">Tambah Hero</a>
+            <a href="{{ route('heroes.create') }}" class="btn btn-success btn-sm">Tambah Hero</a>
         </div>
         <div class="card-body" style="max-height: 60vh; overflow-y: auto;">
             <div class="table-responsive">
@@ -25,8 +25,8 @@
                             <td>{{ $hero->name }}</td>
                             <td>
                                 <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#heroDetailsModal" onclick="showHeroDetails('{{ $hero->id }}')">Details</button>
-                                <a href="{{ route('adminheroes.edit', $hero->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                <form action="{{ route('adminheroes.destroy', $hero->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus hero ini?')">
+                                <a href="{{ route('heroes.edit', $hero->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                <form action="{{ route('heroes.destroy', $hero->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus hero ini?')">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm">Delete</button>
@@ -72,7 +72,7 @@
     <script>
         function showHeroDetails(heroId) {
             $.ajax({
-                url: '/adminheroes/' + heroId,
+                url: '/admin/heroes/' + heroId,
                 method: 'GET',
                 success: function(response) {
                     var hero = response.hero;

@@ -13,8 +13,8 @@ return new class extends Migration {
             $table->foreignId('comment_id')->constrained()->onDelete('cascade');
             $table->enum('reaction', ['like', 'dislike']);
             $table->timestamps();
-
-            $table->unique(['user_id', 'comment_id']); // Satu user hanya bisa like/dislike satu kali per komentar
+            $table->softDeletes();
+            $table->unique(['user_id', 'comment_id']);
         });
     }
 
