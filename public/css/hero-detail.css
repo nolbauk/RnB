@@ -205,3 +205,47 @@ body {
         transform: scale(1.1);
     }
 
+    /* Gambar pada attack type */
+    .attack-type {
+        display: flex;
+        align-items: center; /* Menjadikan gambar dan teks sejajar */
+        gap: 10px; /* Memberikan jarak antara gambar dan teks */
+    }
+    
+    .attack-type img {
+        filter: brightness(0) invert(1); /* Mengubah warna gambar menjadi putih */
+        height: auto;
+        width: auto; /* Menggunakan ukuran asli gambar */
+    }
+    
+    .attack-type p {
+        margin: 0;
+        font-weight: bold;
+        color: white; /* Warna teks putih agar lebih kontras */
+    }
+    .complexity-container {
+        display: flex;
+        gap: 5px;
+    }
+    
+    .diamond-box {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    
+    .diamond {
+        width: 100%;
+        height: 100%;
+        background-color: #555; /* Default warna gelap */
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        transition: background-color 0.3s ease-in-out;
+    }
+    
+    .diamond-box.active .diamond {
+        background-color: white; /* Diamond aktif berubah warna */
+    }
+    

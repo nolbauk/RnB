@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $hero->name }} - Dota 2</title>
-    
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/hero-detail.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/home/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/home/responsive.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/home/jquery.mCustomScrollbar.min.css') }}">
-    
+    {{-- <link rel="stylesheet" href="{{ asset('/css/home/responsive.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('/css/home/jquery.mCustomScrollbar.min.css') }}"> --}}
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('/images/logo.png') }}">
 </head>
-
-
 
 <body>
     <!-- Header Section -->
@@ -33,7 +31,6 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">HERO</a></li>
@@ -48,10 +45,8 @@
             </nav>
         </div>
     </div>
-
     <!-- Hero Detail Section -->
     <div class="container-hero">
-
         <div class="hero-detail">
             <div class="row">
                 <!-- Left Column: Hero Image and Stats -->
@@ -87,98 +82,99 @@
                             <span class="text-info">(+{{ $hero->intelligence_per_lvl }})</span>
                         </li>
                     </ul>
-
                     <!-- Voice Actor Section -->
                     <h3 class="text-white mt-3">Voice Actor</h3>
                     <p class="text-white">{{ $hero->voice_actor }}</p>
                 </div>
-
                 <!-- Right Column: Hero Details -->
                 <div class="col-md-6">
-                    <p>{{ $hero->primary_attribute }}</p>
+                    <div class="d-flex align-items-center">
+                        <img src="{{ asset('images/' . strtolower($hero->primary_attribute) . '.png') }}" alt="{{ $hero->primary_attribute }}" class="me-2" style="width: 50px;">
+                        <p class="mb-0">{{ $hero->primary_attribute }}</p>
+                    </div>
                     <h1 class="hero-name">{{ $hero->name }}</h1>
                     <p class="fst-italic">{{ $hero->bio }}</p>
-                    <p>{!! nl2br(e($hero->lore ?? 'N/A')) !!}
+                    <p>{!! nl2br(e($hero->lore ?? 'N/A')) !!}</p>
                     <ul class="list-unstyled">
-                        <li><strong>Attack Type:</strong></li>
-                        @if($hero->attack_type == 'Melee')
-                            <img src="{{ asset('images/male.png') }}" alt="Melee">
-                        @elseif($hero->attack_type == 'Ranged')
-                            <img src="{{ asset('images/ranged.png') }}" alt="Ranged">
-                        @endif
-                        <li><strong>Complexity:</strong> {{ $hero->complexity }}</li>
+                        <li><strong>Attack Type</strong>
+                            @if($hero->attack_type == 'Melee')
+                                <div class="attack-type">
+                                    <img src="{{ asset('images/Melee.jpg') }}" alt="Melee">
+                                    <p>Melee</p>
+                                </div>
+                            @elseif($hero->attack_type == 'Ranged')
+                                <div class="attack-type">
+                                    <img src="{{ asset('images/Ranged.jpg') }}" alt="Ranged">
+                                    <p>Ranged</p>
+                                </div>
+                            @endif
+                        </li>
+                        <li><strong>Complexity</strong>
+                            <div class="d-flex complexity-container">
+                                @php
+                                    $complexityLevels = ['Easy' => 1, 'Medium' => 2, 'Hard' => 3];
+                                    $complexity = $complexityLevels[$hero->complexity] ?? 1;
+                                @endphp
+                        
+                                @for ($i = 1; $i <= 3; $i++)
+                                    <div class="diamond-box {{ $i <= $complexity ? 'active' : '' }}">
+                                        <div class="diamond"></div>
+                                    </div>
+                                @endfor
+                            </div>
+                        </li>                        
                     </ul>
-                    
-                  
-                    
-       <div class="abilities">
-        <div class="icon-container">
-        
-            <div class="talent-tree">
-                <table>
-                    <tr class="talent-row">
-                        <td class="talent talent-left">{{ $hero->talent_25_left }}</td>
-                        <td class="level">25</td>
-                        <td class="talent talent-right">{{ $hero->talent_25_right }}</td>
-                    </tr>
-                    <tr class="talent-row">
-                        <td class="talent talent-left">{{ $hero->talent_20_left }}</td>
-                        <td class="level">20</td>
-                        <td class="talent talent-right">{{ $hero->talent_20_right }}</td>
-                    </tr>
-                    <tr class="talent-row">
-                        <td class="talent talent-left">{{ $hero->talent_15_left }}</td>
-                        <td class="level">15</td>
-                        <td class="talent talent-right">{{ $hero->talent_15_right }}</td>
-                    </tr>
-                    <tr class="talent-row">
-                        <td class="talent talent-left">{{ $hero->talent_10_left }}</td>
-                        <td class="level">10</td>
-                        <td class="talent talent-right">{{ $hero->talent_10_right }}</td>
-                    </tr>
-                </table>
-            </div>
-            <img src="{{ asset('images/TALENTS TREE BG.png') }}" alt="Talent Tree Icon" width="64" height="64" class="ability-icon">
-            
-        </div>
-       
-   
-    
-
-    <!-- Ability Icons (menyamping) -->
-    <div class="ability-icons">
-        <div class="icon-container">
-            {{-- <img src="{{ asset('images/TALENTS TREE BG.png') }}" alt="Talent Tree Icon" width="64" height="64" class="ability-icon"> --}}
-        </div>
-        <img src="{{ asset('images/innate_icon.png') }}" alt="innate Tree Icon" width="64" height="64" class="ability-icon">
-        <img src="/storage/{{ $hero->ability1 }}" alt="Ability 1" class="ability-icon">
-        <img src="/storage/{{ $hero->ability2 }}" alt="Ability 2" class="ability-icon">
-        <img src="/storage/{{ $hero->ability3 }}" alt="Ability 3" class="ability-icon">
-        <img src="/storage/{{ $hero->ability4 }}" alt="Ability 4" class="ability-icon">
-        
-    </div>
-</div>
-        
-        
-        
+                    <div class="abilities">
+                        <div class="icon-container">
+                            <div class="talent-tree">
+                                <table>
+                                    <tr class="talent-row">
+                                        <td class="talent talent-left">{{ $hero->talent_25_left }}</td>
+                                        <td class="level">25</td>
+                                        <td class="talent talent-right">{{ $hero->talent_25_right }}</td>
+                                    </tr>
+                                    <tr class="talent-row">
+                                        <td class="talent talent-left">{{ $hero->talent_20_left }}</td>
+                                        <td class="level">20</td>
+                                        <td class="talent talent-right">{{ $hero->talent_20_right }}</td>
+                                    </tr>
+                                    <tr class="talent-row">
+                                        <td class="talent talent-left">{{ $hero->talent_15_left }}</td>
+                                        <td class="level">15</td>
+                                        <td class="talent talent-right">{{ $hero->talent_15_right }}</td>
+                                    </tr>
+                                    <tr class="talent-row">
+                                        <td class="talent talent-left">{{ $hero->talent_10_left }}</td>
+                                        <td class="level">10</td>
+                                        <td class="talent talent-right">{{ $hero->talent_10_right }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <img src="{{ asset('images/TALENTS TREE BG.png') }}" alt="Talent Tree Icon" width="64" height="64" class="ability-icon">
+                        </div>
+                        <!-- Ability Icons (menyamping) -->
+                        <div class="ability-icons">
+                            <div class="icon-container">
+                                {{-- <img src="{{ asset('images/TALENTS TREE BG.png') }}" alt="Talent Tree Icon" width="64" height="64" class="ability-icon"> --}}
+                            </div>
+                            <img src="{{ asset('images/innate_icon.png') }}" alt="innate Tree Icon" width="64" height="64" class="ability-icon">
+                            <img src="/storage/{{ $hero->ability1 }}" alt="Ability 1" class="ability-icon">
+                            <img src="/storage/{{ $hero->ability2 }}" alt="Ability 2" class="ability-icon">
+                            <img src="/storage/{{ $hero->ability3 }}" alt="Ability 3" class="ability-icon">
+                            <img src="/storage/{{ $hero->ability4 }}" alt="Ability 4" class="ability-icon">
+                        </div>
+                    </div>
                 </div>
             </div>
-             
-            {{-- <img src="{{ asset('images/TALENTS TREE BG.png') }}" alt="" width="100" height="100"> --}}
-
-                        
-            
-            <!-- Stats Section -->
+            <!-- Stats Section bawah kotak -->
             <div class="row mt-4 rounded" style="background-color: #1b1b1b">
                 <!-- KIRI -->
                 <div class="col-md-4">
-                   
+                    {{-- tolong buatkan facets --}}
                 </div>
-
                 <!-- TENGAH -->
-                <div class="col-md-4 ">
+                <div class="col-md-4">
                     <div class="mt-3">
-                        
                     </div>
                     <div class="row">
                         <div class="col-md-4">
@@ -268,7 +264,9 @@
                         <!-- Attack Stats -->
                         <div class="col-4">
                             <div class="list-unstyled text-white">
-                                <div class="mt-3"><p class="text-left">ATTACK</p></div>
+                                <div class="mt-3">
+                                    <p class="text-left text-white">ATTACK</p>
+                                </div>
                                 <div class="mt-3">
                                     <img src="{{ asset('images/pedang le.png') }}" alt="Attack Damage" class="me-3">
                                     <span class="text-danger">{{ $hero->attack_dmg_min }} - {{ $hero->attack_dmg_max }}</span>
@@ -287,11 +285,12 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Defense Stats -->
                         <div class="col-4">
                             <div class="list-unstyled text-white">
-                                <div class="mt-3"><p class="text-left">DEFENSE</p></div>
+                                <div class="mt-3">
+                                    <p class="text-left text-white">DEFENSE</p>
+                                </div>
                                 <div class="mt-3">
                                     <img src="{{ asset('images/Tameng.png') }}" alt="Armor" class="me-3">
                                     <span class="text-danger">{{ $hero->armor }}</span>
@@ -303,11 +302,12 @@
                             </div>
                             {{-- <h3 class="text-white mt-3">Stats</h3> --}}
                         </div>
-                        
                         <!-- Mobility Stats -->
                         <div class="col-4">
                             <div class="list-unstyled text-white">
-                                <div class="mt-3"><p class="text-left">MOBILITY</p></div>
+                                <div class="mt-3">
+                                    <p class="text-left text-white">MOBILITY</p>
+                                </div>
                                 <div class="mt-3">
                                     <img src="{{ asset('images/Movement Speed.png') }}" alt="Movement Speed" class="me-3">
                                     <span class="text-danger">{{ $hero->movement_speed }}</span>
@@ -328,7 +328,6 @@
             </div>
         </div>
     </div>
-    
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('js/detail-hero.js') }}"></script>
@@ -340,4 +339,5 @@
     <script src="/js/home/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="/js/home/custom.js"></script>
 </body>
+
 </html>

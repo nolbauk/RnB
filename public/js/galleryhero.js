@@ -1,4 +1,4 @@
-// Scrolling 
+// Scrolling
 
 // Inisialisasi variabel untuk tracking
 let currentIndex = 0;
@@ -7,36 +7,47 @@ let lastScrollTime = Date.now();
 const scrollCooldown = 1000; // 1 detik cooldown antara scroll
 
 // Ambil semua section berdasarkan atribut
-const sections = document.querySelectorAll('.hero-section');
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.hero-section');
+    if (sections.length > 0) {
+        updateHeroSection(0);
+    }
+});
 
 // Fungsi untuk mengganti tampilan section dengan animasi smooth
 function updateHeroSection(index) {
-    isScrolling = true;
+    const sections = document.querySelectorAll('.hero-section');
     
-    // Tambahkan efek fade out ke section saat ini
+    if (!sections[index]) {
+        currentIndex = 0; // Reset ke awal jika index tidak valid
+        return;
+    }
+
+    isScrolling = true;
+
+    sections[currentIndex].classList.add('transitioning');
+
     sections[currentIndex].style.opacity = '0';
     setTimeout(() => {
-        // Sembunyikan semua section
         sections.forEach((section, i) => {
             section.style.display = i === index ? 'flex' : 'none';
         });
-        
-        // Tampilkan section baru dengan efek fade in
+
         sections[index].style.opacity = '0';
         setTimeout(() => {
             sections[index].style.opacity = '1';
         }, 50);
-        
-        // Atur section yang sedang aktif
+
         currentIndex = index;
-        
-        // Reset scrolling flag setelah animasi selesai
+
         setTimeout(() => {
             isScrolling = false;
+            sections[index].classList.remove('transitioning');
             addClickEventToHeroes();
         }, 500);
-    }, 300); // Waktu fade out
+    }, 300);
 }
+
 
 // Tambahkan event listener untuk klik pada hero
 function addClickEventToHeroes() {
@@ -51,6 +62,7 @@ function addClickEventToHeroes() {
 
 // Event listener untuk scrolling dengan cooldown
 document.addEventListener('wheel', (event) => {
+    event.preventDefault(); // Blokir scrolling default
     const currentTime = Date.now();
     if (currentTime - lastScrollTime < scrollCooldown || isScrolling) {
         return;
@@ -60,10 +72,11 @@ document.addEventListener('wheel', (event) => {
     const direction = event.deltaY > 0 ? 1 : -1;
     let nextIndex = currentIndex + direction;
 
+    const sections = document.querySelectorAll('.hero-section');
     if (nextIndex < 0 || nextIndex >= sections.length) return;
 
     updateHeroSection(nextIndex);
-});
+}, { passive: false }); // Pastikan event.preventDefault() berfungsi
 
 // Tambahkan CSS untuk transisi smooth
 const style = document.createElement('style');
@@ -74,6 +87,9 @@ style.textContent = `
     .hero-section {
         opacity: 1;
         transition: opacity 0.3s ease-in-out;
+    }
+    .hero-section.transitioning {
+        pointer-events: none; /* Mencegah spam scroll */
     }
     .page-container {
         margin-top: -80px;
@@ -86,9 +102,3 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
-
-// Inisialisasi tampilan awal
-updateHeroSection(0);
-
-
-

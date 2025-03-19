@@ -18,41 +18,49 @@ class GalleryHeroController extends Controller
         ];
         return view('heroes', compact('groupedHeroes')); 
     }
-    public function show($id){
+
+    public function show($id)
+    {
         $hero = Hero::findOrFail($id);
         return view('hero-detail', compact('hero'));
     }
-    public function filter(Request $request)
-{
-    if ($request->has('query')) {
-        // Search berdasarkan nama atau primary_attribute
-        $query = $request->input('query');
-
-        $heroes = Hero::where('name', 'LIKE', "%{$query}%")
-                      ->orWhere('primary_attribute', 'LIKE', "%{$query}%")
-                      ->get();
-        
-        return response()->json($heroes);
-    } elseif ($request->has('complexity')) {
-        // Filter berdasarkan complexity
-        $complexityMap = [
-            1 => 'Easy',
-            2 => 'Medium',
-            3 => 'Hard'
-        ];
-        
-        $complexity = $complexityMap[$request->complexity] ?? null;
     
-        if (!$complexity) {
-            return response()->json([]);
+    public function filter(Request $request)
+    {
+        if (!$request->hasAny(['query', 'complexity', 'attack_type', 'carry', 'support', 'nuker', 'disabler', 'jungler', 'durable', 'escape', 'pusher', 'initiator'])) {
+            return response()->json(Hero::all()); // Kembalikan semua hero jika tidak ada filter yang aktif
         }
     
-        $heroes = Hero::where('complexity', $complexity)->get();
+        $query = Hero::query();
     
-        return response()->json($heroes);
-    }
-
-    return response()->json([]);
-}
+        // Filter pencarian
+        if ($request->has('query')) {
+            $search = $request->input('query');
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'LIKE', "%{$search}%")
+                  ->orWhere('primary_attribute', 'LIKE', "%{$search}%");
+            });
+        }
+    
+        // Filter berdasarkan Complexity
+        if ($request->has('complexity')) {
+            $query->where('complexity', $request->complexity);
+        }
+    
+        // Filter berdasarkan Role
+        $roles = ['carry', 'support', 'nuker', 'disabler', 'jungler', 'durable', 'escape', 'pusher', 'initiator'];
+        foreach ($roles as $role) {
+            if ($request->has($role) && $request->$role > 0) {
+                $query->where($role, '>', 0);
+            }
+        }
+    
+        // Filter berdasarkan Attack Type
+        if ($request->has('attack_type')) {
+            $query->where('attack_type', $request->attack_type);
+        }
+    
+        return response()->json($query->get());
+    }        
 
 }
