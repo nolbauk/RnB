@@ -8,6 +8,7 @@ use App\Http\Controllers\GalleryHeroController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\QuestionController;
 
 // Route::get('/qwerty', function () {
@@ -70,6 +71,7 @@ Route::middleware(['auth', 'role:1'])->group(function () {
         Route::resource('/dashboard', DashboardController::class);
         Route::resource('/heroes', HeroesController::class);
         Route::resource('/roles', RoleController::class);
+        Route::resource('/items', ItemController::class);
 
         // Data User
         Route::resource('/users', UserController::class)->parameters(['users' => 'user']);

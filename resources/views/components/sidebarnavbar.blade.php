@@ -49,7 +49,7 @@
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('heroes.index') }}">Hero List</a>
-                <a class="collapse-item" href="">Item List</a>
+                <a class="collapse-item" href="{{ route('items.index') }}">Item List</a>
                 <a class="collapse-item" href="">Skill List</a>
             </div>
         </div>
