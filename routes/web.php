@@ -9,9 +9,9 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 
-// Route::get('/qwerty', function () {
-//     return view('qwerty');
-// });
+Route::get('/coba', function () {
+    return view('coba');
+});
 
 // Guest
 Route::middleware(['guest'])->group(function () {
