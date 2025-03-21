@@ -9,11 +9,18 @@ use App\Models\User;
 
 class ProfileController extends Controller
 {
-    public function show()
+    public function index()
     {
         $user = Auth::user();
-        return view('profile', compact('user'));
+        return view('profile-view', compact('user'));
     }
+
+    public function edit()
+    {
+        $user = Auth::user(); // Ambil data user yang sedang login
+    
+        return view('profile', compact('user'));
+    }    
 
     public function update(Request $request)
     {
@@ -49,6 +56,6 @@ class ProfileController extends Controller
         // Simpan perubahan ke database
         $user->save();
 
-        return redirect()->route('profile')->with('success', 'Profile updated successfully.');
+        return redirect()->route('profile.index')->with('success', 'Profile updated successfully.');
     }
 }

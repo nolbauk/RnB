@@ -59,7 +59,15 @@
                   </li>
                </ul>
                <form class="form-inline my-2 my-lg-0">
-                  <div class="cart_bt"><a href="login">LOGIN</a></div>
+                  <div class="cart_bt">
+                     @if(Auth::check())
+                           <!-- Jika user login, tampilkan tombol Profile -->
+                           <a href="{{ route('profile.index') }}" >Profile</a>
+                     @else
+                           <!-- Jika belum login, tampilkan tombol Login -->
+                           <a href="{{ route('login') }}" >Login</a>
+                     @endif
+                  </div>
                </form>
             </div>
          </nav>

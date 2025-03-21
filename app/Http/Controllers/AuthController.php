@@ -38,7 +38,7 @@ class AuthController extends Controller
         if (Auth::attempt([$loginType => $credentials['login'], 'password' => $credentials['password']])) {
             $request->session()->regenerate();
 
-            return redirect()->route(Auth::user()->role_id == 1 ? 'admindashboard.index' : 'profile');
+            return redirect()->route(Auth::user()->role_id == 1 ? 'admindashboard.index' : 'profile.index');
         }
 
         return back()->with('error', 'Invalid login credentials.');
