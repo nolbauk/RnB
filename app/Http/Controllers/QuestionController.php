@@ -30,8 +30,7 @@ class QuestionController extends Controller
 
     public function show($id)
     {
-        $question = Question::with(['user', 'comments.user'])->findOrFail($id);
-        
+        $question = Question::with(['user', 'comments.user', 'comments.replies.user'])->findOrFail($id);
         return view('forum.discuss-detail', compact('question'));
     }
 

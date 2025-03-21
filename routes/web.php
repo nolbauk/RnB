@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\CommentController;
 
 // Route::get('/qwerty', function () {
 //     return view('qwerty');
@@ -57,6 +58,9 @@ Route::middleware(['auth', 'role:1,2'])->group(function () {
         Route::get('/discuss', [QuestionController::class, 'index'])->name('questions.index');
         Route::post('/questions', [QuestionController::class, 'store'])->name('questions.store');
         Route::get('/discuss/{question}', [QuestionController::class, 'show'])->name('questions.show');
+        Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+        Route::post('/comments/reply', [CommentController::class, 'reply'])->name('comments.reply');
+        Route::post('/comments/reply2reply', [CommentController::class, 'reply2reply'])->name('comments.reply2reply');
         Route::get('/gallery', function () {
             return view('forum.gallery');
         });

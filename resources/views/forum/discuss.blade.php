@@ -27,7 +27,6 @@
     </li>
     <link rel="icon" type="image" href="/images/logo.png">
 </head>
-
 <body>
     <div class="header_section">
         <div class="container">
@@ -77,7 +76,7 @@
                     <div class="feed">
                         <div class="user">
                             <div class="profile-pic">
-                                <img src="{{ $question->user->profile_picture ? Storage::url($question->user->profile_picture) : 'https://via.placeholder.com/50' }}" alt="Profile Picture">
+                                <img class="img-profile" src="{{ $question->user->profile_picture ? Storage::url($question->user->profile_picture) : 'https://via.placeholder.com/50' }}" alt="Profile Picture">
                             </div>                            
                             <div class="info">
                                 <h5>{{ $question->user->username }}</h5>
