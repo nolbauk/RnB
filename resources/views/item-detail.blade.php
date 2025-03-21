@@ -1,45 +1,52 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>\
-    <link rel="stylesheet" href="css/item-detail.css">
+    <title>Detail Item</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/detail-item.css') }}">
+   
 </head>
 <body>
-    <div class="header_section">
-        <div class="container">
-            @include('header')
-        </div>
-    </div>
-    
-    <div class="container">
-        <div class="item-detail-section">
-            <div class="item-header">
-                <h1 class="item-title">Black King Bar</h1>
-                <img src="images/itembkb.jpg" alt="Black King Bar" class="item-image">
+   <div class="header_section">
+      <div class="container">
+         @include('header')
+      </div>
+   </div>
+    <div class="container mt-4" style="padding-top: 100px;">
+        <div class="row">
+            <!-- Kolom Kiri untuk Gambar -->
+            <div class="col-md-6">
+                <div class="item-image">
+                    <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}" class="img-fluid rounded">
+                </div>
             </div>
             
-            <div class="item-info">
-                <h3>Description</h3>
-                <p>Grants spell immunity for a short duration.</p>
-                
-                <h3>Stats</h3>
-                <ul>
-                    <li>+10 Strength</li>
-                    <li>+24 Damage</li>
-                </ul>
-                
-                <h3>Active: Avatar</h3>
-                <p>Applies spell immunity for 9 seconds. Duration decreases with each use.</p>
-                
-                <h3>Cost</h3>
-                <p>4050 Gold</p>
+            <!-- Kolom Kanan untuk Deskripsi dan Informasi -->
+            <div class="col-md-6">
+                <div class="item-info">
+                    <h1 class="mb-3">{{ $item->name }}</h1>
+                    <p class="item-description mb-4">{{ $item->description }}</p>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Detail Item</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Cost:</strong> {{ $item->cost }}</li>
+                            <li class="list-group-item"><strong>Sell Value:</strong> {{ $item->sell_value }}</li>
+                            <li class="list-group-item"><strong>Type:</strong> {{ $item->type }}</li>
+                            <li class="list-group-item"><strong>Category:</strong> {{ $item->category }}</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    
-    <script src="{{ asset('js/item-detail.js') }}"></script>
-</body>
 
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

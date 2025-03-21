@@ -99,3 +99,7 @@ Route::get('/heroes/filter', [GalleryHeroController::class, 'filter'])->name('he
 Route::get('/news', function () {
     return view('news.news-gallery');
 });
+
+// item
+Route::get('/item', [ItemController::class, 'frontend'])->name('item.frontend');
+Route::get('/item/{name}', [ItemController::class, 'showByName'])->name('items.show');

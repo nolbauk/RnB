@@ -40,67 +40,36 @@
    <div class="header_section">
       <div class="container">
          @include('header')
-         {{-- <nav class="navbar navbar-expand-lg navbar-light ">
-            <a class="navbar-brand" href="index.html"><img src="images/logo2.png"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                     <a class="nav-link" href="hero">HERO</a>
-                  </li>
-                  <li class="nav-item active">
-                     <a class="nav-link" href="item">ITEM</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="icecream.html">NEWS</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="services.html">FORUM</a>
-                  </li>
-               </ul>
-               <form class="form-inline my-2 my-lg-0">
-                  <div class="cart_bt"><a href="login">LOGIN</a></div>
-               </form>
-            </div>
-         </nav> --}}
-         
       </div>
-      {{-- item start --}}
-      <div>
-         <div class="container">
-            <h1 class="services_taital mb-3">Artifact</h1>
-            <div class="services_section_2">
-               <div class="services_box">
-                  <h5 class="tasty_text"><span class="icon_img"><img src="images/itembkb.jpg"></span>Black King Bar</h5>
-                  <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat</p>
-               </div>
-               <div class="services_box">
-                  <h5 class="tasty_text"><span class="icon_img"><img src="images/itemdeso.jpg"></span>Desolator</h5>
-                  <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat</p>
-               </div>
-               <div class="services_box">
-                  <h5 class="tasty_text"><span class="icon_img"><img src="images/itemshiva.jpg"></span>Shiva Guard</h5>
-                  <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat</p>
-               </div>
-               <div class="services_box">
-                  <h5 class="tasty_text"><span class="icon_img"><img src="images/itembkb.jpg"></span>Black King Bar</h5>
-                  <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat</p>
-               </div>
-               <div class="services_box">
-                  <h5 class="tasty_text"><span class="icon_img"><img src="images/itemdeso.jpg"></span>Desolator</h5>
-                  <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat</p>
-               </div>
-               <div class="services_box">
-                  <h5 class="tasty_text"><span class="icon_img"><img src="images/itemshiva.jpg"></span>Shiva Guard</h5>
-                  <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat</p>
-               </div>
-            </div>
+   </div>
+
+   {{-- Item Section --}}
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <h1 class="services_taital">{{ $category }}</h1>
          </div>
       </div>
       
-      <script src="{{ asset('js/item.js') }}"></script>
+      <div class="services_section_2">
+         @foreach($items as $item)
+         <a href="{{ route('items.show', ['name' => str_replace(' ', '-', $item->name)]) }}" class="item-link">
+             <div class="services_box">
+                 <div class="icon_img">
+                     <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}">
+                 </div>
+                 <h5 class="tasty_text">{{ $item->name }}</h5>
+             </div>
+         </a>
+         @endforeach
+     </div>
+     
+   </div>
+   <script src="{{ asset('js/scroll-item.js') }}"></script>
+
 </body>
+
+
+
 
 </html>

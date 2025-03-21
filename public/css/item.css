@@ -1,70 +1,97 @@
 /* Reset dasar */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #1f1f1f;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    overflow-x: hidden; /* Menghindari scroll horizontal */
-}
-.container {
-    margin-top: 40px;
-    width: 100%;
-    padding: 20px 0;
-}
-
-.services_section_2 {
+   font-family: Arial, sans-serif;
+   background-color: #1f1f1f;
+   color: white;
    display: flex;
-   justify-content: flex-start; /* Menghindari jarak antar card */
-   flex-wrap: wrap;
-   gap: 15px; /* Jarak antar card */
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+   overflow-x: hidden;
 }
 
+/* Container agar berada di tengah */
+.container {
+   margin-top: 40px;
+   width: 80%; /* Lebar lebih kecil agar tidak terlalu melebar */
+   padding: 20px 0;
+   display: flex;
+   flex-direction: column;
+   
+}
+
+/* Mengatur posisi card agar di tengah */
+.services_section_2 {
+  display: flex;
+  justify-content: center; /* Menjadikan card berada di tengah */
+  flex-wrap: wrap;
+  gap: 15px; /* Jarak antar card */
+}
+
+/* Card */
 .services_box {
-   background-color: #2a2a2a;
-   border: 2px solid yellow;
-   width: 180px;
-   height: 300px;
-   padding: 15px;
-   text-align: center;
-   border-radius: 10px;
-   box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.8);
-   transition: all 0.3s ease-in-out;
-   margin-bottom: 20px; /* Menghindari card menempel */
+  background-color: #2a2a2a;
+  border: 2px solid yellow;
+  width: 200px; /* Lebar card sedikit diperbesar */
+  height: 200; /* Tinggi card sedikit diperbesar */
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 20px; /* Menghindari card menempel */
 }
 
 .services_box:hover {
-   transform: scale(1.05);
-   box-shadow: -5px -5px 10px rgba(255, 215, 0, 0.8);
+  transform: scale(1.05);
+  box-shadow: -5px -5px 10px rgba(255, 215, 0, 0.8);
 }
 
+/* Perbesar ukuran gambar dalam card */
 .icon_img img {
-   width: 120px;
-   height: 120px;
-   margin-bottom: 10px;
-   border-radius: 10px; /* Memberikan efek lebih smooth */
+  width: 140px; /* Lebih besar dari sebelumnya */
+  height: 140px;
+  margin-bottom: 10px;
+  border-radius: 10px; /* Memberikan efek lebih smooth */
 }
 
 .tasty_text {
-   font-size: 16px;
-   font-weight: bold;
-   margin-bottom: 10px;
-   color: #b0b0f0;
+  font-size: 18px; /* Ukuran font sedikit diperbesar */
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #b0b0f0;
 }
 
-.lorem_text {
-   font-size: 14px;
-   color: #d1d1d1;
-   text-align: justify;
-}
+/* Heading */
 .services_taital {
-    margin-bottom: 30px; /* Atur jarak sesuai kebutuhan */
+   margin-bottom: 30px; /* Atur jarak sesuai kebutuhan */
+   text-align: center;
 }
+
+.services_taital {
+   margin-bottom: 30px; /* Jarak sesuai kebutuhan */
+   text-align: left; /* Buat teks rata kiri */
+   width: 100%; /* Pastikan elemen ini mengisi seluruh lebar container */
+   padding-left: 20px; /* Beri sedikit padding agar tidak terlalu mepet */
+}
+
+/* Hilangkan garis bawah pada link */
+.item-link {
+   text-decoration: none;
+ }
+ 
+ /* Ubah warna teks agar sesuai tema */
+ .item-link .tasty_text {
+   color: #b0b0f0; /* Warna tetap sama */
+   font-size: 18px;
+   font-weight: bold;
+ }
+ 
+
+ 

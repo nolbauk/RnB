@@ -136,4 +136,38 @@ class ItemController extends Controller
     
         return redirect()->route('items.index')->with('success', 'Item berhasil dihapus!');
     }    
+    public function frontend(Request $request)
+{
+    // Ambil kategori dari query parameter, default ke 'Consumables' jika tidak ada
+    $category = $request->query('category', 'Consumables');
+
+    // Ambil semua kategori dari daftar yang sudah didefinisikan di database
+    $categories = [
+        'Consumables', 'Attributes', 'Equipment', 'Miscellaneous', 'Secret Shop',
+        'Accessories', 'Support', 'Magical', 'Armor', 'Weapons', 'Armaments',
+        'Boss Rewards', 'Collectible Items'
+    ];
+
+    // Pastikan kategori yang dipilih valid
+    if (!in_array($category, $categories)) {
+        abort(404, 'Kategori tidak ditemukan');
+    }
+
+    // Ambil item berdasarkan kategori yang dipilih
+    $items = Item::where('category', $category)->get();
+
+    return view('item', compact('items', 'category', 'categories'));
+}
+
+
+
+    public function showByName($name)
+    {
+    // Cari item berdasarkan nama (tanpa memperhatikan huruf besar/kecil)
+    $item = Item::where('name', str_replace('-', ' ', $name))->firstOrFail();
+    
+    return view('item-detail', compact('item'));
+    }
+
+    
 }
