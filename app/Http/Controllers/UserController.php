@@ -24,11 +24,6 @@ class UserController extends Controller
     
         return view('admin.users.index', compact('users', 'filter'));
     }
-    
-    public function profile() {
-        $user = Auth::user(); // Ambil user yang sedang login
-        return view('profile', compact('user'));
-    }
 
     public function create()
     {

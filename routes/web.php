@@ -11,6 +11,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ProfileController;
 
 // Route::get('/qwerty', function () {
 //     return view('qwerty');
@@ -46,12 +47,13 @@ Route::get('/hero/{id}', [GalleryHeroController::class, 'show'])->name('hero.sho
 // =======================
 Route::middleware(['auth', 'role:1,2'])->group(function () {
     // Profile
-    Route::prefix('profile')->group(function () {
-        Route::get('/', [UserController::class, 'profile'])->name('profile');
-        Route::get('/view', function () {
-            return view('profile-view');
-        });
-    });
+    Route::resource('/profile', ProfileController::class);
+    // Route::prefix('profile')->group(function () {
+    //     Route::get('/', [UserController::class, 'profile'])->name('profile');
+    //     Route::get('/view', function () {
+    //         return view('profile-view');
+    //     });
+    // });
 
     // Forum
     Route::prefix('forum')->group(function () {

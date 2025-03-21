@@ -58,7 +58,15 @@
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
-                        <div class="cart_bt"><a href="login">LOGIN</a></div>
+                        <div class="cart_bt">
+                            @if(Auth::check())
+                                  <!-- Jika user login, tampilkan tombol Profile -->
+                                  <a href="{{ route('profile.index') }}" >Profile</a>
+                            @else
+                                  <!-- Jika belum login, tampilkan tombol Login -->
+                                  <a href="{{ route('login') }}" >Login</a>
+                            @endif
+                         </div>
                     </form>
                 </div>
             </nav>
@@ -75,29 +83,41 @@
                             <!-- BEGIN profile-header-cover -->
                             <div class="profile-header-cover"></div>
                             <!-- END profile-header-cover -->
+                    
                             <!-- BEGIN profile-header-content -->
                             <div class="profile-header-content">
                                 <!-- BEGIN profile-header-img -->
                                 <div class="profile-header-img">
-                                    <img src="images/itembkb.jpg" alt="">
+                                    @if(isset($user->profile_picture) && $user->profile_picture)
+                                        <img id="profile-img" src="{{ asset('storage/' . $user->profile_picture) }}" class="rounded-circle img-fluid profile-img" alt="Profile Picture">
+                                    @else
+                                        <div id="default-profile-icon" class="default-profile-icon">
+                                            <i class="fa-solid fa-circle-user"></i>
+                                        </div>
+                                    @endif
                                 </div>
                                 <!-- END profile-header-img -->
+                    
                                 <!-- BEGIN profile-header-info -->
                                 <div class="profile-header-info">
-                                    <h3 class="m-t-10 m-b-5">Sean Ngu</h3>
-                                    <h4 class="m-b-10">UXUI + Frontend Developer</h4>
-                                    <a href="#" class="btn mb-2">Edit Profile</a>
+                                    <h3 class="fw-bold text-primary">{{ '@' . $user->username }}</h3>
+                                    <h4 class="text-white">{{ $user->name }}</h4>
+                                    <p class="text-muted">{{ $user->bio ?? 'No bio available' }}</p>
+                                    <a href="{{ route('profile.edit', $user->id) }}" class="btn mb-2">Edit Profile</a>
                                 </div>
                                 <!-- END profile-header-info -->
                             </div>
                             <!-- END profile-header-content -->
+                    
                             <!-- BEGIN profile-header-tab -->
                             <ul class="profile-header-tab nav nav-tabs">
-                                <li class="nav-item"><a href="https://www.bootdey.com/snippets/view/bs4-profile-with-timeline-posts" target="__blank" class="nav-link_">RECENT POSTS</a></li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">RECENT POSTS</a>
+                                </li>
                             </ul>
                             <!-- END profile-header-tab -->
                         </div>
-                    </div>
+                    </div>                    
                     <!-- end profile -->
                     <!-- begin profile-content -->
                     <div class="profile-content">

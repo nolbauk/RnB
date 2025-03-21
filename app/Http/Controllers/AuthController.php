@@ -10,21 +10,29 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
-    // Menampilkan halaman login
+    public function showRegistrationForm()
+    {
+        if (Auth::guard('web')->check()) {
+            return redirect('/');
+        }
+        return view('auth.register');
+    }
+    
     public function showLoginForm()
     {
+        if (Auth::guard('web')->check()) {
+            return redirect('/');
+        }
         return view('auth.login');
     }
 
-    // Proses login (bisa pakai username atau email)
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'login' => 'required', // Bisa email atau username
+            'login' => 'required',
             'password' => 'required|string|min:6',
         ]);
 
-        // Tentukan apakah input adalah email atau username
         $loginType = filter_var($credentials['login'], FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
         if (Auth::attempt([$loginType => $credentials['login'], 'password' => $credentials['password']])) {
@@ -37,13 +45,6 @@ class AuthController extends Controller
         return back()->with('error', 'Invalid login credentials.');
     }
 
-    // Menampilkan halaman register
-    public function showRegistrationForm()
-    {
-        return view('auth.register');
-    }
-
-    // Proses registrasi user baru
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -60,13 +61,12 @@ class AuthController extends Controller
             'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role_id' => 2, // Default role user
+            'role_id' => 2,
         ]);
 
         return redirect()->route('login')->with('success', 'Registration successful. Please log in.');
     }
 
-    // Proses logout
     public function logout(Request $request)
     {
         Auth::logout();
