@@ -6,12 +6,82 @@
     <title>Daftar Hero - Dota 2</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/herogallery.css">
-    <link rel="stylesheet" href="css/header.css">
-</head>
-<body class="bg-dark text-white">
-    <div class="container">
-        @include('header')
+    {{-- <link rel="stylesheet" href="css/header.css"> --}}
 
+    {{-- Jangan Disentuh biar hakim --}}
+    <!-- basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- mobile metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- site metas -->
+   <title>RNB</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <link rel="stylesheet" type="text/css" href="{{ asset('css/buttonlg.css') }}">
+   <!-- bootstrap css -->
+   <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
+   <link rel="stylesheet" type="text/css" href="{{ asset('css/home/bootstrap.min.css') }}">
+   <!-- style css -->
+   <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+   <link rel="stylesheet" type="text/css" href="{{ asset('css/home/style.css') }}">
+   <!-- Responsive-->
+   <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+   <link rel="stylesheet" href="{{ asset('css/home/responsive.css') }}">
+   <!-- fevicon -->
+   <!-- <link rel="icon" href="images/fevicon.png" type="{{ asset('images/logo.png') }}" /> -->
+   <!-- font css -->
+   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+   <!-- Scrollbar Custom CSS -->
+   <!-- <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css"> -->
+   <link rel="stylesheet" href="{{ asset('css/home/jquery.mCustomScrollbar.min.css') }}">
+   <!-- Tweaks for older IEs-->
+   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }} ">
+   {{-- Jangan sentuh uy --}}
+</head>
+<body class="text-white">
+    <div class="header_section">
+        <div class="container">
+         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html"><img src="images/logo2.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link" href="/">HOME</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="item">ITEM</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="icecream.html">NEWS</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="services.html">FORUM</a>
+                  </li>
+               </ul>
+               <form class="form-inline my-2 my-lg-0">
+                  <div class="cart_bt">
+                     @if(Auth::check())
+                           <!-- Jika user login, tampilkan tombol Profile -->
+                           <a href="{{ route('profile.index') }}" >Profile</a>
+                     @else
+                           <!-- Jika belum login, tampilkan tombol Login -->
+                           <a href="{{ route('login') }}" >Login</a>
+                     @endif
+                  </div>
+               </form>
+            </div>
+         </nav>
+      </div>
+    </div>
+    <div class="container">
         <!-- HERO LIST SECTION -->
         <div class="page-container mt-n5">
             <div id="hero-list">
@@ -49,9 +119,8 @@
             </div>
         </div>
     </div>
-
     <!-- FILTER NAVBAR (BOTTOM FIXED) -->
-    <nav class="navbar-bawah navbar-expand-lg navbar-dark fixed-bottom">
+    <nav class="navbar-bawah navbar-expand-lg  fixed-bottom">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
                 

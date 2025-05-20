@@ -91,11 +91,7 @@
 <script>
     function showUserDetails(userId) {
         $.ajax({
-<<<<<<< HEAD
             url: '/admin/users/' + userId,
-=======
-            url: '/admin/adminusers/' + userId,
->>>>>>> 14-ProfileUser
             method: 'GET',
             success: function(response) {
                 var user = response.user;

@@ -109,13 +109,15 @@ class HeroesController extends Controller
         ], 200);
     }
 
-    public function edit(Hero $adminhero)
+    public function edit($id) 
     {
+        $adminhero = Hero::findOrFail($id);
         return view('admin.heroes.edit', compact('adminhero'));
-    }
+    } 
     
-    public function update(Request $request, Hero $adminhero)
+    public function update(Request $request, $id)
     {
+        $adminhero = Hero::findOrFail($id);
         try {
             $validated = $request->validate([
                 'name' => 'required|string|max:100',

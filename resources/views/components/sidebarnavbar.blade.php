@@ -50,12 +50,12 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('heroes.index') }}">Hero List</a>
                 <a class="collapse-item" href="{{ route('items.index') }}">Item List</a>
-                <a class="collapse-item" href="">Skill List</a>
+                {{-- <a class="collapse-item" href="">Skill List</a> --}}
             </div>
         </div>
     </li>
 
-    <!-- Divider -->
+    {{-- <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
     <li class="nav-item">
@@ -70,7 +70,7 @@
                 <a class="collapse-item" href="">Category List</a>
             </div>
         </div>
-    </li>
+    </li> --}}
 
     <!-- Divider -->
     <hr class="sidebar-divider">

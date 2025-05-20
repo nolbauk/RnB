@@ -139,7 +139,7 @@ header .login a:hover {
     transition: transform 0.8s ease-in-out;
 }
 .navbar-bawah {
-    background-color: #1b1b1b;
+    
     display: flex;
     justify-content: space-between;
     padding: 20px;

@@ -157,11 +157,11 @@
                             <div class="icon-container">
                                 {{-- <img src="{{ asset('images/TALENTS TREE BG.png') }}" alt="Talent Tree Icon" width="64" height="64" class="ability-icon"> --}}
                             </div>
-                            <img src="{{ asset('images/innate_icon.png') }}" alt="innate Tree Icon" width="64" height="64" class="ability-icon">
+                            {{-- <img src="{{ asset('images/innate_icon.png') }}" alt="innate Tree Icon" width="64" height="64" class="ability-icon">
                             <img src="/storage/{{ $hero->ability1 }}" alt="Ability 1" class="ability-icon">
                             <img src="/storage/{{ $hero->ability2 }}" alt="Ability 2" class="ability-icon">
                             <img src="/storage/{{ $hero->ability3 }}" alt="Ability 3" class="ability-icon">
-                            <img src="/storage/{{ $hero->ability4 }}" alt="Ability 4" class="ability-icon">
+                            <img src="/storage/{{ $hero->ability4 }}" alt="Ability 4" class="ability-icon"> --}}
                         </div>
                     </div>
                 </div>
