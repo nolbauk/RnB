@@ -1,70 +1,81 @@
-/* Reset dasar */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* CSS yang masih digunakan dalam HTML */
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #1f1f1f;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    overflow-x: hidden; /* Menghindari scroll horizontal */
+    background-color: #121212;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
 }
-.container {
-    margin-top: 40px;
-    width: 100%;
+
+
+
+
+
+.services_box:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.6);
+    transform: scale(1.03);
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .services_box {
+        width: 90%;
+    }
+}
+
+.item-section {
+    margin-top: 80px; /* Tambahkan jarak antara navbar dan section card */
+    height: 100vh;
+    overflow-y: auto;
     padding: 20px 0;
 }
 
+.items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Ini akan memposisikan item ke tengah */
+    gap: 20px; /* Perkecil jaraknya, misalnya dari 40px jadi 20px */
+    padding: 20px;
+}
+
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
 .services_section_2 {
-   display: flex;
-   justify-content: flex-start; /* Menghindari jarak antar card */
-   flex-wrap: wrap;
-   gap: 15px; /* Jarak antar card */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 24px; /* jarak antar item */
 }
 
-.services_box {
-   background-color: #2a2a2a;
-   border: 2px solid yellow;
-   width: 180px;
-   height: 300px;
-   padding: 15px;
-   text-align: center;
-   border-radius: 10px;
-   box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.8);
-   transition: all 0.3s ease-in-out;
-   margin-bottom: 20px; /* Menghindari card menempel */
+
+    .services_box {
+        border: 2px solid yellow;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #1e1e1e;
+        text-align: center;
+        color: white;
+    }
+
+    .services_box img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;   /* crop jika perlu */
+    object-position: center;
 }
 
-.services_box:hover {
-   transform: scale(1.05);
-   box-shadow: -5px -5px 10px rgba(255, 215, 0, 0.8);
-}
 
-.icon_img img {
-   width: 120px;
-   height: 120px;
-   margin-bottom: 10px;
-   border-radius: 10px; /* Memberikan efek lebih smooth */
-}
-
-.tasty_text {
-   font-size: 16px;
-   font-weight: bold;
-   margin-bottom: 10px;
-   color: #b0b0f0;
-}
-
-.lorem_text {
-   font-size: 14px;
-   color: #d1d1d1;
-   text-align: justify;
-}
-.services_taital {
-    margin-bottom: 30px; /* Atur jarak sesuai kebutuhan */
-}
+    .item_text {
+        margin-top: 10px;
+        font-size: 16px;
+    }

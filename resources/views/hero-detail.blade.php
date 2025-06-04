@@ -34,7 +34,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">HERO</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">ITEM</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/item">ITEM</a></li>
                         <li class="nav-item"><a class="nav-link" href="icecream.html">NEWS</a></li>
                         <li class="nav-item"><a class="nav-link" href="services.html">FORUM</a></li>
                     </ul>
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                     <!-- Attributes Section -->
-                    <ul class="list-unstyled text-white position-static">
+                    {{-- <ul class="list-unstyled text-white position-static">
                         <li class="mt-3">
                             <img src="{{ asset('images/hero_strength.png') }}" alt="Strength">
                             <span class="text-danger">{{ $hero->primary_strength }}</span>
@@ -81,10 +81,10 @@
                             <span class="text-warning">{{ $hero->primary_intelligence }}</span>
                             <span class="text-info">(+{{ $hero->intelligence_per_lvl }})</span>
                         </li>
-                    </ul>
+                    </ul> --}}
                     <!-- Voice Actor Section -->
-                    <h3 class="text-white mt-3">Voice Actor</h3>
-                    <p class="text-white">{{ $hero->voice_actor }}</p>
+                    {{-- <h3 class="text-white mt-3">Voice Actor</h3>
+                    <p class="text-white">{{ $hero->voice_actor }}</p> --}}
                 </div>
                 <!-- Right Column: Hero Details -->
                 <div class="col-md-6">
@@ -171,6 +171,23 @@
                 <!-- KIRI -->
                 <div class="col-md-4">
                     {{-- tolong buatkan facets --}}
+                      <ul class="list-unstyled text-white position-static">
+                        <li class="mt-3">
+                            <img src="{{ asset('images/hero_strength.png') }}" alt="Strength">
+                            <span class="text-danger">{{ $hero->primary_strength }}</span>
+                            <span class="text-info">(+{{ $hero->strength_per_lvl }})</span>
+                        </li>
+                        <li class="mt-3">
+                            <img src="{{ asset('images/hero_agility.png') }}" alt="Agility">
+                            <span class="text-success">{{ $hero->primary_agility }}</span>
+                            <span class="text-info">(+{{ $hero->agility_per_lvl }})</span>
+                        </li>
+                        <li class="mt-3">
+                            <img src="{{ asset('images/hero_Intelligence.png') }}" alt="Intelligence">
+                            <span class="text-warning">{{ $hero->primary_intelligence }}</span>
+                            <span class="text-info">(+{{ $hero->intelligence_per_lvl }})</span>
+                        </li>
+                    </ul>
                 </div>
                 <!-- TENGAH -->
                 <div class="col-md-4">
@@ -256,7 +273,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-center">ROLES</p>
+                    <h3 class="text-white mt-3 text-center">ROLES</h3>
                 </div>
 
                 <div class="col-md-4">

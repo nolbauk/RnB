@@ -12,7 +12,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProfileController;
-
+use App\Http\Controllers\GalleryItemController;
 // Route::get('/qwerty', function () {
 //     return view('qwerty');
 // });
@@ -35,9 +35,9 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/cek', function () {
-    return view('forum/discuss-detail');
-});
+Route::get('/item', [GalleryItemController::class, 'index'])->name('item.index');
+
+Route::get('/item/{id}', [GalleryItemController::class, 'show'])->name('item.show');
 
 Route::get('/hero', [GalleryHeroController::class, 'index'])->name('heroes.index');
 Route::get('/hero/{id}', [GalleryHeroController::class, 'show'])->name('hero.show');

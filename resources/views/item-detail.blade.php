@@ -1,45 +1,42 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>\
-    <link rel="stylesheet" href="css/item-detail.css">
+    <title>{{ $item->name }} - Dota 2 Items</title>
+    
+    <link rel="stylesheet" href="{{ asset('css/item-detail.css') }}"> {{-- Khusus untuk halaman ini --}}
 </head>
 <body>
-    <div class="header_section">
-        <div class="container">
-            @include('header')
-        </div>
-    </div>
     
+
     <div class="container">
         <div class="item-detail-section">
-            <div class="item-header">
-                <h1 class="item-title">Black King Bar</h1>
-                <img src="images/itembkb.jpg" alt="Black King Bar" class="item-image">
+            <div class="item-header text-center">
+                <h1 class="item-title">{{ $item->name }}</h1>
+                <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}" class="item-image">
             </div>
-            
-            <div class="item-info">
+
+            <div class="item-info mt-4">
                 <h3>Description</h3>
-                <p>Grants spell immunity for a short duration.</p>
-                
+                <p>{{ $item->description ?? 'No description available.' }}</p>
+
                 <h3>Stats</h3>
                 <ul>
-                    <li>+10 Strength</li>
-                    <li>+24 Damage</li>
+                    {!! $item->stats ?? '<li>No stats available.</li>' !!}
                 </ul>
-                
-                <h3>Active: Avatar</h3>
-                <p>Applies spell immunity for 9 seconds. Duration decreases with each use.</p>
-                
+
+                @if ($item->effect)
+                    <h3>Active Effect</h3>
+                    <p>{{ $item->effect }}</p>
+                @endif
+
                 <h3>Cost</h3>
-                <p>4050 Gold</p>
+                <p>{{ $item->cost ? $item->cost . ' Gold' : 'Unknown cost' }}</p>
             </div>
         </div>
     </div>
-    
+
     <script src="{{ asset('js/item-detail.js') }}"></script>
 </body>
-
 </html>
